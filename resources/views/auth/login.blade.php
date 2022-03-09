@@ -1,55 +1,102 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Agroxa - Responsive Bootstrap 4 Admin Dashboard</title>
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
-                    <h3 class="text-center m-0">
-                        <a href="index.html" class="logo logo-admin"><img src="assets/images/logo.png" height="30" alt="logo"></a>
-                    </h3>
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/metismenu.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/icons.') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+</head>
 
-                    <div class="p-3">
-                        <h4 class="text-muted font-18 m-b-5 text-center">Welcome Back !</h4>
-                        <p class="text-muted text-center">Sign in to continue to Agroxa.</p>
+<body>
 
-                        <form class="form-horizontal m-t-30" action="index.html">
+    <!-- Background -->
+    <div class="account-pages"></div>
+    <!-- Begin page -->
+    <div class="wrapper-page">
 
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" placeholder="Enter username">
-                            </div>
+        <div class="card">
+            <div class="card-body">
 
-                            <div class="form-group">
-                                <label for="userpassword">Password</label>
-                                <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
-                            </div>
+                <h3 class="text-center m-0">
+                    <a href="index.html" class="logo logo-admin"><img src="{{ asset('images/logo.png') }}" height="30"
+                            alt="logo"></a>
+                </h3>
 
-                            <div class="form-group row m-t-20">
-                                <div class="col-6">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customControlInline">
-                                        <label class="custom-control-label" for="customControlInline">Remember me</label>
-                                    </div>
+                <div class="p-3">
+                    <h4 class="text-muted font-18 m-b-5 text-center">Welcome Back !</h4>
+                    <p class="text-muted text-center">Sign in to continue to Agroxa.</p>
+
+                    <form class="form-horizontal m-t-30" action="index.html">
+
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userpassword">Password</label>
+                            <input type="password" class="form-control" id="userpassword"
+                                placeholder="Enter password">
+                        </div>
+
+                        <div class="form-group row m-t-20">
+                            <div class="col-6">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                    <label class="custom-control-label" for="customControlInline">Remember me</label>
                                 </div>
-                                <div class="col-6 text-right">
-                                    <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
-                                </div>
                             </div>
-
-                            <div class="form-group m-t-10 mb-0 row">
-                                <div class="col-12 m-t-20">
-                                    <a href="pages-recoverpw.html" class="text-muted"><i class="mdi mdi-lock"></i> Forgot your password?</a>
-                                </div>
+                            <div class="col-6 text-right">
+                                <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log
+                                    In</button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
 
+                        <div class="form-group m-t-10 mb-0 row">
+                            <div class="col-12 m-t-20">
+                                <a href="pages-recoverpw.html" class="text-muted"><i class="mdi mdi-lock"></i>
+                                    Forgot your password?</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+
             </div>
         </div>
+
+        <div class="m-t-40 text-center">
+            <p class="text-white-50">Don't have an account ? <a href="pages-register.html" class="text-white">
+                    Signup Now </a> </p>
+            <p class="text-muted">© 2018 Agroxa. Crafted with <i class="mdi mdi-heart text-danger"></i> by
+                Themesbrand</p>
+        </div>
+
     </div>
-</div>
-@endsection
+
+    <!-- END wrapper -->
+
+
+    <!-- jQuery  -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/metisMenu.min.') }}"></script>
+    <script src="{{ asset('js/jquery.slimscroll.') }}"></script>
+    <script src="{{ asset('js/waves.min.js') }}"></script>
+
+    <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+
+    <!-- App js -->
+    <script src="{{ asset('js/app.') }}"></script>
+
+</body>
+
+</html>
