@@ -50,11 +50,11 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="page-title-box">
-                                <h4 class="page-title">Blank page</h4>
+                                <h4 class="page-title">@yield('title')</h4>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="javascript:void(0);">Agroxa</a></li>
                                     <li class="breadcrumb-item"><a href="javascript:void(0);">Pages</a></li>
-                                    <li class="breadcrumb-item active">Blank page</li>
+                                    <li class="breadcrumb-item active">@yield('title')</li>
                                 </ol>
 
                                 <div class="state-information d-none d-sm-block">
@@ -73,7 +73,18 @@
                     <!-- end row -->
 
                     <div class="page-content-wrapper">
-                        @yield('content')
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- Demo purpose only -->
+                                        <div style="min-height: 300px;">
+                                            @yield('content')
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- end page content-->
 

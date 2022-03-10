@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/metismenu.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/icons.') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/icons.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
 </head>
 
@@ -98,14 +98,14 @@
     <!-- jQuery  -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/metisMenu.min.') }}"></script>
-    <script src="{{ asset('js/jquery.slimscroll.') }}"></script>
+    <script src="{{ asset('js/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
     <script src="{{ asset('js/waves.min.js') }}"></script>
 
     <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 
     <!-- App js -->
-    <script src="{{ asset('js/app.') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
 </body>
 
