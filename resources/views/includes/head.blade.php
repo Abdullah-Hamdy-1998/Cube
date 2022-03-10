@@ -12,3 +12,4 @@
 <link href="{{ asset('css/metismenu.min.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('css/icons.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('icons/eva-icons/style/eva-icons.css') }}" rel="stylesheet" type="text/css">
