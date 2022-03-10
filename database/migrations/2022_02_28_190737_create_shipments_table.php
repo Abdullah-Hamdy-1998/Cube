@@ -19,8 +19,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate();
             $table->foreignId('log_id')->unique()->constrained()->cascadeOnUpdate();
             $table->foreignId('shipment_info_id')->constrained('shipment_info')->cascadeOnUpdate();
-            $table->foreignId('customer_id')->constrained()->cascadeOnUpdate();
-            $table->foreignId('supplier_id')->constrained()->cascadeOnUpdate();
+            $table->morphs('shipmentable');
             $table->timestamps();
         });
     }

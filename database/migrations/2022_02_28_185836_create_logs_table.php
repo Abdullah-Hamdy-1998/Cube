@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string('type');
+            $table->string('subject');
+            $table->string('method');
+            $table->morphs('logable');
             $table->timestamps();
         });
     }

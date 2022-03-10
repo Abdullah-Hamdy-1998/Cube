@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->text('note')->nullable();
-            $table->string('job_title');
+            $table->string('job_title')->nullable();
             $table->string('phone')->nullable();
             $table->text('address')->nullable();
-            $table->string('avatar')->default();
+            $table->string('avatar')->default('default.png');
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

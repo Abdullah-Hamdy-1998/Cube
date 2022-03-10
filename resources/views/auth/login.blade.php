@@ -9,7 +9,6 @@
     <meta content="Admin Dashboard" name="description" />
     <meta content="Themesbrand" name="author" />
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
-
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/metismenu.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/icons.') }}" rel="stylesheet" type="text/css">
@@ -35,23 +34,34 @@
                     <h4 class="text-muted font-18 m-b-5 text-center">Welcome Back !</h4>
                     <p class="text-muted text-center">Sign in to continue to Agroxa.</p>
 
-                    <form class="form-horizontal m-t-30" action="index.html">
-
+                    <form class="form-horizontal m-t-30" action="{{ route('login') }}" method="POST"
+                        autocomplete="off">
+                        @csrf
                         <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Enter username">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" class="form-control" id="email" placeholder="Enter email"
+                                value="{{ old('email') }}">
                         </div>
+
+                        @error('email')
+                            {{ $message }}
+                        @enderror
 
                         <div class="form-group">
                             <label for="userpassword">Password</label>
-                            <input type="password" class="form-control" id="userpassword"
+                            <input type="password" name="password" class="form-control" id="userpassword"
                                 placeholder="Enter password">
                         </div>
+
+                        @error('password')
+                            {{ $message }}
+                        @enderror
 
                         <div class="form-group row m-t-20">
                             <div class="col-6">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                    <input type="checkbox" name"remember" class="custom-control-input"
+                                        id="customControlInline" value="1">
                                     <label class="custom-control-label" for="customControlInline">Remember me</label>
                                 </div>
                             </div>
