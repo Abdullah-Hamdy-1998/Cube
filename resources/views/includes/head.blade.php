@@ -1,10 +1,10 @@
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-<title>Agroxa - Responsive Bootstrap 4 Admin Dashboard</title>
+<title>Cube | @yield('title')</title>
 <meta content="Admin Dashboard" name="description" />
 <meta content="Themesbrand" name="author" />
-<link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
+<link rel="shortcut icon" href="{{ asset('images/cube_logo.svg') }}">
 
 <link rel="stylesheet" href="{{ asset('plugins/morris/morris.css') }}">
 

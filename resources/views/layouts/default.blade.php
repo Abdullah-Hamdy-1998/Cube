@@ -15,10 +15,10 @@
             <div class="topbar-left topbar-left-dark">
                 <a href="index.html" class="logo">
                     <span>
-                        <img src="{{ asset('images/logo-light.png') }}" alt="" height="24">
+                        <img src="{{ asset('images/cube_logo.svg') }}" alt="" height="77">
                     </span>
                     <i>
-                        <img src="{{ asset('images/logo-sm-light.png') }}" alt="" height="22">
+                        <img src="{{ asset('images/cube_logo.svg') }}" alt="" height="22">
                     </i>
                 </a>
             </div>
