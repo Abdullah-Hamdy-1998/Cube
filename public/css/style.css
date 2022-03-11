@@ -242,6 +242,11 @@ a:focus {
     color: #2a3142 !important;
 }
 
+.text-stroke {
+    color: white;
+    text-shadow: -1px -1px 0 #2a3142, 1px -1px 0 #2a3142, -1px 1px 0 #2a3142, 1px 1px 0 #2a3142;
+}
+
 .badge {
     font-weight: 500;
     -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
@@ -695,11 +700,7 @@ dt {
 }
 
 .logo {
-    color: #2a3142 !important;
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    filter: invert(16%) sepia(8%) saturate(2107%) hue-rotate(185deg) brightness(94%) contrast(89%);
 }
 
 .logo span span {

@@ -61,7 +61,7 @@
            </li>
 
            <li>
-               <a href="javascript:void(0);" class="waves-effect"><i class="eva eva-settings"></i> <span> Settings
+               <a href="javascript:void(0);" class="waves-effect"><i class="eva eva-settings-2"></i> <span> Settings
                        <span class="float-right menu-arrow"></a>
            </li>
 

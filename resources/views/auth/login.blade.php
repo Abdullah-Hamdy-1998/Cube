@@ -16,8 +16,7 @@
             <div class="card-body">
 
                 <h3 class="text-center m-0">
-                    <a href="index.html" class="logo logo-admin"><img src="{{ asset('images/cube_logo.svg') }}"
-                            height="30" alt="logo"></a>
+                    <img src="{{ asset('images/cube_logo.svg') }}" height="77" alt="logo" class="logo">
                 </h3>
 
                 <div class="p-3">
@@ -60,9 +59,9 @@
         </div>
 
         <div class="m-t-40 text-center">
-            <p class="text-muted">© {{ now()->year }} Cube. Crafted with <i class="mdi mdi-heart text-danger"></i>
+            <p class="text-white text-stroke">© {{ now()->year }} Cube. Crafted with <i class="mdi mdi-heart text-danger"></i>
                 by
-                Themesbrand</p>
+                TechX</p>
         </div>
 
     </div>
