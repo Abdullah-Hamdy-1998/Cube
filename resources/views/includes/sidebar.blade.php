@@ -4,14 +4,15 @@
        <ul class="metismenu" id="side-menu">
 
            <li>
-               <a href="index.html" class="waves-effect">
+               <a href="{{ route('home') }}" class="waves-effect">
                    <i class="eva eva-home"></i><span> Home
                    </span>
                </a>
            </li>
 
            <li>
-               <a href="javascript:void(0);" class="waves-effect"><i class="eva eva-people"></i></i><span> Users
+               <a href="{{ route('users.index') }}" class="waves-effect"><i class="eva eva-people"></i></i><span>
+                       Users
                        <span class="float-right menu-arrow"></a>
 
            </li>
@@ -28,7 +29,8 @@
            </li>
 
            <li>
-               <a href="javascript:void(0);" class="waves-effect"><i class="eva eva-shopping-bag"></i> <span> Shipments
+               <a href="javascript:void(0);" class="waves-effect"><i class="eva eva-shopping-bag"></i> <span>
+                       Shipments
                    </span>
                </a>
            </li>
