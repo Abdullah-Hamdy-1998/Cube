@@ -28,7 +28,7 @@
                 <tr>
                     <td>
                         <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
+                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
                         </div>
                     </td>
                     <td>{{ $i + 1 }}</td>
@@ -42,7 +42,7 @@
             @endfor
         </tbody>
     </table>
-
+@endsection
 @section('plugins')
     <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 
@@ -64,5 +64,4 @@
 
     <!-- Datatable init js -->
     <script src="{{ asset('pages/datatables.init.js') }}"></script>
-@endsection
 @endsection
