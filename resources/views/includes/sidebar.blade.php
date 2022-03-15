@@ -21,7 +21,7 @@
                <a href="javascript:void(0);" class="waves-effect"><i class="eva eva-file-text"></i> <span> Data
                        <span class="float-right menu-arrow"><i class="eva eva-arrow-ios-forward"></i></span> </span> </a>
                <ul class="submenu">
-                   <li><a href=".html">Items</a></li>
+                   <li><a href="{{ route('items.index') }}">Items</a></li>
                    <li><a href=".html">Suppliers</a></li>
                    <li><a href=".html">Customers</a></li>
                    <li><a href=".html">Shipments Types</a></li>

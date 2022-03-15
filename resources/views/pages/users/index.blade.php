@@ -3,18 +3,19 @@
     Users
 @endsection
 @section('content')
-    <a href="{{ route('users.create') }}"> <button type="button" class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
+    <a href="{{ route('users.create') }}"> <button type="button"
+            class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
         <thead>
             <tr>
+                <th></th>
                 <th>ID</th>
                 <th>Avatar</th>
                 <th>Name</th>
                 <th>Job Title</th>
                 <th>Phone</th>
                 <th>Email</th>
-                <th>Address</th>
                 <th>Modified</th>
             </tr>
         </thead>
@@ -25,13 +26,17 @@
                 @foreach ($users as $user)
                 @endforeach
                 <tr>
+                    <td>
+                        <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
+                        </div>
+                    </td>
                     <td>{{ $i + 1 }}</td>
                     <td></td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->job_title }}</td>
                     <td>{{ $user->phone }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->address }}</td>
                     <td>{{ $user->updated_at }}</td>
                 </tr>
             @endfor
