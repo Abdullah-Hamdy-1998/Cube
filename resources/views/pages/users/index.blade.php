@@ -22,16 +22,17 @@
 
 
         <tbody>
-            @for ($i = 0; $i < 100; $i++)
-                @foreach ($users as $user)
-                @endforeach
+            @php
+                $i = 0;
+            @endphp
+            @foreach ($users as $user)
                 <tr>
                     <td>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
                         </div>
                     </td>
-                    <td>{{ $i + 1 }}</td>
+                    <td>{{ ++$i }}</td>
                     <td></td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->job_title }}</td>
@@ -39,7 +40,7 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->updated_at }}</td>
                 </tr>
-            @endfor
+            @endforeach
         </tbody>
     </table>
 @endsection

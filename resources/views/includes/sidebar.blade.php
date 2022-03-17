@@ -45,7 +45,6 @@
                <a href="javascript:void(0);" class="waves-effect"><i class="eva eva-clipboard"></i><span> Reports
                        <span class="float-right menu-arrow"><i class="eva eva-arrow-ios-forward"></i></span> </span></a>
                <ul class="submenu">
-                   <li><a href="charts-chartist.html">Shipments Receipts</a></li>
                    <li><a href="charts-chartjs.html">Activity Log</a></li>
                </ul>
            </li>

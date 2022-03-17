@@ -3,45 +3,80 @@
     Home
 @endsection
 @section('content')
+    @foreach ($errors->all() as $error)
+        {{ $error }}
+    @endforeach
     <form action="{{ route('users.store') }}" method="POST" autocomplete="off">
+        @csrf
         <label for="username" class="col-sm-2 col-form-label">Username</label>
-        <input class="form-control" type="text" id="username" name="username">
+        <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}">
 
         <label for="job_title" class="col-sm-2 col-form-label">Job Title</label>
-        <input class="form-control" type="text" id="job_title" name="job_title">
+        <input class="form-control" type="text" id="job_title" name="job_title" value="{{ old('job_title') }}">
 
         <label for="phone" class="col-sm-2 col-form-label">Phone</label>
-        <input class="form-control" type="text" id="phone" name="phone">
+        <input class="form-control" type="text" id="phone" name="phone" value="{{ old('phone') }}">
 
         <label for="email" class="col-sm-2 col-form-label">Email</label>
-        <input class="form-control" type="text" id="email" name="email">
+        <input class="form-control" type="text" id="email" name="email" value="{{ old('email') }}">
 
         <label for="address" class="col-sm-2 col-form-label">Address</label>
-        <input class="form-control" type="text" id="address" name="address">
+        <input class="form-control" type="text" id="address" name="address" value="{{ old('address') }}">
 
         <label for="note" class="col-sm-2 col-form-label">Note</label>
-        <input class="form-control" type="text" id="note" name="note">
+        <input class="form-control" type="text" id="note" name="note" value="{{ old('note') }}">
 
         <label for="password" class="col-sm-2 col-form-label">Password</label>
         <input class="form-control" type="password" id="password" name="password">
 
         <label for="confirm_password" class="col-sm-2 col-form-label">Confirm Password</label>
-        <input class="form-control" type="password" id="confirm_password" name="confirm_password">
-
-        <p>Access Permissions</p>
-
-        <input type="checkbox" name="" id=""> Users
-        <input type="checkbox" name="" id=""> Data
-        <input type="checkbox" name="" id=""> Shipments
-        <input type="checkbox" name="" id=""> Inventory
-        <input type="checkbox" name="" id=""> Reports
-        <input type="checkbox" name="" id=""> Trash
-        <input type="checkbox" name="" id=""> Settings
+        <input class="form-control" type="password" id="password_confirmation" name="password_confirmation">
         <br>
-        <input type="checkbox" id="switch1" switch="none" checked />
-        <label for="switch1" data-on-label="Write" data-off-label="Read"></label>
+        <h6>Access Permissions</h6>
         <br>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" name="permissions[]" value="users" id=""> Users </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="permissions[]" value="data" id=""> Data
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="permissions[]" value="shipments" id=""> Shipments
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="permissions[]" value="inventory" id="">Inventory
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="permissions[]" value="reports" id="">Reports
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="permissions[]" value="trash" id="">Trash
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="permissions[]" value="settings" id="">Settings
+            </label>
+        </div>
+        <br><br>
+        <div class="form-check form-check-inline">
+            <input type='hidden' name="access" value="read">
+            <input type="checkbox" name="access" value="write" id="switch" switch="none" />
+            <label for="switch" data-on-label="Write" data-off-label="Read"></label>
+        </div>
+        <br><br>
         <button type="submit" class="btn btn-primary waves-effect waves-light ">Add</button>
-        <button type="button" class="btn btn-danger waves-effect waves-light ">Cancel</button>
+        <a href="{{ route('users.index') }}"> <button type="button"
+                class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
     </form>
 @endsection

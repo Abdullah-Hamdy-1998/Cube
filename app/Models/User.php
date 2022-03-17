@@ -22,6 +22,9 @@ class User extends Authenticatable
         'email',
         'password',
         'job_title',
+        'phone',
+        'address',
+        'note',
     ];
 
     /**
@@ -30,7 +33,6 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
         'remember_token',
     ];
 
@@ -42,4 +44,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function permissions()
+    {
+        return $this->belongsToMany(Permission::class, 'permission_user')->withPivot('access');
+    }
 }

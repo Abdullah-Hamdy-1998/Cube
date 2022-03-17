@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->id();
-            $table->enum('module', ['users', 'data', 'shipping', 'inventory', 'reports', 'trash', 'settings']);
-            $table->enum('access', ['read', 'write']);
+            $table->enum('module', ['users', 'data', 'shipments', 'inventory', 'reports', 'trash', 'settings']);
         });
     }
 

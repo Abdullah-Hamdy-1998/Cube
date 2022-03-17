@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
+use App\Models\Permission;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -34,11 +37,19 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
-        
+        $request->merge(['password' => Hash::make($request->password)]);
+        $user = User::create($request->input());
+        foreach ($request->permissions as $permission) {
+            $module = Permission::where('module', '=', $permission)->first();
+            if ($module === null) {
+                $module = Permission::create(['module' => $permission]);
+            }
+            $user->permissions()->attach($module->id, ['access' => $request->access]);
+        }
+        return redirect()->route('users.index');
     }
-
     /**
      * Display the specified resource.
      *
