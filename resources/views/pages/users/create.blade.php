@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('title')
-    Home
+    Users
 @endsection
 @section('content')
     @foreach ($errors->all() as $error)
@@ -36,36 +36,36 @@
         <br>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" name="permissions[]" value="users" id=""> Users </label>
+                <input type="checkbox" class="form-check-input" name="modules[]" value="users" id=""> Users </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="permissions[]" value="data" id=""> Data
+                <input class="form-check-input" type="checkbox" name="modules[]" value="data" id=""> Data
             </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="permissions[]" value="shipments" id=""> Shipments
+                <input class="form-check-input" type="checkbox" name="modules[]" value="shipments" id=""> Shipments
             </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="permissions[]" value="inventory" id="">Inventory
+                <input class="form-check-input" type="checkbox" name="modules[]" value="inventory" id="">Inventory
             </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="permissions[]" value="reports" id="">Reports
+                <input class="form-check-input" type="checkbox" name="modules[]" value="reports" id="">Reports
             </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="permissions[]" value="trash" id="">Trash
+                <input class="form-check-input" type="checkbox" name="modules[]" value="trash" id="">Trash
             </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="permissions[]" value="settings" id="">Settings
+                <input class="form-check-input" type="checkbox" name="modules[]" value="settings" id="">Settings
             </label>
         </div>
         <br><br>

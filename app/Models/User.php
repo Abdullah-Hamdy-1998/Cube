@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Permission::class, 'permission_user')->withPivot('access');
     }
+
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
 }

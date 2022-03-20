@@ -13,7 +13,7 @@
 
             <!-- LOGO -->
             <div class="topbar-left topbar-left-dark">
-                <a href="index.html" class="logo">
+                <a href="{{ route('home') }}" class="logo">
                     <span>
                         <img src="{{ asset('images/cube_logo.svg') }}" alt="" height="77">
                     </span>

@@ -22,9 +22,9 @@
                        <span class="float-right menu-arrow"><i class="eva eva-arrow-ios-forward"></i></span> </span> </a>
                <ul class="submenu">
                    <li><a href="{{ route('items.index') }}">Items</a></li>
-                   <li><a href=".html">Suppliers</a></li>
-                   <li><a href=".html">Customers</a></li>
-                   <li><a href=".html">Shipments Types</a></li>
+                   <li><a href="javascript:void(0);">Suppliers</a></li>
+                   <li><a href="javascript:void(0);">Customers</a></li>
+                   <li><a href="javascript:void(0);">Shipments Types</a></li>
                </ul>
            </li>
 
@@ -45,7 +45,7 @@
                <a href="javascript:void(0);" class="waves-effect"><i class="eva eva-clipboard"></i><span> Reports
                        <span class="float-right menu-arrow"><i class="eva eva-arrow-ios-forward"></i></span> </span></a>
                <ul class="submenu">
-                   <li><a href="charts-chartjs.html">Activity Log</a></li>
+                   <li><a href="javascript:void(0);">Activity Log</a></li>
                </ul>
            </li>
 
@@ -53,11 +53,11 @@
                <a href="javascript:void(0);" class="waves-effect"><i class="eva eva-trash-2"></i><span> Trash
                        <span class="float-right menu-arrow"><i class="eva eva-arrow-ios-forward"></i></span> </span></a>
                <ul class="submenu">
-                   <li><a href=".html">Users</a></li>
-                   <li><a href=".html">Items</a></li>
-                   <li><a href=".html">Suppliers</a></li>
-                   <li><a href=".html">Customers</a></li>
-                   <li><a href=".html">Shipments Types</a></li>
+                   <li><a href="javascript:void(0);">Users</a></li>
+                   <li><a href="javascript:void(0);">Items</a></li>
+                   <li><a href="javascript:void(0);">Suppliers</a></li>
+                   <li><a href="javascript:void(0);">Customers</a></li>
+                   <li><a href="javascript:void(0);">Shipments Types</a></li>
                </ul>
            </li>
 
@@ -67,7 +67,8 @@
            </li>
 
            <li>
-               <a href="calendar.html" class="waves-effect"><i class="eva eva-question-mark-circle"></i><span> Help
+               <a href="javascript:void(0);" class="waves-effect"><i class="eva eva-question-mark-circle"></i><span>
+                       Help
                    </span></a>
            </li>
 

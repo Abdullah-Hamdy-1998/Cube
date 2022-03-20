@@ -25,18 +25,18 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|alpha',
+            'name' => 'required|alpha|unique:users,name',
             'job_title' => 'alpha',
-            'phone' => 'numeric',
-            'email' => 'required|unique:users|email',
+            'phone' => 'numeric|min:11',
+            'email' => 'required|unique:users,email|email',
             'password' => 'required|confirmed|min:8',
-            'permissions' => 'required'
+            'modules' => 'required'
 
         ];
     }
 
     public function messages()
     {
-        return ['permissions.required' => 'The Access Permissions field is required.'];
+        return ['modules.required' => 'The Access Permissions field is required.'];
     }
 }

@@ -17,6 +17,7 @@
                 <th>Phone</th>
                 <th>Email</th>
                 <th>Modified</th>
+                <th>Actions</th>
             </tr>
         </thead>
 
@@ -39,6 +40,16 @@
                     <td>{{ $user->phone }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->updated_at }}</td>
+                    <td>
+                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                                <a href="{{ route('users.show', $user) }}"> <button type="button"
+                                        class="btn btn-primary"><i class="eva eva-eye-outline"></i></button></a>
+                                <button type="button" class="btn btn-danger"><i class="eva eva-trash"></i></button>
+
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
