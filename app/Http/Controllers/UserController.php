@@ -57,11 +57,13 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, User $user)
     {
         $request->merge(['password' => Hash::make($request->password)]);
-        $user = User::create($request->all());
+        $user->update($request->all());
+
         foreach ($request->modules as $module) {
             $permission = Permission::firstOrCreate(['module' => $module]);
-            $user->permissions()->attach($permission->id, ['access' => $request->access]);
+            $permissionIDs[] = $permission->id;
         }
+        $user->permissions()->syncWithPivotValues($permissionIDs, ['access' => $request->access]);
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
 
