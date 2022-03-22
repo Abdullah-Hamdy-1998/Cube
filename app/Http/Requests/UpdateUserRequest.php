@@ -3,16 +3,14 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Hash;
 
-class StoreUserRequest extends FormRequest
+class UpdateUserRequest extends FormRequest
 {
 
     public function authorize()
     {
         return true;
     }
-
 
     public function rules()
     {
@@ -23,7 +21,6 @@ class StoreUserRequest extends FormRequest
             'email' => 'required|unique:users,email|email',
             'password' => 'required|confirmed|min:8',
             'modules' => 'required'
-
         ];
     }
 

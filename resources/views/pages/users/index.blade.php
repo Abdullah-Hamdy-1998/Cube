@@ -45,7 +45,11 @@
                             <div class="btn-group mr-2" role="group" aria-label="First group">
                                 <a href="{{ route('users.show', $user) }}"> <button type="button"
                                         class="btn btn-primary"><i class="eva eva-eye-outline"></i></button></a>
-                                <button type="button" class="btn btn-danger"><i class="eva eva-trash"></i></button>
+                                <form action="{{ route('users.destroy', $user) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger"><i class="eva eva-trash"></i></button>
+                                </form>
 
                             </div>
                         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\Permission;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -25,12 +26,12 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $request->merge(['password' => Hash::make($request->password)]);
-        $user = User::create($request->input());
+        $user = User::create($request->all());
         foreach ($request->modules as $module) {
             $permission = Permission::firstOrCreate(['module' => $module]);
             $user->permissions()->attach($permission->id, ['access' => $request->access]);
         }
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success', 'User created successfully.');
     }
 
     public function show(User $user)
@@ -45,16 +46,28 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        return $user;
+        $permissions = $user->permissions;
+        $access = $permissions[0]->pivot->access;
+        foreach ($permissions as $permission) {
+            $modules[] = $permission->module;
+        }
+        return view('pages.users.edit', ['user' => $user, 'modules' => $modules, 'access' => $access]);
     }
 
-    public function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
-        //
+        $request->merge(['password' => Hash::make($request->password)]);
+        $user = User::create($request->all());
+        foreach ($request->modules as $module) {
+            $permission = Permission::firstOrCreate(['module' => $module]);
+            $user->permissions()->attach($permission->id, ['access' => $request->access]);
+        }
+        return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
 
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('users.index');
     }
 }
