@@ -3,19 +3,35 @@
     Items
 @endsection
 @section('content')
+<<<<<<< Updated upstream
     <a href="{{ route('items.create') }}"> <button type="button"
             class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
         <thead>
+=======
+
+    <a href="{{ route('items.create') }}">
+        <button type="button" class="btn btn-primary waves-effect waves-light float-right"><i class="fa fa-plus" style="margin:5px; font-size:14px;" ></i>  Add</button></a>
+
+        <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
+        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+
+        <thead>
+
+>>>>>>> Stashed changes
             <tr>
                 <th></th>
                 <th>ID</th>
                 <th>Avatar</th>
                 <th>Name</th>
+<<<<<<< Updated upstream
                 <th>Job Title</th>
                 <th>Phone</th>
                 <th>Email</th>
+=======
+                <th>Description</th>
+>>>>>>> Stashed changes
                 <th>Modified</th>
             </tr>
         </thead>
@@ -33,8 +49,12 @@
                 <td></td>
                 <td></td>
                 <td></td>
+<<<<<<< Updated upstream
                 <td></td>
                 <td></td>
+=======
+
+>>>>>>> Stashed changes
             </tr>
         </tbody>
     </table>
