@@ -48,12 +48,11 @@ class UserFactory extends Factory
     public function configure()
     {
         return $this->afterCreating(function (User $user) {
-            $access = ['read', 'write'];
             $modules = ['users', 'data', 'shipments', 'inventory', 'reports', 'trash', 'settings'];
             shuffle($modules);
             for ($i = 0; $i < 4; $i++) {
                 $permission =  \App\Models\Permission::firstOrCreate(['module' => $modules[$i]]);
-                $user->permissions()->attach($permission->id, ['access' => $access[rand(0, 1)]]);
+                $user->permissions()->attach($permission->id, ['access' => 'read']);
             }
         });
     }

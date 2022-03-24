@@ -3,6 +3,8 @@
     Users
 @endsection
 @section('content')
+    <img src="{{ asset('images/avatars/' . $user->avatar) }}" alt="user" class="rounded-circle mx-auto d-block" style="max-width: 25%">
+
     <label for="username" class="col-sm-2 col-form-label">Username</label>
     <input class="form-control" type="text" id="name" name="name" value="{{ $user->name }}" disabled>
 

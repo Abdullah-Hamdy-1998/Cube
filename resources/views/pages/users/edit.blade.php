@@ -6,9 +6,12 @@
     @foreach ($errors->all() as $error)
         {{ $error }}
     @endforeach
-    <form action="{{ route('users.update', $user) }}" method="POST" autocomplete="off">
+    <form action="{{ route('users.update', $user) }}" method="POST" autocomplete="off" enctype="multipart/form-data">
         @csrf
         @method('PUT')
+        <label class="form-label" for="customFile">Upload Avatar</label>
+        <input type="file" class="form-control" name="user-avatar" accept=".jpg,.jpeg,.png" />
+
         <label for="username" class="col-sm-2 col-form-label">Username</label>
         <input class="form-control" type="text" id="name" name="name" value="{{ $user->name }}">
 

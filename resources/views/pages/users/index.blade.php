@@ -34,7 +34,9 @@
                         </div>
                     </td>
                     <td>{{ ++$i }}</td>
-                    <td></td>
+                    <td> <img src="{{ asset('images/avatars/' . $user->avatar) }}" alt="user"
+                            class="rounded-circle img-fluid">
+                    </td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->job_title }}</td>
                     <td>{{ $user->phone }}</td>

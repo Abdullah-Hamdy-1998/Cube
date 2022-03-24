@@ -12,13 +12,12 @@
         <div class="dropdown notification-list nav-pro-img">
             <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user waves-light" data-toggle="dropdown"
                 href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                <img src="{{ asset('images/users/user-4.jpg') }}" alt="user" class="rounded-circle">
+                <img src="{{ asset('images/avatars/' . auth()->user()->avatar) }}" alt="user" class="rounded-circle">
             </a>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                 <!-- item-->
                 <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5"></i> Profile</a>
-                <a class="dropdown-item d-block" href="#"><i
-                        class="mdi mdi-settings m-r-5"></i>
+                <a class="dropdown-item d-block" href="#"><i class="mdi mdi-settings m-r-5"></i>
                     Settings</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item text-danger" href="{{ route('logout') }}"

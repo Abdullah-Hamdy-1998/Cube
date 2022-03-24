@@ -15,12 +15,13 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|alpha|unique:users,name,' . $this->user->id,
-            'job_title' => 'alpha',
+            'name' => 'required|alpha_spaces|unique:users,name,' . $this->user->id,
+            'job_title' => 'alpha_spaces',
             'phone' => 'numeric|min:11',
             'email' => 'required|unique:users,email,' . $this->user->id . '|email',
             'password' => 'required|confirmed|min:8',
-            'modules' => 'required'
+            'modules' => 'required',
+            'user-avatar' => 'image|mimes:jpg,png,jpeg|max:2048',
         ];
     }
 

@@ -17,13 +17,13 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|alpha|unique:users,name',
-            'job_title' => 'alpha',
+            'name' => 'required|alpha_spaces|unique:users,name',
+            'job_title' => 'alpha_spaces',
             'phone' => 'numeric|min:11',
             'email' => 'required|unique:users,email|email',
             'password' => 'required|confirmed|min:8',
-            'modules' => 'required'
-
+            'modules' => 'required',
+            'user-avatar' => 'image|mimes:jpg,png,jpeg|max:2048',
         ];
     }
 

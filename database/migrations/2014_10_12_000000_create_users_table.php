@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('job_title')->nullable();
             $table->string('phone')->nullable();
             $table->text('address')->nullable();
-            $table->string('avatar')->default('default.png');
+            $table->string('avatar')->default('user-default.png');
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
