@@ -1356,6 +1356,54 @@ button:focus {
 .btn-primary {
     background-color: #1b82ec;
     border: 1px solid #1b82ec;
+    width: 85px;
+    border-radius: 14px;
+    margin-top: 5px;
+}
+.btn-primary2{
+    margin-right: 3vh;
+    background-color: #e2ecff;
+    border-color: transparent;
+    color: #1b82ec;
+    width: 85px;}.dropbtn {
+        background-color: #3498DB;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .dropbtn:hover, .dropbtn:focus {
+        background-color: #2980B9;
+      }
+      
+      .dropdown1 {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown1-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown1-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown1 a:hover {background-color: #ddd;}
+      
+      .show {display: block;}
+
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active,
@@ -2171,6 +2219,8 @@ button:focus {
 ===================*/
 label {
     font-weight: 500;
+    margin-left:145px;
+
 }
 
 .form-control {
@@ -2185,6 +2235,10 @@ label {
 
 .form-control-sm {
     font-size: .875rem;
+    border-radius: 15px;
+    background-color: rgb(244 244 244);
+    border-color: transparent;
+    margin-top:20px ;
 }
 
 .custom-control-input:checked~.custom-control-indicator {
@@ -2747,6 +2801,9 @@ th {
 
 .table>tbody>tr>td, .table>tfoot>tr>td, .table>thead>tr>td {
     padding: 15px 12px;
+    background-color: white;
+    border-bottom:2px solid #f4f4f4;
+    height: 50px;
 }
 
 .table-hover tbody tr:hover, .table-striped tbody tr:nth-of-type(odd),
@@ -2817,6 +2874,10 @@ table.focus-on tbody tr.focused td {
     width: 17px;
     outline: none !important;
 }
+.items{margin-bottom: -60px;
+    margin-left: 30px;
+    font-size: 25px;}
+
 
 .table-rep-plugin .checkbox-row label::after {
     color: #e9ecef;

@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+    
     @include('includes.head')
+    
 </head>
 
 <body>
@@ -47,12 +49,16 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="page-content-wrapper">
+                        
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
+                                    
                                     <div class="card-body">
+                                        
                                         <!-- Demo purpose only -->
                                         <div style="min-height: 300px;">
+                                            <p class="page label"></p>
                                             @yield('content')
                                         </div>
                                     </div>
