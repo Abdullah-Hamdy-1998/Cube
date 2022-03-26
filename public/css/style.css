@@ -1744,6 +1744,9 @@ button:focus {
     width: 170px;
     padding-left: 80px;
 }
+.col-sm-2{
+    max-width: 28.667%;
+}
 
 .message-list li.active,
 .message-list li.active:hover {
@@ -2225,12 +2228,19 @@ label {
 
 .form-control {
     font-size: 13.5px;
+    width: 42%;
 }
 
 .form-control:focus {
     border-color: #1b82ec;
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+.form-control-coust{
+    width:50%;}
+    .form-group-coust{
+    margin-bottom: 10px;;
+
 }
 
 .form-control-sm {
@@ -2364,6 +2374,11 @@ label {
 .color-picker-inputs .form-group .input-group-append .btn {
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+.label-coust{
+    margin-left: 10px;;
+
+
 }
 
 .colorpicker-2x .colorpicker-saturation {
@@ -2877,7 +2892,9 @@ table.focus-on tbody tr.focused td {
 .items{margin-bottom: -60px;
     margin-left: 30px;
     font-size: 25px;}
+.row-coust{display:revert-layer
 
+}
 
 .table-rep-plugin .checkbox-row label::after {
     color: #e9ecef;
