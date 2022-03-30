@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreUserRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Traits\SaveImageTrait;
 
 class UserController extends Controller
 {
+    use SaveImageTrait;
 
     public function index()
     {
@@ -25,8 +27,8 @@ class UserController extends Controller
 
     public function store(StoreUserRequest $request)
     {
-        if ($request->hasFile('user-avatar')) {
-            $this->saveImage($request, 'images/avatars');
+        if ($request->hasFile('image')) {
+            $request->merge(['avatar' => $this->saveImage($request, 'images/avatars')]);
         }
 
         $request->merge(['password' => Hash::make($request->password)]);
@@ -61,10 +63,10 @@ class UserController extends Controller
 
     public function update(UpdateUserRequest $request, User $user)
     {
-        if ($request->hasFile('user-avatar')) {
+        if ($request->hasFile('image')) {
             if ($user->avatar != "user-default.png")
                 Storage::disk('avatars')->delete($user->avatar);
-            $this->saveImage($request, 'images/avatars');
+            $request->merge(['avatar' => $this->saveImage($request, 'images/avatars')]);
         }
 
         $request->merge(['password' => Hash::make($request->password)]);
@@ -82,13 +84,5 @@ class UserController extends Controller
     {
         $user->delete();
         return redirect()->route('users.index');
-    }
-
-    protected function saveImage($request, $destinationPath)
-    {
-        $avatar = $request->file('user-avatar');
-        $userAvatar = date('YmdHis') . "." . $avatar->getClientOriginalExtension();
-        $avatar->move($destinationPath, $userAvatar);
-        $request->merge(['avatar' => $userAvatar]);
     }
 }

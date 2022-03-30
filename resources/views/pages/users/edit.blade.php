@@ -10,7 +10,7 @@
         @csrf
         @method('PUT')
         <label class="form-label" for="customFile">Upload Avatar</label>
-        <input type="file" class="form-control" name="user-avatar" accept=".jpg,.jpeg,.png" />
+        <input type="file" class="form-control" name="image" accept=".jpg,.jpeg,.png" />
 
         <label for="username" class="col-sm-2 col-form-label">Username</label>
         <input class="form-control" type="text" id="name" name="name" value="{{ $user->name }}">

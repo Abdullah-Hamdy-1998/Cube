@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('log_id')->unique()->constrained()->cascadeOnUpdate();
+            // $table->foreignId('log_id')->unique()->constrained()->cascadeOnUpdate();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->unsignedBigInteger('quantity');
+            $table->unsignedInteger('quantity')->nullable();
             $table->string('avatar')->default();
-            $table->decimal('amount', $precision = 8, $scale = 3);
+            $table->decimal('amount', $precision = 8, $scale = 3)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
