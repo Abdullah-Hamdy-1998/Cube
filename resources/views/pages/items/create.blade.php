@@ -13,15 +13,15 @@
                         <input type="file" class="form-control  " name="user avater" accept=".jpg,.jpeg,.png"/> 
                         <div class="form-group row form-group-coust row-coust">
 
-                        <label for="example-text-input " class="col-sm-2 col-form-label label-coust">Username</label>
+                        <label for="example-text-input " class="col-sm-2 col-form-label col-sm-2-coustm">Username</label>
                         <div class="col-sm-10">
                             <input class="form-control form-control-coust" type="text" placeholder="Username" id="example-text-input">
                         </div>
                     </div>
                     <div class="form-group row  form-group-coust row-coust">
-                        <label for="example-search-input " class="col-sm-2 col-form-label label-coust">Job title</label>
+                        <label for="example-search-input " class="col-sm-2 col-form-label col-sm-2-coustm">Descraption</label>
                         <div class="col-sm-10">
-                            <input class="form-control form-control-coust" type="search" placeholder="Job title" id="example-search-input">
+                            <input class="form-control form-control-coust" type="search" placeholder="Descraption" id="example-search-input">
                         </div>
                     </div>
                 </div>
@@ -35,4 +35,3 @@
         </div> <!-- end col -->
     </div></div> <!-- end row -->
 @endsection
-
