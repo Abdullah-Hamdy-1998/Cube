@@ -22,9 +22,9 @@
                        <span class="float-right menu-arrow"><i class="eva eva-arrow-ios-forward"></i></span> </span> </a>
                <ul class="submenu">
                    <li><a href="{{ route('items.index') }}">Items</a></li>
-                   <li><a href="javascript:void(0);">Suppliers</a></li>
-                   <li><a href="javascript:void(0);">Customers</a></li>
-                   <li><a href="javascript:void(0);">Shipments Types</a></li>
+                   <li><a href="{{ route('suppliers.index') }}">Suppliers</a></li>
+                   <li><a href="{{ route('customers.index') }}">Customers</a></li>
+                   <li><a href="{{ route('shipments-types.index') }}">Shipments Types</a></li>
                </ul>
            </li>
 
