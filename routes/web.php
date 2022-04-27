@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ShipmentController;
 use App\Http\Controllers\ShipmentTypeController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
@@ -14,4 +15,5 @@ Route::middleware('auth')->group(function () {
     Route::resource('suppliers', SupplierController::class);
     Route::resource('customers', CustomerController::class);
     Route::resource('shipments-types', ShipmentTypeController::class);
+    Route::resource('shipments', ShipmentController::class);
 });

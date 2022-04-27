@@ -10,7 +10,7 @@ class ShipmentController extends Controller
 
     public function index()
     {
-        //
+        return view('pages.shipments.index');
     }
 
     public function create()

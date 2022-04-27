@@ -29,7 +29,7 @@
            </li>
 
            <li>
-               <a href="javascript:void(0);" class="waves-effect"><i class="eva eva-shopping-bag"></i> <span>
+               <a href="{{ route('shipments.index') }}" class="waves-effect"><i class="eva eva-shopping-bag"></i> <span>
                        Shipments
                    </span>
                </a>
