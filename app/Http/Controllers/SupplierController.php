@@ -22,7 +22,7 @@ class SupplierController extends Controller
     public function store(Request $request)
     {
         Supplier::create($request->all());
-        return view('pages.suppliers.index');
+        return redirect()->route('suppliers.index');
     }
 
     public function show(Supplier $supplier)
