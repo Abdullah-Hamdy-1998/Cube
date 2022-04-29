@@ -29,7 +29,7 @@
         <br><br>
 
         <button type="submit" class="btn btn-primary waves-effect waves-light ">Add</button>
-        <a href="{{ route('users.index') }}"> <button type="button"
+        <a href="{{ route('customers.create') }}"> <button type="button"
                 class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
     </form>
 @endsection

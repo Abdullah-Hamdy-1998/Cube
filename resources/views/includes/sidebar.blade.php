@@ -24,7 +24,7 @@
                    <li><a href="{{ route('items.index') }}">Items</a></li>
                    <li><a href="{{ route('suppliers.index') }}">Suppliers</a></li>
                    <li><a href="{{ route('customers.index') }}">Customers</a></li>
-                   <li><a href="{{ route('shipments-types.index') }}">Shipments Types</a></li>
+                   <li><a href="{{ route('infos.index') }}">Shipments Info</a></li>
                </ul>
            </li>
 
