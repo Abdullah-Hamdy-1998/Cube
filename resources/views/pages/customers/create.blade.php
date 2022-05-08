@@ -8,6 +8,8 @@
     @endforeach
     <form action="{{ route('customers.store') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
         @csrf
+        <div class="card">
+            <div class="card-body"
         <label for="name" class="col-sm-2 col-form-label">Name</label>
         <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}">
 
@@ -32,4 +34,5 @@
         <a href="{{ route('customers.create') }}"> <button type="button"
                 class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
     </form>
+<div></div>
 @endsection

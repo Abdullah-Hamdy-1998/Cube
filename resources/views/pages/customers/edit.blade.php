@@ -3,6 +3,8 @@
     Customers
 @endsection
 @section('content')
+<div class="card">
+    <div class="card-body">
     <form action="{{ route('customers.update', $customer) }}" method="POST" autocomplete="off">
         @csrf
         @method('PUT')
@@ -30,4 +32,5 @@
         <a href="{{ route('customers.index') }}"> <button type="button"
                 class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
     </form>
+    </div></div>
 @endsection

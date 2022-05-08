@@ -3,6 +3,8 @@
     Customers
 @endsection
 @section('content')
+<div class="card">
+    <div class="card-body">
     <a href="{{ route('customers.create') }}"> <button type="button"
             class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
@@ -56,6 +58,7 @@
             @endforeach
         </tbody>
     </table>
+    </div></div>
 @endsection
 @section('plugins')
     <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>

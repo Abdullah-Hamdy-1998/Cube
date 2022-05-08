@@ -3,6 +3,8 @@
     Items
 @endsection
 @section('content')
+<div class="card">
+    <div class="card-body">
     <a href="{{ route('items.create') }}">
         <button type="button" class="btn btn-primary waves-effect waves-light float-right"><i class="fa fa-plus"
                 style="margin:5px; font-size:14px;"></i> Add</button></a>
@@ -56,6 +58,7 @@
         </tbody>
 
     </table>
+    </div></div>
 @endsection
 @section('plugins')
     <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>

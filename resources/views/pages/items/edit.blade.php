@@ -3,6 +3,8 @@
     Items
 @endsection
 @section('content')
+<div class="card">
+    <div class="card-body">
 <form action="{{ route('items.update',$item) }}" method="POST" enctype="multipart/form-data" autocomplete="off">
     @csrf
     @method('PUT')
@@ -19,4 +21,5 @@
     <a href="{{ route('items.index') }}"> <button type="button"
             class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
 </form>
+    </div></div>
 @endsection

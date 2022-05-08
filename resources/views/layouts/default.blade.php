@@ -52,12 +52,12 @@
                         
                         <div class="row">
                             <div class="col-12">
-                                <div class="card">
+                                
                                     
-                                    <div class="card-body">
+                                    <div >
                                         
                                         <!-- Demo purpose only -->
-                                        <div style="min-height: 300px;">
+                                        <div >
                                             <p class="page label"></p>
                                             @yield('content')
                                         </div>

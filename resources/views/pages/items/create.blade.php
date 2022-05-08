@@ -3,6 +3,8 @@
     Items
 @endsection
 @section('content')
+<div class="card">
+    <div class="card-body">
     <form action="{{ route('items.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
         @foreach ($errors->all() as $error)
             {{ $error }}
@@ -22,4 +24,5 @@
                 class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
 
     </form>
+    </div></div>
 @endsection

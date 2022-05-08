@@ -3,6 +3,8 @@
     Users
 @endsection
 @section('content')
+<div class="card">
+    <div class="card-body">
     <img src="{{ asset('images/avatars/' . $user->avatar) }}" alt="user" class="rounded-circle mx-auto d-block" style="max-width: 25%">
 
     <label for="username" class="col-sm-2 col-form-label">Username</label>
@@ -80,4 +82,5 @@
             class="btn btn-primary waves-effect waves-light ">Edit</button></a>
     <a href="{{ route('users.index') }}"> <button type="button"
             class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
+    </div></div>
 @endsection

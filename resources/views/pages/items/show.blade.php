@@ -3,6 +3,8 @@
     Items
 @endsection
 @section('content')
+<div class="card">
+    <div class="card-body">
     <img src="{{ asset('images/avatars/' . $item->avatar) }}" alt="user" class="rounded-circle mx-auto d-block"
         style="max-width: 25%">
 
@@ -17,4 +19,5 @@
             class="btn btn-primary waves-effect waves-light ">Edit</button></a>
     <a href="{{ route('items.index') }}"> <button type="button"
             class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
+    </div></div>
 @endsection
