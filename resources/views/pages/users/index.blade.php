@@ -29,7 +29,7 @@
                 $i = 0;
             @endphp
             @foreach ($users as $user)
-                <tr>
+                <tr class="userRow{{ $user->id }}">
                     <td>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
@@ -49,14 +49,12 @@
                             <div class="btn-group mr-2" role="group" aria-label="First group">
                                 <a href="{{ route('users.show', $user) }}"> <button type="button"
                                         class="btn btn-primary"><i class="eva eva-eye-outline"></i></button></a>
-                                <form action="{{ route('users.destroy', $user) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger"><i class="eva eva-trash"></i></button>
-                                </form>
-
+                                <button class="btn btn-danger delete_btn" data-id="{{ $user->id }}"
+                                    data-route="user-delete/"><i class="eva eva-trash"></i></button>
                             </div>
                         </div>
+
+
                     </td>
                 </tr>
             @endforeach
@@ -64,6 +62,33 @@
     </table>
     </div></div>
 @endsection
+
+@section('jquery')
+    <script>
+        $(document).on('click', '.delete_btn', function(e) {
+            e.preventDefault();
+            var id = $(this).data("id");
+            var route = $(this).data("route");
+
+            $.ajax({
+                type: "POST",
+                url: route,
+                data: {
+                    id: id,
+                    _token: "{{ csrf_token() }}",
+                    _method: "DELETE",
+
+                },
+                success: function(data) {
+
+                    $('.userRow' + id).remove();
+                }
+
+            });
+        });
+    </script>
+@endsection
+
 @section('plugins')
     <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 

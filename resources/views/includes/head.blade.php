@@ -16,4 +16,11 @@
 <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('icons/eva-icons/style/eva-icons.css') }}" rel="stylesheet" type="text/css">
 
+<!-- jQuery  -->
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('js/metisMenu.min.js') }}"></script>
+<script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
+<script src="{{ asset('js/waves.min.js') }}"></script>
 
+@yield('jquery')

@@ -9,6 +9,8 @@ use App\Http\Requests\StoreUserRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Traits\SaveImageTrait;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -16,7 +18,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::all()->except(auth()->id());
+        $users = User::all()->except(['id', Auth::id()]);
         return view('pages.users.index', ['users' => $users]);
     }
 
@@ -80,8 +82,9 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
 
-    public function destroy(User $user)
+    public function destroy(Request $request)
     {
+        $user = User::find($request->id);
         $user->delete();
         return redirect()->route('users.index');
     }
