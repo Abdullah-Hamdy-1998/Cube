@@ -7,11 +7,10 @@
     .placeholder-coust{font-weight: normal}
     .label-coust{color:#656565}
     .placeholder-coust{color:#949595;position: absolute;left:16px; top:9px}
-    .button-coust{position: absolute;right: 16px;border-radius: 12px;  border-bottom-left-radius: 0px ;border-top-left-radius: 0px ; width: 15%;background-color: #E9ECEF; border-color:transparent;font-size: 20px;cursor: text ;color: #384044};
+    .button-coust{position: absolute;right: 16px;border-radius: 12px;  border-bottom-left-radius: 0px ;border-top-left-radius: 0px ;background-color: #E9ECEF; border-color:transparent;font-size: 20px;cursor: text ;color: #384044};
     form{position: relative;}
     input:focus ~ label {
-        transform:translateY(-10px); 
-
+    transform:translateY(-10px); 
     background-color: white; 
     left:11px;
     top: .5px;
@@ -49,9 +48,9 @@
             <label class="label-coust control-label mb-3 mt-2" style="font-size: 19px;">shipment basic info</label>
             <div class="div-coust">
                 <label class="placeholder-coustt placeholder-couust" >shipment type</label></div> 
-            <select class="form-control  select2 mb-3 " style="border-radius: 10px  ">
-                    <option class=" ">Select </option>
-                    <option style="height: 100px;" value="">aya</option>
+            <select class="form-control  select2 mb-3 " style=" border-radius: 10px  ">
+                    <option style="min-height: 30%">Select </option>
+                    <option  value="">aya</option>
                     <option value="">mohammed</option>
                     <option value="">abdallah</option>
 
@@ -87,15 +86,16 @@
             <tbody >
             <tr class="border-bottom  " >
                 <th scope="row"></th>
-                <td ></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>aya</td>
+                <td>mohammed</td>
+                <td>abdallah</td>
+                <td>aya</td>
+                <td>mohammed</td>
+                <td>abdallah</td>
                 <td><i class="ion-ios7-trash-outline" style="color: red; font-size: 24px "></i></td>
               
             </tr>
+                     
             </tbody>
         </table>
     </div></div>
@@ -108,7 +108,7 @@
                     <div class="div-coust">
                         <label class="placeholder-coustt " >shipment type</label></div> 
                     <select class="form-control select2 mb-4  " style="border-radius: 12px  ">
-                            <option >Select  </option>
+                            <option > Select  </option>
                             <option value="1"></option>
                             <option value="2"></option>
                         </optgroup></select></div></form>

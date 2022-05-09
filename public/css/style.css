@@ -59,6 +59,8 @@ body {
     font-family: "Roboto", sans-serif;
     color: #5b626b;
     font-size: 13.5px;
+    text-transform: capitalize;
+
 }
 
 html {
