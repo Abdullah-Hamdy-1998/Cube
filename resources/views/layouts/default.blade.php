@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    
+
     @include('includes.head')
-    
+
 </head>
 
 <body>
@@ -49,13 +49,13 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="page-content-wrapper">
-                        
+
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    
+
                                     <div class="card-body">
-                                        
+
                                         <!-- Demo purpose only -->
                                         <div style="min-height: 300px;">
                                             <p class="page label"></p>
@@ -78,12 +78,6 @@
             </footer>
         </div>
 
-        <!-- jQuery  -->
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ asset('js/metisMenu.min.js') }}"></script>
-        <script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
-        <script src="{{ asset('js/waves.min.js') }}"></script>
 
         <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 
