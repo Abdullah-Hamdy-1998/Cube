@@ -3,8 +3,10 @@
     Users
 @endsection
 @section('content')
-    <a href="{{ route('users.create') }}"> <button type="button"
-            class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
+    @can('write-users')
+        <a href="{{ route('users.create') }}"> <button type="button"
+                class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
+    @endcan
     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
         <thead>
@@ -47,8 +49,10 @@
                             <div class="btn-group mr-2" role="group" aria-label="First group">
                                 <a href="{{ route('users.show', $user) }}"> <button type="button"
                                         class="btn btn-primary"><i class="eva eva-eye-outline"></i></button></a>
-                                <button class="btn btn-danger delete_btn" data-id="{{ $user->id }}"
-                                    data-route="user-delete/"><i class="eva eva-trash"></i></button>
+                                @can('write-users')
+                                    <button class="btn btn-danger delete_btn" data-id="{{ $user->id }}"
+                                        data-route="user-delete/"><i class="eva eva-trash"></i></button>
+                                @endcan
                             </div>
                         </div>
 
