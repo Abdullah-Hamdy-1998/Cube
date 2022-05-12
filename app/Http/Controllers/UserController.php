@@ -16,8 +16,9 @@ class UserController extends Controller
 {
     use SaveImageTrait;
 
-    public function index()
+    public function index(User $user)
     {
+        $this->authorize('read-users', $user);
         $users = User::all()->except(['id', Auth::id()]);
         return view('pages.users.index', ['users' => $users]);
     }
