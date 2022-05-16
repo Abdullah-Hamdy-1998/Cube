@@ -3,9 +3,11 @@
     Items
 @endsection
 @section('content')
-    <a href="{{ route('items.create') }}">
-        <button type="button" class="btn btn-primary waves-effect waves-light float-right"><i class="fa fa-plus"
-                style="margin:5px; font-size:14px;"></i> Add</button></a>
+    @can('write-data')
+        <a href="{{ route('items.create') }}">
+            <button type="button" class="btn btn-primary waves-effect waves-light float-right"><i class="fa fa-plus"
+                    style="margin:5px; font-size:14px;"></i> Add</button></a>
+    @endcan
 
     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
         style="border-collapse: collapse; border-spacing: 0; width: 100%;">

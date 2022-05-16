@@ -26,8 +26,8 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('read-users', [UserPolicy::class, 'read']);
         Gate::define('write-users', [UserPolicy::class, 'write']);
 
-        Gate::define('read-users', [DataPolicy::class, 'read']);
-        Gate::define('write-users', [DataPolicy::class, 'write']);
+        Gate::define('read-data', [DataPolicy::class, 'read']);
+        Gate::define('write-data', [DataPolicy::class, 'write']);
 
         Gate::define('read-shipments', [ShipmentPolicy::class, 'read']);
         Gate::define('write-shipments', [ShipmentPolicy::class, 'write']);
@@ -39,7 +39,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('read-trash', [TrashPolicy::class, 'read']);
         Gate::define('write-trash', [TrashPolicy::class, 'write']);
 
-        Gate::define('read-setting', [SettingPolicy::class, 'read']);
-        Gate::define('write-setting', [SettingPolicy::class, 'write']);
+        Gate::define('read-settings', [SettingPolicy::class, 'read']);
+        Gate::define('write-settings', [SettingPolicy::class, 'write']);
     }
 }

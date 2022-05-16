@@ -50,3 +50,4 @@ class ShipmentInfoController extends Controller
         return redirect()->route('infos.index');
     }
 }
+

@@ -13,8 +13,10 @@
     <input class="form-control" type="text" id="description" name="description" value="{{ $item->description }}"
         disabled>
     <br><br>
-    <a href="{{ route('items.edit', $item) }}"><button type="button"
-            class="btn btn-primary waves-effect waves-light ">Edit</button></a>
+    @can('write-data')
+        <a href="{{ route('items.edit', $item) }}"><button type="button"
+                class="btn btn-primary waves-effect waves-light ">Edit</button></a>
+    @endcan
     <a href="{{ route('items.index') }}"> <button type="button"
             class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
 @endsection
