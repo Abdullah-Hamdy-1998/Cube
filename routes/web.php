@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', UserController::class)->except('delete')->middleware('can:read-users');
     Route::delete('user-delete/', [UserController::class, 'destroy'])->name('ajax.users.delete')->middleware('can:write-users');
 
-   
+
     Route::resource('items', ItemController::class)->middleware('can:read-data');
 
     Route::resource('suppliers', SupplierController::class)->middleware('can:read-data');
