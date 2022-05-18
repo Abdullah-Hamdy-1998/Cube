@@ -3,8 +3,10 @@
     Shipments Info
 @endsection
 @section('content')
-    <a href="{{ route('infos.create') }}"> <button type="button"
-            class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
+    @can('write-data')
+        <a href="{{ route('infos.create') }}"> <button type="button"
+                class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
+    @endcan
     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
         <thead>
@@ -37,11 +39,13 @@
                             <div class="btn-group mr-2" role="group" aria-label="First group">
                                 <a href="{{ route('infos.show', $shipment_info) }}"> <button type="button"
                                         class="btn btn-primary"><i class="eva eva-eye-outline"></i></button></a>
-                                <form action="{{ route('infos.destroy', $shipment_info) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger"><i class="eva eva-trash"></i></button>
-                                </form>
+                                @can('write-data')
+                                    <form action="{{ route('infos.destroy', $shipment_info) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger"><i class="eva eva-trash"></i></button>
+                                    </form>
+                                @endcan
 
                             </div>
                         </div>
