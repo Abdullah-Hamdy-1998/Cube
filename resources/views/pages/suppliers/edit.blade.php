@@ -3,6 +3,8 @@
     Suppliers
 @endsection
 @section('content')
+<div class="card">
+    <div class="card-body">
     <form action="{{ route('suppliers.update', $supplier) }}" method="POST" autocomplete="off">
         @csrf
         @method('PUT')
@@ -29,5 +31,5 @@
         <button type="submit" class="btn btn-primary waves-effect waves-light ">Save</button>
         <a href="{{ route('suppliers.index') }}"> <button type="button"
                 class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
-    </form>
+    </form></div></div>
 @endsection

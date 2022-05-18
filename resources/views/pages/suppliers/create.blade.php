@@ -6,6 +6,8 @@
     @foreach ($errors->all() as $error)
         {{ $error }}
     @endforeach
+    <div class="card">
+        <div class="card-body">
     <form action="{{ route('suppliers.store') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
         @csrf
         <label for="name" class="col-sm-2 col-form-label">Name</label>
@@ -32,4 +34,5 @@
         <a href="{{ route('suppliers.create') }}"> <button type="button"
                 class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
     </form>
+        </div></div>
 @endsection

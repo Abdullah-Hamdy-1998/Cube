@@ -4,6 +4,10 @@
 @endsection
 @section('content')
 <style>
+        .hover-table:hover ~ #checkbox {visibility: visible}
+
+        #checkbox{visibility: hidden;}
+        .hover-table:hover{background-color: antiquewhite};
     .placeholder-coust{font-weight: normal}
     .label-coust{color:#656565}
     .placeholder-coust{color:#949595;position: absolute;left:16px; top:9px}
@@ -28,7 +32,7 @@
     padding-right: 5px;
     left:11px;
   }
-  
+ 
     .placeholder-coustt{ background-color: white; 
     position: absolute;
         bottom:19.5px;
@@ -42,13 +46,13 @@
 
 
     </style>
-<div class="card shadow-sm pt-3 pl-2 "style="border-radius:10px;" > 
-    <form class=" text-capitalize">
-        <div class="form-group  d-inline-block col-5 w-50 " >
+<div  class="card shadow-sm pt-3 pl-2 "style="border-radius:10px;" > 
+    <form  class=" text-capitalize">
+        <div  class="form-group  d-inline-block col-5 w-50 " >
             <label class="label-coust control-label mb-3 mt-2" style="font-size: 19px;">shipment basic info</label>
-            <div class="div-coust">
-                <label class="placeholder-coustt placeholder-couust" >shipment type</label></div> 
-            <select class="form-control  select2 mb-3 " style=" border-radius: 10px  ">
+            <div  class="div-coust">
+                <label  class="placeholder-coustt placeholder-couust" >shipment type</label></div> 
+            <select id="time"  class="form-control  select2 mb-3 " style=" border-radius: 10px  ">
                     <option style="min-height: 30%">Select </option>
                     <option  value="">aya</option>
                     <option value="">mohammed</option>
@@ -58,7 +62,7 @@
                 <div class="form-group  d-inline-block col-5 ml-5 ">
                     <div class="div-coust">
                     <label class="placeholder-coustt" >coustmer/supplier</label></div> 
-                    <select class="form-control select2 "style="border-radius: 12px   ">
+                    <select id="submit" id="timeagain"  class="form-control select2 "style="border-radius: 12px   ">
                             <option>Select  </option>
                             <option value=""></option>
                             <option value=""></option>
@@ -71,7 +75,8 @@
         <label class="label-coust pt-4 pb-4 " style="font-size: 19px;">Shipment Items</label>
         <table class="table  " style=" border-top-style: hidden">
             <thead style="background-color: #f3f3f3 ; ">
-            <tr>
+            <tr >
+                <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col">ID</th>
                 <th scope="col">Avatar</th>
@@ -84,18 +89,19 @@
             </tr>
             </thead>
             <tbody >
-            <tr class="border-bottom  " >
+            <tr class="border-bottom hover-table " >
                 <th scope="row"></th>
-                <td>aya</td>
+            <div class="try"> <td> <input type="checkbox" class="form-check-input" name="" id="checkbox" value="checkedValue" ></td></div>
+                <td class="tryr">aya</td>
                 <td>mohammed</td>
                 <td>abdallah</td>
                 <td>aya</td>
                 <td>mohammed</td>
                 <td>abdallah</td>
-                <td><i class="ion-ios7-trash-outline" style="color: red; font-size: 24px "></i></td>
-              
+                <td><i class="ion-ios7-trash-outline icon" style="color: red; font-size: 24px "></i></td>
+            
             </tr>
-                     
+                
             </tbody>
         </table>
     </div></div>
@@ -107,13 +113,13 @@
                 <div class="pl-0 col-12   " >
                     <div class="div-coust">
                         <label class="placeholder-coustt " >shipment type</label></div> 
-                    <select class="form-control select2 mb-4  " style="border-radius: 12px  ">
+                    <select id="submitagain"  class="form-control select2 mb-4  " style="border-radius: 12px  ">
                             <option > Select  </option>
                             <option value="1"></option>
                             <option value="2"></option>
                         </optgroup></select></div></form>
                         <div class="div-coust pl-0  pb-4 form-floating col-12">
-                            <input type="text" class="form-control pl-3" id="text"  required=""  id="floatinginput type="text"" style="border-radius: 12px;"><button class="ml-0 button-coust "style="top:1px">Kg</button><label class="placeholder-coust placeholder-coust">weight</label>
+                            <input type="text"class="form-control" placeholder="Sum" id="WSum">
                         </div>
                         <div class=" pl-0  pb-4 form-floating col-12">
                             <input type="text" class="form-control" id="text"  required=""  id="floatinginput type="text"" style="border-radius: 12px;"><button class="ml-0 button-coust "style="top:1px">Unit</button><label class="placeholder-coust placeholder-coust">Quantity</label>
@@ -135,11 +141,11 @@
                                         <input type="text" class="form-control" style="height: 70px; border-radius: 12px;" placeholder="Weight" id="floatinginput type="text"" style="border-radius: 12px;"><button class="ml-0 button-coust "style="box-shadow: none;height: 70px;  ">Kg</button>
                                     </div>
                     <label class=" label-coust pt-4 pb-4 "style="font-size: 19px;">Cumulative Weights</label>  
-
-                    <table class="table " style="border-top-style: hidden">
+                    <input type="text" placeholder="Type something..." id="myInput">
+                    <button type="button" onclick="Add_Sum()">Get Value</button>
+                    <table class="table "id="fetch" style="border-top-style: hidden">
                         <thead style="background-color: #f3f3f3">
                         <tr>
-                            <th scope="col"></th>
                             <th scope="col">No</th>
                             <th scope="col">Weight</th>
                             <th scope="col"></th>
@@ -147,27 +153,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>1</td>
-                            <td>aya</td>
-                            <td><i class="ion-ios7-trash-outline" style="color: red; font-size: 24px "></i></td>
-
-                        </tr>
-
-                        <tr>
-                            <th scope="row"></th>
-                            <td>2</td>
-                            <td>mohammed</td>
-                            <td><i class="ion-ios7-trash-outline" style="color: red; font-size: 24px "></i></td>
-
-                        </tr><tr>
-                            <th scope="row"></th>
-                            <td>3</td>
-                            <td>abd allah</td>
-                            <td><i class="ion-ios7-trash-outline" style="color: red; font-size: 24px "></i></td>
-
-                        </tr>
+                            <tr>
+                            </tr>
+                        
                         </tbody>
                     </table>
 
@@ -176,8 +164,25 @@
            
         </div>  </div>
         
-    
+
+    <script>
+
+    var weights = [];
+    var wSum = 0;
+
+    function Add_Sum(){
+
+        var input = document.getElementById('myInput').value;
+
+        weights = [[parseInt(input)]];        
+        for(var i=0 ; i<weights.length ; i++){
+            wSum += parseInt(weights[i]);
+        }
+        document.getElementById('WSum').value = wSum;
+    }
+            </script>
 @endsection
+
 
 
 

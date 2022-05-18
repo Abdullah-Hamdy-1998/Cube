@@ -3,6 +3,8 @@
     Suppliers
 @endsection
 @section('content')
+<div class="card">
+    <div class="card-body">
     <label for="name" class="col-sm-2 col-form-label">Name</label>
     <input class="form-control" type="text" id="name" name="name" value="{{ $supplier->name }}" disabled>
 
@@ -26,5 +28,5 @@
     <a href="{{ route('suppliers.edit', $supplier) }}""> <button type=" button"
         class="btn btn-primary waves-effect waves-light ">Edit</button></a>
     <a href="{{ route('suppliers.index') }}"> <button type="button"
-            class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
+            class="btn btn-danger waves-effect waves-light ">Cancel</button></a></div></div>
 @endsection

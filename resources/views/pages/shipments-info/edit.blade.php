@@ -3,6 +3,9 @@
     Shipments Info
 @endsection
 @section('content')
+<div class="card">
+    <div class="card-body">
+
     @foreach ($errors->all() as $error)
         {{ $error }}
     @endforeach
@@ -17,5 +20,5 @@
         <button type="submit" class="btn btn-primary waves-effect waves-light ">Save</button>
         <a href="{{ route('infos.index') }}"> <button type="button"
                 class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
-    </form>
+    </form></div></div>
 @endsection
