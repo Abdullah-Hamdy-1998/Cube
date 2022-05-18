@@ -31,19 +31,19 @@ Route::middleware('auth')->group(function () {
     Route::resource('infos', ShipmentInfoController::class)->middleware('can:read-data');
 
 
-    Route::resource('shipments', ShipmentController::class);
+    Route::resource('shipments', ShipmentController::class)->middleware('can:read-shipments');
 
-    Route::get('inventory', InventoryController::class)->name('inventory');
+    Route::get('inventory', InventoryController::class)->name('inventory')->middleware('can:read-inventory');
 
-    Route::get('reports', ReportController::class)->name('reports');
+    Route::get('reports', ReportController::class)->name('reports')->middleware('can:read-reports');
 
-    Route::get('trash/users', [TrashController::class, 'viewUsers'])->name('trash.users');
-    Route::get('trash/items', [TrashController::class, 'viewItems'])->name('trash.items');
-    Route::get('trash/suppliers', [TrashController::class, 'viewSuppliers'])->name('trash.suppliers');
-    Route::get('trash/customers', [TrashController::class, 'viewCustomers'])->name('trash.customers');
-    Route::get('trash/shipments-types', [TrashController::class, 'viewShipmentsTypes'])->name('trash.shipments-types');
+    Route::get('trash/users', [TrashController::class, 'viewUsers'])->name('trash.users')->middleware('can:read-trash');
+    Route::get('trash/items', [TrashController::class, 'viewItems'])->name('trash.items')->middleware('can:read-trash');
+    Route::get('trash/suppliers', [TrashController::class, 'viewSuppliers'])->name('trash.suppliers')->middleware('can:read-trash');
+    Route::get('trash/customers', [TrashController::class, 'viewCustomers'])->name('trash.customers')->middleware('can:read-trash');
+    Route::get('trash/shipments-types', [TrashController::class, 'viewShipmentsTypes'])->name('trash.shipments-types')->middleware('can:read-trash');
 
-    Route::get('settings', SettingController::class)->name('settings');
+    Route::get('settings', SettingController::class)->name('settings')->middleware('can:read-settings');
 
     Route::get('about', AboutController::class)->name('about');
 });

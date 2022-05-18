@@ -8,6 +8,6 @@ class ReportController extends Controller
 {
     public function __invoke()
     {
-        return view('pages.reports');
+        return view('pages.reports.index');
     }
 }
