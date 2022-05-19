@@ -788,8 +788,7 @@ dt {
 }
 
 #sidebar-menu>ul>li>a.active {
-    color: #1b82ec !important;
-    background-color: #f9f9f9;
+    color: white !important;
 }
 
 .menu-title {

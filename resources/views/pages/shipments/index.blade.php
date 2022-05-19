@@ -4,7 +4,12 @@
 @endsection
 @section('content')
 <style>
-        .hover-table:hover ~ #checkbox {visibility: visible}
+    input[type=checkbox] {
+    transform: scale(1.5);
+}
+    button {    background-color: #3B86FF;color: white; font-size: 16px;}
+    button:disabled{background-color:#949595;}
+    .hover-table:hover ~ #checkbox {visibility: visible}
 
         #checkbox{visibility: hidden;}
         .hover-table:hover{background-color: antiquewhite};
@@ -72,12 +77,12 @@
                         </div></form></div></div>
 <div class="card"style="border-radius:10px;">
     <div class="card-body pt-0 shadow-sm">
-        <label class="label-coust pt-4 pb-4 " style="font-size: 19px;">Shipment Items</label>
+        <label class="label-coust pt-4 pb-4 " style="font-size: 19px; ">Shipment Items</label>
         <table class="table" id="fetchch" style=" border-top-style: hidden">
             <thead style="background-color: #f3f3f3 ; ">
             <tr >
               
-                <th scope="col">ID</th>
+                <th class="pl-5 "scope="col">ID</th>
                 <th scope="col">Avatar</th>
                 <th scope="col">Name</th>
                 <th scope="col">Weight</th>
@@ -101,44 +106,44 @@
             <form class=" text-capitalize">
                 <div class="pl-0 col-12   " >
                     <div class="div-coust">
-                        <label class="placeholder-coustt " >shipment item</label></div> 
+                        <label class="placeholder-coustt "style="left:12px;" >shipment item</label></div> 
                     <select id="submitagain"  class="form-control select2 mb-4  " style="border-radius: 12px  ">
                             <option > Select  </option>
                             <option value="1"></option>
                             <option value="2"></option>
                         </optgroup></select></div></form>
                         <div class="div-coust pl-0  pb-4 form-floating col-12">
-                            <input type="text"class="form-control" placeholder="weight" id="WSum">
+                            <input type="text"class="form-control"style="border-radius: 12px  " placeholder="weight" id="WSum">
                         </div>
                         <div class=" pl-0  pb-4 form-floating col-12">
-                            <input type="number" class="form-control" placeholder="Quantity" id="Quantity">
+                            <input type="number" class="form-control"style="border-radius: 12px  " placeholder="Quantity" id="Quantity">
                         </div>
-                        <button type="button" onclick="table_again();" style="border-radius: 12px ;box-shadow: none;" class="btn btn-secondary col-2 dropdown-coust ml-1  mb-4" >Add</button>
+                        <button type="button" onclick="table_again();" style="border-radius: 12px ;box-shadow: none;" class="btn  col-2 dropdown-coust ml-1  mb-4" >Add</button>
         </div> 
         <div  class="col-6 pl-0">
-            <button type="button" style="border-radius: 12px ;box-shadow: none;" class="btn btn-secondary col-4 d-inline   " disabled>Add</button>
+            <button type="button" style="border-radius: 12px ;box-shadow: none;" class="btn  col-4 d-inline   " disabled>Add</button>
             <button type="button" style="border-radius: 12px ;box-shadow: none;"class="btn btn-danger  ml-2  col-4 d-inline   " >Cancel</button>
 
                 </div></div>
         <div class="d-inline-block col-6 ml-auto" >
             <div class="card   shadow-sm p-3 pl-4 pt-4"style="border-radius:10px;" >
                         <div>
-                        <label class="label-coust pb-1 label-coust" style="font-size: 19px;">weight point<input  onclick="SocketOn();" type="checkbox" class="form-check-input d-inline-block ml-auto" name="" id="" value="checkedValue" checked></label>
+                           <div> <input  onclick="SocketOn();" type="checkbox" class="form-check-input d-inline-block mr-auto" style="right: 7% ;" name="" id="" value="checkedValue" checked></div>
+                        <label class="label-coust pb-1 label-coust" style="font-size: 19px;">weight point</label>
                           </div>
 
                                     <div class=" f-flex pl-0 pb-4 form-floating col-12">
-                                        <input type="text" class="form-control" placeholder="Unknown" id="floatinginput type="text"" style="border-radius: 12px;"></input type="text"><button class="button-coust"style=" box-shadow: none;color:white;background-color:#6c757d;Top:1px;cursor: pointer"><i class="fas fa-redo"></i></button>
+                                        <input type="text" class="form-control" placeholder="Unknown" id="floatinginput"id=" connect" type="text" style="border-radius: 12px;"></input type="text"><button class="button-coust"style=" box-shadow: none;color:white;background-color:#6c757d;Top:1px;cursor: pointer"><i class="fas fa-redo"></i></button>
                                     </div>
                                     <div class=" d-flex pl-0 pb-4 form-floating col-12 " >
-                                        <input type="text" class="form-control" style="height: 70px; border-radius: 12px;" placeholder="Weight" id="floatinginput AddedWeight" type="text" style="border-radius: 12px;"><button class="ml-0 button-coust "style="box-shadow: none;height: 70px;  ">Kg</button>
+                                        <input type="number" class="form-control" style="height: 70px; border-radius: 12px;" placeholder="Weight" id="myInput" id="AddedWeight" style="border-radius: 12px;"><button class="ml-0 button-coust "style="box-shadow: none;height: 70px;  ">Kg</button>
                                     </div>
-                    <label class=" label-coust pt-4 pb-4 "style="font-size: 19px;">Cumulative Weights</label>  
-                    <input type="text" placeholder="Type something..." id="myInput">
-                    <button type="button" onclick="Add_Sum();">Get Value</button>
+                                    <button onclick="Add_Sum();" type="button" style="border-radius: 12px ;box-shadow: none;" class="btn ml-auto  col-2 d-inline  ">Add</button>
+                    <label class=" label-coust pt-4 pb-4 d-inline "style="font-size: 19px;">Cumulative Weights  </label> 
                     <table class="table "id="fetch" style="border-top-style: hidden">
                         <thead style="background-color: #f3f3f3">
                         <tr>
-                            <th scope="col">No</th>
+                            <th class=" pl-5" scope="col">No</th>
                             <th scope="col">Weight</th>
                             <th scope="col"></th>
                           
@@ -217,10 +222,10 @@
 
         // socket connecting
         function SocketOn(){
-            socket = new WebSocket('ws://192.168.1.1/');
+            socket = new WebSocket('ws://192.168.43.235/');
             socket.onopen = function(e) {
-                alert("[open] Connection established");
-            };
+                getElementById(connect).innerHTML("connected-192.168.43.235 ")
+                        };
 
             // messages detecting & recognizing 
             socket.onmessage = function(event) {
@@ -232,7 +237,7 @@
                 } else if (data.includes("Test")) {
                     // Not Req.
                 } else {
-                    document.getElementById('weight').innerHTML = data;
+                    document.getElementById('connect').innerHTML = data;
                 }
             };    
         }
