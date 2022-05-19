@@ -16,19 +16,24 @@ class UserController extends Controller
 {
     use SaveImageTrait;
 
-    public function index()
+    public function index(User $user)
     {
+        $this->authorize('read-users', $user);
         $users = User::all()->except(['id', Auth::id()]);
         return view('pages.users.index', ['users' => $users]);
     }
 
-    public function create()
+    public function create(User $user)
     {
+        $this->authorize('write-users', $user);
+
         return view('pages.users.create');
     }
 
-    public function store(StoreUserRequest $request)
+    public function store(StoreUserRequest $request, User $user)
     {
+        $this->authorize('write-users', $user);
+
         if ($request->hasFile('image')) {
             $request->merge(['avatar' => $this->saveImage($request, 'images/avatars')]);
         }
@@ -55,6 +60,8 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
+        $this->authorize('write-users', $user);
+
         $permissions = $user->permissions;
         $access = $permissions[0]->pivot->access;
         foreach ($permissions as $permission) {
@@ -65,6 +72,8 @@ class UserController extends Controller
 
     public function update(UpdateUserRequest $request, User $user)
     {
+        $this->authorize('write-users', $user);
+
         if ($request->hasFile('image')) {
             if ($user->avatar != "user-default.png")
                 Storage::disk('avatars')->delete($user->avatar);
@@ -82,8 +91,10 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
 
-    public function destroy(Request $request)
+    public function destroy(Request $request, User $user)
     {
+        $this->authorize('write-users', $user);
+
         $user = User::find($request->id);
         $user->delete();
         return redirect()->route('users.index');

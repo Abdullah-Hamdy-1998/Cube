@@ -14,17 +14,20 @@ class ItemController extends Controller
 
     public function index()
     {
+        $this->authorize('read-data');
         $items = Item::all();
         return view('pages.items.index', ['items' => $items]);
     }
 
     public function create()
     {
+        $this->authorize('write-data');
         return view('pages.items.create');
     }
 
     public function store(StoreItemRequest $request)
     {
+        $this->authorize('write-data');
         if ($request->hasFile('image')) {
             $request->merge(['avatar' => $this->saveImage($request, 'images/avatars')]);
         }
@@ -34,16 +37,19 @@ class ItemController extends Controller
 
     public function show(Item $item)
     {
+        $this->authorize('read-data');
         return view('pages.items.show', ['item' => $item]);
     }
 
     public function edit(Item $item)
     {
+        $this->authorize('write-data');
         return view('pages.items.edit', ['item' => $item]);
     }
 
     public function update(Request $request, Item $item)
     {
+        $this->authorize('write-data');
         if ($request->hasFile('image')) {
             if ($item->avatar != "item-default.png")
                 Storage::disk('avatars')->delete($item->avatar);
@@ -55,6 +61,7 @@ class ItemController extends Controller
 
     public function destroy(Item $item)
     {
+        $this->authorize('write-data');
         $item->delete();
         return redirect()->route('items.index');
     }

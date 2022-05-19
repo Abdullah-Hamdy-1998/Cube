@@ -78,9 +78,13 @@
         <label for="switch" data-on-label="Write" data-off-label="Read"></label>
     </div>
     <br><br>
+    @can('write-users')
     <a href="{{ route('users.edit', $user) }}"><button type="button"
-            class="btn btn-primary waves-effect waves-light ">Edit</button></a>
+        class="btn btn-primary waves-effect waves-light ">Edit</button></a>
+    @endcan
     <a href="{{ route('users.index') }}"> <button type="button"
             class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
     </div></div>
 @endsection
+
+
