@@ -17,7 +17,7 @@
             <div class="topbar-left topbar-left-dark">
                 <a href="{{ route('home') }}" class="logo">
                     <span>
-                        <img src="{{ asset('images/cube_logo.svg') }}" alt="" height="77">
+                        <img src="{{ asset('images/cube_logo.svg') }}"class="logo mt-4 mb-5"alt="" height="77">
                     </span>
                     <i>
                         <img src="{{ asset('images/cube_logo.svg') }}" alt="" height="22">
@@ -25,7 +25,7 @@
                 </a>
             </div>
 
-            <nav class="navbar-custom">
+            <nav class="navbar-custom ">
                 @include('includes.header')
             </nav>
 
@@ -34,7 +34,7 @@
 
 
         <!-- ========== Left Sidebar Start ========== -->
-        <div class="left side-menu side-menu-dark">
+        <div class="left side-menu side-menu-dark ">
             <div class="slimscroll-menu" id="remove-scroll">
                 @include('includes.sidebar')
             </div>
@@ -73,9 +73,7 @@
             </div> <!-- content -->
 
 
-            <footer class="footer">
-                @include('includes.footer')
-            </footer>
+          
         </div>
 
 

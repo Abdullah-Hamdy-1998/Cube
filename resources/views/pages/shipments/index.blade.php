@@ -52,7 +52,7 @@
             <label class="label-coust control-label mb-3 mt-2" style="font-size: 19px;">shipment basic info</label>
             <div  class="div-coust">
                 <label  class="placeholder-coustt placeholder-couust" >shipment type</label></div> 
-            <select id="time"  class="form-control  select2 mb-3 " style=" border-radius: 10px  ">
+            <select id="myselect"  class="form-control  select2 mb-3 " style=" border-radius: 10px  ">
                     <option style="min-height: 30%">Select </option>
                     <option  value="">aya</option>
                     <option value="">mohammed</option>
@@ -62,7 +62,7 @@
                 <div class="form-group  d-inline-block col-5 ml-5 ">
                     <div class="div-coust">
                     <label class="placeholder-coustt" >coustmer/supplier</label></div> 
-                    <select id="submit" id="timeagain"  class="form-control select2 "style="border-radius: 12px   ">
+                    <select id="mytext" id="timeagain"  class="form-control select2 "style="border-radius: 12px   ">
                             <option>Select  </option>
                             <option value=""></option>
                             <option value=""></option>
@@ -73,11 +73,10 @@
 <div class="card"style="border-radius:10px;">
     <div class="card-body pt-0 shadow-sm">
         <label class="label-coust pt-4 pb-4 " style="font-size: 19px;">Shipment Items</label>
-        <table class="table  " style=" border-top-style: hidden">
+        <table class="table" id="fetchch" style=" border-top-style: hidden">
             <thead style="background-color: #f3f3f3 ; ">
             <tr >
-                <th scope="col"></th>
-                <th scope="col"></th>
+              
                 <th scope="col">ID</th>
                 <th scope="col">Avatar</th>
                 <th scope="col">Name</th>
@@ -89,17 +88,7 @@
             </tr>
             </thead>
             <tbody >
-            <tr class="border-bottom hover-table " >
-                <th scope="row"></th>
-            <div class="try"> <td> <input type="checkbox" class="form-check-input" name="" id="checkbox" value="checkedValue" ></td></div>
-                <td class="tryr">aya</td>
-                <td>mohammed</td>
-                <td>abdallah</td>
-                <td>aya</td>
-                <td>mohammed</td>
-                <td>abdallah</td>
-                <td><i class="ion-ios7-trash-outline icon" style="color: red; font-size: 24px "></i></td>
-            
+            <tr class="border-bottom hover-table " >    
             </tr>
                 
             </tbody>
@@ -108,23 +97,23 @@
     <div class="row align-items-start">
     <div class="d-inline-block col-6  m-0">
 <div class="card   shadow-sm p-3 pl-4 pt-4"style="border-radius:10px;" >
-            <label class="pb-1 label-coust" style="font-size: 19px;">Add shipment item</label>
+    <label class="pb-1 label-coust" style="font-size: 19px;">Add shipment item</label>
             <form class=" text-capitalize">
                 <div class="pl-0 col-12   " >
                     <div class="div-coust">
-                        <label class="placeholder-coustt " >shipment type</label></div> 
+                        <label class="placeholder-coustt " >shipment item</label></div> 
                     <select id="submitagain"  class="form-control select2 mb-4  " style="border-radius: 12px  ">
                             <option > Select  </option>
                             <option value="1"></option>
                             <option value="2"></option>
                         </optgroup></select></div></form>
                         <div class="div-coust pl-0  pb-4 form-floating col-12">
-                            <input type="text"class="form-control" placeholder="Sum" id="WSum">
+                            <input type="text"class="form-control" placeholder="weight" id="WSum">
                         </div>
                         <div class=" pl-0  pb-4 form-floating col-12">
-                            <input type="text" class="form-control" id="text"  required=""  id="floatinginput type="text"" style="border-radius: 12px;"><button class="ml-0 button-coust "style="top:1px">Unit</button><label class="placeholder-coust placeholder-coust">Quantity</label>
+                            <input type="number" class="form-control" placeholder="Quantity" id="Quantity">
                         </div>
-                        <button type="button" style="border-radius: 12px ;box-shadow: none;" class="btn btn-secondary col-2 dropdown-coust ml-1  mb-4" disabled>Add</button>
+                        <button type="button" onclick="table_again();" style="border-radius: 12px ;box-shadow: none;" class="btn btn-secondary col-2 dropdown-coust ml-1  mb-4" >Add</button>
         </div> 
         <div  class="col-6 pl-0">
             <button type="button" style="border-radius: 12px ;box-shadow: none;" class="btn btn-secondary col-4 d-inline   " disabled>Add</button>
@@ -133,16 +122,19 @@
                 </div></div>
         <div class="d-inline-block col-6 ml-auto" >
             <div class="card   shadow-sm p-3 pl-4 pt-4"style="border-radius:10px;" >
-                        <label class="label-coust pb-1 label-coust" style="font-size: 19px;">weight point</label>
+                        <div>
+                        <label class="label-coust pb-1 label-coust" style="font-size: 19px;">weight point<input  onclick="SocketOn();" type="checkbox" class="form-check-input d-inline-block ml-auto" name="" id="" value="checkedValue" checked></label>
+                          </div>
+
                                     <div class=" f-flex pl-0 pb-4 form-floating col-12">
                                         <input type="text" class="form-control" placeholder="Unknown" id="floatinginput type="text"" style="border-radius: 12px;"></input type="text"><button class="button-coust"style=" box-shadow: none;color:white;background-color:#6c757d;Top:1px;cursor: pointer"><i class="fas fa-redo"></i></button>
                                     </div>
                                     <div class=" d-flex pl-0 pb-4 form-floating col-12 " >
-                                        <input type="text" class="form-control" style="height: 70px; border-radius: 12px;" placeholder="Weight" id="floatinginput type="text"" style="border-radius: 12px;"><button class="ml-0 button-coust "style="box-shadow: none;height: 70px;  ">Kg</button>
+                                        <input type="text" class="form-control" style="height: 70px; border-radius: 12px;" placeholder="Weight" id="floatinginput AddedWeight" type="text" style="border-radius: 12px;"><button class="ml-0 button-coust "style="box-shadow: none;height: 70px;  ">Kg</button>
                                     </div>
                     <label class=" label-coust pt-4 pb-4 "style="font-size: 19px;">Cumulative Weights</label>  
                     <input type="text" placeholder="Type something..." id="myInput">
-                    <button type="button" onclick="Add_Sum()">Get Value</button>
+                    <button type="button" onclick="Add_Sum();">Get Value</button>
                     <table class="table "id="fetch" style="border-top-style: hidden">
                         <thead style="background-color: #f3f3f3">
                         <tr>
@@ -169,17 +161,126 @@
 
     var weights = [];
     var wSum = 0;
+    var str=0;
 
     function Add_Sum(){
-
+        
         var input = document.getElementById('myInput').value;
 
         weights = [[parseInt(input)]];        
-        for(var i=0 ; i<weights.length ; i++){
-            wSum += parseInt(weights[i]);
-        }
+            str++;
+            wSum += parseInt(weights);
+        
         document.getElementById('WSum').value = wSum;
+        var table= document.getElementById('fetch');
+        var newRow = table.insertRow();
+        var newCell1 = newRow.insertCell(0);
+        var newCell2 = newRow.insertCell(1);
+        var newText1 = document.createTextNode(str);
+        var newText2 = document.createTextNode(input);
+        newCell1.appendChild(newText1);
+        newCell2.appendChild(newText2);
+    
+        }
+       
+    function table_again(){
+        var Quantity = document.getElementById('Quantity').value ;
+        var tableagain= document.getElementById('fetchch');
+        var newcolumn = tableagain.insertRow();
+        var newCelll1 = newcolumn.insertCell(0);
+        var newCelll2 = newcolumn.insertCell(1);
+        var newCelll3 = newcolumn.insertCell(1);
+        var newCelll4 = newcolumn.insertCell(1);
+        var newCelll5 = newcolumn.insertCell(1);
+        var newCelll6 = newcolumn.insertCell(1);
+        var newTextt1 = document.createTextNode(str);
+        var newTextt2 = document.createTextNode("");
+        var newTextt3 = document.createTextNode(Quantity);
+        var newTextt4 = document.createTextNode(wSum);
+        var newTextt5 = document.createTextNode("");
+        var newTextt6 = document.createTextNode("");
+        newCelll1.appendChild(newTextt1);
+        newCelll2.appendChild(newTextt2);
+        newCelll3.appendChild(newTextt3);
+        newCelll4.appendChild(newTextt4);
+        newCelll5.appendChild(newTextt5);
+        newCelll6.appendChild(newTextt6);
+        
     }
+    
+
+    
+
+
+        // socket creating
+        let socket;
+
+        // socket connecting
+        function SocketOn(){
+            socket = new WebSocket('ws://192.168.1.1/');
+            socket.onopen = function(e) {
+                alert("[open] Connection established");
+            };
+
+            // messages detecting & recognizing 
+            socket.onmessage = function(event) {
+                let data = event.data;
+                console.log(data);
+                // cases of messages
+                if (data.includes("IP")) {
+                    document.getElementById('ip').innerHTML = data;
+                } else if (data.includes("Test")) {
+                    // Not Req.
+                } else {
+                    document.getElementById('weight').innerHTML = data;
+                }
+            };    
+        }
+
+        // socket disconnecting
+        function SocketOff(){
+            socket.close();
+            socket.onclose = function(event) {
+                if (event.wasClean) {
+                    alert(`[close] Connection closed cleanly`);
+                } else {
+                    alert('[close] Connection died');
+                }
+            };
+            socket.onerror = function(error) {
+                alert(`[error] ${error.message}`);
+            };
+            document.getElementById('ip').innerHTML = "IP : UNKNOWN";
+            document.getElementById('weight').innerHTML = "off";
+            document.getElementById('AddedWeight').innerHTML = "Added Weights : ";
+        }
+
+        // send for ip
+        function aIP(){
+            socket.send("ip");
+        }
+
+        // testing send
+        function test(){
+            socket.send("test");
+        }
+
+        // save spacific weights
+        function AddWeight(){
+            var paragraph = document.getElementById("AddedWeight");
+            var text = document.createTextNode(" (" + document.getElementById('weight').innerHTML + ") ");
+            paragraph.appendChild(text);
+        }
+
+        window.addEventListener("beforeunload", function(e){
+            SocketOff();
+        }, false);
+
+    
+
+
+
+        
             </script>
 @endsection
 

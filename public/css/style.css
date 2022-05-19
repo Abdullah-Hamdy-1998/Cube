@@ -62,7 +62,7 @@ body {
     text-transform: capitalize;
 
 }
-
+.logo{color: #ffffff}
 html {
     overflow-x: hidden;
     position: relative;
@@ -701,9 +701,7 @@ dt {
     margin-top: 2px;
 }
 
-.logo {
-    filter: invert(16%) sepia(8%) saturate(2107%) hue-rotate(185deg) brightness(94%) contrast(89%);
-}
+
 
 .logo span span {
     color: #1b82ec;

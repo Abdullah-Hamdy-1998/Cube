@@ -4,7 +4,7 @@
        <ul class="metismenu" id="side-menu">
 
            <li>
-               <a href="{{ route('home') }}" class="waves-effect">
+               <a href="{{ route('home') }}" class="waves-effect mt-5 ">
                    <i class="eva eva-home"></i><span> Home
                    </span>
                </a>
