@@ -3,61 +3,68 @@
     Suppliers
 @endsection
 @section('content')
-<div class="card">
-    <div class="card-body">
-    <a href="{{ route('suppliers.create') }}"> <button type="button"
-            class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
-    <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
-        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-        <thead>
-            <tr>
-                <th></th>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Delegate</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Modified</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
+    <div class="card">
+        <div class="card-body">
+            @can('write-data')
+                <a href="{{ route('suppliers.create') }}"> <button type="button"
+                        class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
+            @endcan
+            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
+                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Delegate</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Modified</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
 
 
-        <tbody>
-            @php
-                $i = 0;
-            @endphp
-            @foreach ($suppliers as $supplier)
-                <tr>
-                    <td>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                        </div>
-                    </td>
-                    <td>{{ ++$i }}</td>
-                    <td>{{ $supplier->name }}</td>
-                    <td>{{ $supplier->delegate }}</td>
-                    <td>{{ $supplier->phone }}</td>
-                    <td>{{ $supplier->email }}</td>
-                    <td>{{ $supplier->updated_at }}</td>
-                    <td>
-                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                            <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <a href="{{ route('suppliers.show', $supplier) }}"> <button type="button"
-                                        class="btn btn-primary"><i class="eva eva-eye-outline"></i></button></a>
-                                <form action="{{ route('suppliers.destroy', $supplier) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger"><i class="eva eva-trash"></i></button>
-                                </form>
+                <tbody>
+                    @php
+                        $i = 0;
+                    @endphp
+                    @foreach ($suppliers as $supplier)
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                                </div>
+                            </td>
+                            <td>{{ ++$i }}</td>
+                            <td>{{ $supplier->name }}</td>
+                            <td>{{ $supplier->delegate }}</td>
+                            <td>{{ $supplier->phone }}</td>
+                            <td>{{ $supplier->email }}</td>
+                            <td>{{ $supplier->updated_at }}</td>
+                            <td>
+                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                                        <a href="{{ route('suppliers.show', $supplier) }}"> <button type="button"
+                                                class="btn btn-primary"><i class="eva eva-eye-outline"></i></button></a>
+                                        @can('write-data')
+                                            <form action="{{ route('suppliers.destroy', $supplier) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger"><i
+                                                        class="eva eva-trash"></i></button>
+                                            </form>
+                                        @endcan
 
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table></div></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 @endsection
 @section('plugins')
     <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>

@@ -1,12 +1,4 @@
 <ul class="navbar-right d-flex list-inline float-right mb-0">
-    <li class="dropdown notification-list d-none d-sm-block">
-        <form role="search" class="app-search">
-            <div class="form-group mb-0">
-                <input type="text" class="form-control" placeholder="Search..">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </div>
-        </form>
-    </li>
 
     <li class="dropdown notification-list">
         <div class="dropdown notification-list nav-pro-img">
