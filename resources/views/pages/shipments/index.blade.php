@@ -290,8 +290,8 @@
             var newTextt2 = document.createTextNode(date.getDate()+"-"+(date.getUTCMonth()+1)+"-"+date.getFullYear());
             var newTextt3 = document.createTextNode(Quantity);
             var newTextt4 = document.createTextNode(w);
-            var newTextt5 = document.createTextNode("");
-            var newTextt6 = document.createTextNode("");
+            var newTextt5 = document.createTextNode("name");
+            var newTextt6 = document.createTextNode(name);
             newCelll1.appendChild(newTextt1);
             newCelll2.appendChild(newTextt2);
             newCelll3.appendChild(newTextt3);
