@@ -176,8 +176,8 @@
                         </div>
                         <select id="submitagain" class="form-control select2 mb-4  " style="border-radius: 12px  ">
                             <option> Select </option>
-                            <option value="1"></option>
-                            <option value="2"></option>
+                            <option value="1">1 </option>
+                            <option value="2">2</option>
                             </optgroup>
                         </select>
                     </div>
@@ -274,6 +274,8 @@
         }
 
         function table_again() {
+            var date=new Date();
+            var name=document.getElementById('submitagain');
             var w = document.getElementById('WSum').value;
             var Quantity = document.getElementById('Quantity').value;
             var tableagain = document.getElementById('fetchch');
@@ -285,7 +287,7 @@
             var newCelll5 = newcolumn.insertCell(1);
             var newCelll6 = newcolumn.insertCell(1);
             var newTextt1 = document.createTextNode("");
-            var newTextt2 = document.createTextNode("");
+            var newTextt2 = document.createTextNode(date.getDate()+"-"+(date.getUTCMonth()+1)+"-"+date.getFullYear());
             var newTextt3 = document.createTextNode(Quantity);
             var newTextt4 = document.createTextNode(w);
             var newTextt5 = document.createTextNode("");
@@ -300,7 +302,7 @@
         }
 
 
-
+        
 
 
         // socket creating
