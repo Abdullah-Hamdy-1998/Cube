@@ -32,7 +32,8 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('shipments', ShipmentController::class)->middleware('can:read-shipments');
 
-    Route::get('inventory', InventoryController::class)->name('inventory')->middleware('can:read-inventory');
+    Route::get('inventory', [InventoryController::class, 'index'])->name('inventory.index')->middleware('can:read-inventory');
+    Route::get('inventory/show', [InventoryController::class, 'show'])->name('inventory.show')->middleware('can:read-inventory');
 
     Route::get('reports', ReportController::class)->name('reports')->middleware('can:read-reports');
 

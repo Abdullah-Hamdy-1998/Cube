@@ -15,17 +15,16 @@ class ShipmentController extends Controller
 
     public function create()
     {
-        //
+        return view('pages.shipments.create');
     }
 
     public function store(Request $request)
     {
-        //
     }
 
-    public function show(Shipment $shipment)
+    public function show()
     {
-        //
+        return view('pages.shipments.show');
     }
 
     public function edit(Shipment $shipment)

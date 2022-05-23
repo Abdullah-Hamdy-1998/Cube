@@ -43,8 +43,8 @@
            </li>
 
            <li>
-               <a href="{{ route('inventory') }}" class="waves-effect sidebar-tab"
-                   data-route="{{ route('inventory') }}"><i class="eva eva-clipboard"></i><span>
+               <a href="{{ route('inventory.index') }}" class="waves-effect sidebar-tab"
+                   data-route="{{ route('inventory.index') }}"><i class="eva eva-clipboard"></i><span>
                        Inventory
                </a>
 

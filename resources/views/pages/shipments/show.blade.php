@@ -5,8 +5,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <a href="{{ route('shipments.create') }}"> <button class="btn btn-primary">add</button></a>
-            <a href="{{ route('shipments.show',3) }}"> <button class="btn btn-primary">show</button></a>
+            <h2>Show page</h2>
         </div>
     </div>
 @endsection
