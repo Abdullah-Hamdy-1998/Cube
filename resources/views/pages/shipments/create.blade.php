@@ -3,6 +3,7 @@
     Shipments
 @endsection
 @section('content')
+<script src="{{asset('plugins\datatables\table.js')}}"></script>
     <style>
         input[type=checkbox] {
             transform: scale(1.5);
@@ -143,7 +144,7 @@
     <div class="card" style="border-radius:10px;">
         <div class="card-body pt-0 shadow-sm">
             <label class="label-coust pt-4 pb-4 " style="font-size: 19px; ">Shipment Items</label>
-            <table class="table" id="fetchch" style=" border-top-style: hidden">
+            <table class="table" id="table" style=" border-top-style: hidden">
                 <thead style="background-color: #f3f3f3 ; ">
                     <tr>
 
@@ -153,13 +154,11 @@
                         <th scope="col">Weight</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Modified</th>
-                        <th scope="col"></th>
 
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-bottom hover-table ">
-                    </tr>
+                    <tr><td>aya</td><td>aya</td><td>aya</td><td>aya</td><td>aya</td><td>aya</td></tr>
 
                 </tbody>
             </table>
@@ -278,7 +277,7 @@
             var name = document.getElementById('submitagain');
             var w = document.getElementById('WSum').value;
             var Quantity = document.getElementById('Quantity').value;
-            var tableagain = document.getElementById('fetchch');
+            var tableagain = document.getElementById('table');
             var newcolumn = tableagain.insertRow();
             var newCelll1 = newcolumn.insertCell(0);
             var newCelll2 = newcolumn.insertCell(1);
@@ -292,7 +291,7 @@
             var newTextt3 = document.createTextNode(Quantity);
             var newTextt4 = document.createTextNode(w);
             var newTextt5 = document.createTextNode("name");
-            var newTextt6 = document.createTextNode(name);
+            var newTextt6 = document.createTextNode("name");
             newCelll1.appendChild(newTextt1);
             newCelll2.appendChild(newTextt2);
             newCelll3.appendChild(newTextt3);
@@ -369,11 +368,14 @@
         window.addEventListener("beforeunload", function(e) {
             SocketOff();
         }, false);
+
+
+
+
     </script>
 @endsection
 @section('plugins')
     <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
-
     <!-- Required datatable js -->
     <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>

@@ -4,16 +4,14 @@
 @endsection
 @section('content')
     <style>
-        .p-coust {
-            opacity: 70%;
-        }
+        .inventory-card-coust:hover{background-color: #3B86FF;color: white }
 
     </style>
     <a href="{{ route('inventory.show') }}">
-        <div class="card pl-5 mr-4 col-3 d-inline-block" style="max-width:300px; min-width:300px;">
+        <div class="card font-weight-bold inventory-card-coust pl-5 mr-4 col-3 d-inline-block" style="max-width:300px; min-width:300px;">
             <div class="card-body ">
                 <div class="mb-4"> <img src="{{ asset('images/tomato.WEBP') }}" class="d-inline mr-5"
-                        style="max-height:30px; height:auto;">
+                        style="max-height:30px;">
                     <p class="d-inline ">tomato</p>
                 </div>
                 <div>
