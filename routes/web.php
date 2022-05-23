@@ -18,6 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::view('/', 'pages.home')->name('home');
 
     Route::resource('users', UserController::class)->except('delete')->middleware('can:read-users');
+
     Route::delete('user-delete/', [UserController::class, 'destroy'])->name('ajax.users.delete')->middleware('can:write-users');
 
 
@@ -46,4 +47,5 @@ Route::middleware('auth')->group(function () {
     Route::get('settings', SettingController::class)->name('settings')->middleware('can:read-settings');
 
     Route::get('about', AboutController::class)->name('about');
+
 });
