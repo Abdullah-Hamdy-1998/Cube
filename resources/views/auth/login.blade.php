@@ -25,24 +25,21 @@
     <div class="account-pages"></div>
     <!-- Begin page -->
     <div class="wrapper-page">
+        <img src="{{ asset('images/cube_logo.svg') }}" height="77" alt="logo" class="logo mx-auto d-block">
 
-        <div class="card">
+        <h5 class="text-center m-0 text-white mb-4">cube</h5>
+
+        <div class="card border-radius-coust">
             <div class="card-body">
 
-                <h3 class="text-center m-0">
-                    <img src="{{ asset('images/cube_logo.svg') }}" height="77" alt="logo" class="logo">
-                </h3>
 
                 <div class="p-3">
-                    <h4 class="text-muted font-18 m-b-5 text-center">Welcome Back !</h4>
-                    <p class="text-muted text-center">Sign in to continue to Cube.</p>
-
                     <form class="form-horizontal m-t-30" action="{{ route('login') }}" method="POST"
                         autocomplete="off">
                         @csrf
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" name="email" class="form-control" id="email" placeholder="Enter email"
+                            <input type="text" name="email" class="form-control border-radius-coust" id="email" placeholder="Enter email"
                                 value="{{ old('email') }}">
                         </div>
 
@@ -52,7 +49,7 @@
 
                         <div class="form-group">
                             <label for="userpassword">Password</label>
-                            <input type="password" name="password" class="form-control" id="userpassword"
+                            <input type="password" name="password" class="form-control border-radius-coust" id="userpassword"
                                 placeholder="Enter password">
                         </div>
 
@@ -61,8 +58,8 @@
                         @enderror
 
                         <div class="form-group row m-t-20">
-                            <div class="col-6 text-right">
-                                <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log
+                            <div class="col-8 text-right">
+                                <button class="btn btn-primary w-md waves-effect waves-light border-radius-coust" type="submit">Log
                                     In</button>
                             </div>
                         </div>
