@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="card border-radius-coust">
-    <div class="card-body ">
+    <div class="card-body "style="min-width:100px;">
       <h5 class="mb-4">item stock</h5>
     <div class="ml-5">
     <img src="{{ asset('images/tomato.WEBP') }}"style="max-height:30px;"class="ml-5  d-inline">
@@ -19,16 +19,16 @@
 </div>
 <div class="card border-radius-coust" >
 <div class="card-body ">
-  <button type="button" class="btn btn-primary border-radius-coust col-1 waves-effect waves-light float-right"><i class="ti-plus"> </i> New</button>
-    <table id="datatable-buttons" class="table  mt-3 dt-responsive nowrap" style=" border-bottom:1px solid #F4F4F4; width: 100%; background-color: white;">
+  <button type="button" class="btn btn-primary border-radius-coust col-1 table-coust waves-effect waves-light float-right"><i class="ti-plus"> </i> New</button>
+    <table id="datatable-buttons" class="table  mt-3 dt-responsive nowrap" style=" width: 100%; background-color: white;">
       <thead style="background-color: #f3f3f3 ; ">
       <tr>
-          <th>id</th>
-          <th>user</th>
-          <th>module</th>
-          <th>action</th>
-          <th>data date</th>
-          <th>modified</th>
+        <th></th>
+        <th>id</th>
+        <th>shipment type</th>
+        <th>cus.-sup.</th>
+        <th>description</th>
+        <th>modified</th>
       </tr>
       </thead>
   

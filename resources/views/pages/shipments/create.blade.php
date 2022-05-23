@@ -19,13 +19,8 @@
             background-color: #949595;
         }
 
-        .hover-table:hover~#checkbox {
-            visibility: visible
-        }
-
-        #checkbox {
-            visibility: hidden;
-        }
+        tr{background-color: white}
+        th{background-color: #f3f3f3}
 
         .hover-table:hover {
             background-color: antiquewhite
@@ -144,8 +139,8 @@
     <div class="card" style="border-radius:10px;">
         <div class="card-body pt-0 shadow-sm">
             <label class="label-coust pt-4 pb-4 " style="font-size: 19px; ">Shipment Items</label>
-            <table class="table" id="table" style=" border-top-style: hidden">
-                <thead style="background-color: #f3f3f3 ; ">
+            <table class="table table-coust" id="table" style=" border-top-style: hidden">
+                <thead >
                     <tr>
 
                         <th class="pl-5 " scope="col">ID</th>
@@ -158,8 +153,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>aya</td><td>aya</td><td>aya</td><td>aya</td><td>aya</td><td>aya</td></tr>
-
                 </tbody>
             </table>
         </div>
@@ -249,6 +242,7 @@
         var weights = [];
         var wSum = 0;
         var str = 0;
+        var strr=1;
 
         function Add_Sum() {
 
@@ -274,7 +268,7 @@
 
         function table_again() {
             var date = new Date();
-            var name = document.getElementById('submitagain');
+            var name = document.getElementById('submitagain').value;
             var w = document.getElementById('WSum').value;
             var Quantity = document.getElementById('Quantity').value;
             var tableagain = document.getElementById('table');
@@ -285,13 +279,13 @@
             var newCelll4 = newcolumn.insertCell(1);
             var newCelll5 = newcolumn.insertCell(1);
             var newCelll6 = newcolumn.insertCell(1);
-            var newTextt1 = document.createTextNode("");
+            var newTextt1 = document.createTextNode(strr++);
             var newTextt2 = document.createTextNode(date.getDate() + "-" + (date.getUTCMonth() + 1) + "-" + date
                 .getFullYear());
             var newTextt3 = document.createTextNode(Quantity);
             var newTextt4 = document.createTextNode(w);
-            var newTextt5 = document.createTextNode("name");
-            var newTextt6 = document.createTextNode("name");
+            var newTextt5 = document.createTextNode(name);
+            var newTextt6 = document.createTextNode("");
             newCelll1.appendChild(newTextt1);
             newCelll2.appendChild(newTextt2);
             newCelll3.appendChild(newTextt3);
