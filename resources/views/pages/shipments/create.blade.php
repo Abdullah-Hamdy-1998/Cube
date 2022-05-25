@@ -19,8 +19,6 @@
             background-color: #949595;
         }
 
-        tr{background-color: white}
-        th{background-color: #f3f3f3}
 
         .hover-table:hover {
             background-color: antiquewhite

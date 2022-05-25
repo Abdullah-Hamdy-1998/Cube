@@ -3,25 +3,25 @@
     Users
 @endsection
 @section('content')
-    <div class="card">
+    <div class="card border-radius-coust">
         <div class="card-body">
             @can('write-users')
-                <a href="{{ route('users.create') }}"> <button type="button"
-                        class="btn btn-primary waves-effect border-radius-coust col-1 waves-light float-right">Add</button></a>
-            @endcan
-            <table id="datatable-buttons" class="table table-striped mt-3 table-bordered dt-responsive nowrap"
+                <a href="{{ route('users.create') }}">
+                    <button type="button" class="btn btn-primary all-buttons-coust  border-radius-coust col-1 table-coust waves-effect waves-light float-right"><i class="ti-plus"> </i> Add</button></a>
+                    @endcan
+            <table id="datatable-buttons" class="table table-striped mt-3 bitable-bordered dt-responsive nowrap"
                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                     <tr>
                         <th></th>
-                        <th>ID</th>
-                        <th>Avatar</th>
-                        <th>Name</th>
-                        <th>Job Title</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Modified</th>
-                        <th>Actions</th>
+                        <th  class="th-table-coust">ID <i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
+                        <th  class="th-table-coust">Avatar<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
+                        <th  class="th-table-coust">Name<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
+                        <th  class="th-table-coust">Job Title<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
+                        <th  class="th-table-coust">Phone<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
+                        <th  class="th-table-coust">Email<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
+                        <th  class="th-table-coust">Modified<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
+                        <th  class="th-table-coust">Actions</th>
                     </tr>
                 </thead>
 
@@ -34,7 +34,7 @@
                         <tr class="userRow{{ $user->id }}">
                             <td>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                                    <input type="checkbox" class="form-check-input checkbox-coust" name="" id="" value="checkedValue">
                                 </div>
                             </td>
                             <td>{{ ++$i }}</td>
@@ -46,18 +46,18 @@
                             <td>{{ $user->phone }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->updated_at }}</td>
-                         <td>
-                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                        <td>
+                            <div class="d-flex"   <div class="d-inline">
                                     <div class="btn-group mr-2" role="group" aria-label="First group">
                                         <a href="{{ route('users.show', $user) }}"> <button type="button"
-                                                class="btn btn-primary"><i class="eva eva-eye-outline"></i></button></a>
-                                        @can('write-users')
-                                            <button class="btn btn-danger delete_btn" data-id="{{ $user->id }}"
+                                                class="btn btn-primary mr-2 border-radius-coust"><i class="eva eva-eye-outline"></i></button></a></div>
+                                    <div class="d-inline">  @can('write-users')
+                                            <button class="btn btn-danger delete_btn border-radius-coust" data-id="{{ $user->id }}"
                                                 data-route="user-delete/"><i class="eva eva-trash"></i></button>
                                         @endcan
                                     </div>
-
-                               
+                            </div>
+                            
                             </td>
                         </tr>
                     @endforeach
