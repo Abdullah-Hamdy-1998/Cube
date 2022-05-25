@@ -3869,7 +3869,7 @@ Invoice
 .all-buttons-coust{box-shadow: none; min-width: 100px;}
 input{border-radius: 12px !important;min-width: 50px !important;}
 .checkbox-coust{min-width: auto !important;}
-.th-table-coust{min-width: 50px;}
+.th-table-coust{min-width: 100px;}
 td{background-color: white!important;}
 th{background-color: #f3f3f3;}
 label:disabled{background-color:red !important ;}
