@@ -7,9 +7,9 @@
         <div class="card-body">
             @can('write-users')
                 <a href="{{ route('users.create') }}"> <button type="button"
-                        class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
+                        class="btn btn-primary waves-effect border-radius-coust col-1 waves-light float-right">Add</button></a>
             @endcan
-            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
+            <table id="datatable-buttons" class="table table-striped mt-3 table-bordered dt-responsive nowrap"
                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                     <tr>
@@ -39,14 +39,14 @@
                             </td>
                             <td>{{ ++$i }}</td>
                             <td> <img src="{{ asset('images/avatars/' . $user->avatar) }}" alt="user"
-                                    class="rounded-circle img-fluid">
+                                    class="rounded-circle img-fluid avater-table-coust" >
                             </td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->job_title }}</td>
                             <td>{{ $user->phone }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->updated_at }}</td>
-                            <td>
+                         <td>
                                 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group mr-2" role="group" aria-label="First group">
                                         <a href="{{ route('users.show', $user) }}"> <button type="button"
@@ -56,9 +56,8 @@
                                                 data-route="user-delete/"><i class="eva eva-trash"></i></button>
                                         @endcan
                                     </div>
-                                </div>
 
-
+                               
                             </td>
                         </tr>
                     @endforeach

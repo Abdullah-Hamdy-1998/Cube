@@ -46,6 +46,5 @@ Shipments
                     <!-- Datatable init js -->
                     <script src="{{ asset('pages/datatables.init.js') }}"></script>
             
-    </div>
-</div>
+
 @endsection
