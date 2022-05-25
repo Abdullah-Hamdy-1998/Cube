@@ -3861,5 +3861,8 @@ Invoice
 .paragraph-coust{font-size: 15px;}
 .border-radius-coust{border-radius: 12px;}
 .table-coust{border-bottom: 1px solid #F4F4F4;}
-
+.home-icon-coust{font-size: 60px;}
+.home-coust{font-size: 16px;min-width: 250px;}
+.home-coust:hover{background-color: #3B86FF;color:white;}
+.home-card-coust{display: inline;}
 /*# sourceMappingURL=style.css.map */
