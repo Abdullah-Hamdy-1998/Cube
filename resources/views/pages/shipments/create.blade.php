@@ -3,7 +3,7 @@
     Shipments
 @endsection
 @section('content')
-<script src="{{asset('plugins\datatables\table.js')}}"></script>
+    <script src="{{ asset('plugins\datatables\table.js') }}"></script>
     <style>
         input[type=checkbox] {
             transform: scale(1.5);
@@ -19,8 +19,13 @@
             background-color: #949595;
         }
 
-        tr{background-color: white}
-        th{background-color: #f3f3f3}
+        tr {
+            background-color: white
+        }
+
+        th {
+            background-color: #f3f3f3
+        }
 
         .hover-table:hover {
             background-color: antiquewhite
@@ -111,11 +116,9 @@
                 </div>
                 <select id="myselect" class="form-control  select2 mb-3 " style=" border-radius: 10px  ">
                     <option style="min-height: 30%">Select </option>
-                    <option value="">aya</option>
-                    <option value="">mohammed</option>
-                    <option value="">abdallah</option>
-
-                    </optgroup>
+                    @foreach ($shipmentTypes as $shipmentType)
+                        <option value="{{ $shipmentType->id }}">{{ $shipmentType->type }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group  d-inline-block col-5 ml-5 ">
@@ -124,14 +127,18 @@
                 </div>
                 <select id="mytext" id="timeagain" class="form-control select2 " style="border-radius: 12px   ">
                     <option>Select </option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    @foreach ($customers as $customer)
+                        <option value="{{ $customer->id }}">{{ $customer->name }}</option>
+                    @endforeach
+                    @foreach ($suppliers as $supplier)
+                        <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
+                    @endforeach
                     </optgroup>
                 </select>
             </div>
             <div class=" div-coust mb-2 pb-4 form-floating col-5">
                 <input type="text" class="form-control pl-3" id="text" required="" id="floatinginput type=" text""
-                    style="border-radius: 12px; "><label class=" placeholder-coust  ml-3 ">Description</label>
+                    style="border-radius: 12px;"><label class=" placeholder-coust  ml-3 ">Description</label>
             </div>
         </form>
     </div>
@@ -140,7 +147,7 @@
         <div class="card-body pt-0 shadow-sm">
             <label class="label-coust pt-4 pb-4 " style="font-size: 19px; ">Shipment Items</label>
             <table class="table table-coust" id="table" style=" border-top-style: hidden">
-                <thead >
+                <thead>
                     <tr>
 
                         <th class="pl-5 " scope="col">ID</th>
@@ -168,9 +175,9 @@
                         </div>
                         <select id="submitagain" class="form-control select2 mb-4  " style="border-radius: 12px  ">
                             <option> Select </option>
-                            <option value="1">1 </option>
-                            <option value="2">2</option>
-                            </optgroup>
+                            @foreach ($items as $item)
+                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </form>
@@ -242,7 +249,7 @@
         var weights = [];
         var wSum = 0;
         var str = 0;
-        var strr=1;
+        var strr = 1;
 
         function Add_Sum() {
 
@@ -292,7 +299,6 @@
             newCelll4.appendChild(newTextt4);
             newCelll5.appendChild(newTextt5);
             newCelll6.appendChild(newTextt6);
-
         }
 
 
@@ -362,10 +368,6 @@
         window.addEventListener("beforeunload", function(e) {
             SocketOff();
         }, false);
-
-
-
-
     </script>
 @endsection
 @section('plugins')

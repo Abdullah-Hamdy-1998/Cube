@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
+use App\Models\Item;
 use App\Models\Shipment;
+use App\Models\ShipmentInfo;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 
 class ShipmentController extends Controller
@@ -15,7 +19,11 @@ class ShipmentController extends Controller
 
     public function create()
     {
-        return view('pages.shipments.create');
+        $shipmentTypes = ShipmentInfo::all();
+        $customers = Customer::all();
+        $suppliers = Supplier::all();
+        $items = Item::all();
+        return view('pages.shipments.create', ['shipmentTypes' => $shipmentTypes, 'customers' => $customers, 'suppliers' => $suppliers, 'items' => $items]);
     }
 
     public function store(Request $request)
