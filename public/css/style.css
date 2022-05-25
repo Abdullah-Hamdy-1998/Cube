@@ -3861,5 +3861,19 @@ Invoice
 .paragraph-coust{font-size: 15px;}
 .border-radius-coust{border-radius: 12px;}
 .table-coust{border-bottom: 1px solid #F4F4F4;}
-
+.home-icon-coust{font-size: 60px;}
+.home-coust{font-size: 16px;min-width: 250px;}
+.home-coust:hover{background-color: #3B86FF;color:white;}
+.home-card-coust{display: inline;}
+.avater-table-coust{max-height: 100px;}
+.all-buttons-coust{box-shadow: none; min-width: 100px;}
+input{border-radius: 12px !important;min-width: 50px !important;}
+.checkbox-coust{min-width: auto !important;}
+.th-table-coust{min-width: 50px;}
+td{background-color: white!important;}
+th{background-color: #f3f3f3;}
+label:disabled{background-color:red !important ;}
+label{min-width: 100px;}
+.label-switch {min-width: 10px !important;}
+button{min-width: 100px !important;box-shadow: none !important;}
 /*# sourceMappingURL=style.css.map */

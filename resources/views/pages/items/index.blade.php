@@ -37,11 +37,12 @@
                             </td>
                             <td>{{ ++$i }}</td>
                             <td> <img src="{{ asset('images/avatars/' . $item->avatar) }}" alt="item"
-                                    class="rounded-circle img-fluid">
+                                    class="rounded-circle img-fluid avater-table-coust">
                             </td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->description }}</td>
                             <td>
+                                
                                 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group mr-2" role="group" aria-label="First group">
                                         <a href="{{ route('items.show', $item) }}"> <button type="button"
