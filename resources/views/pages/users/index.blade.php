@@ -3,13 +3,16 @@
     Users
 @endsection
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <div class="card border-radius-coust">
         <div class="card-body">
             @can('write-users')
                 <a href="{{ route('users.create') }}">
-                    <button type="button" class="btn btn-primary all-buttons-coust  border-radius-coust col-1 table-coust waves-effect waves-light float-right"><i class="ti-plus"> </i> Add</button></a>
+                    <button type="button" class="btn btn-primary ml-3 all-buttons-coust  border-radius-coust col-1 table-coust waves-effect waves-light float-right"><i class="ti-plus"> </i> Add</button></a>
                     @endcan
-            <table id="datatable-buttons" class="table table-striped mt-3 bitable-bordered dt-responsive nowrap"
+                    <input  type="submit" value="Delete " class="btn btn-danger float-right col-1" id="checkerButton"/>
+            <table id="datatable-buttons" class="table table-striped mt-3 text-center bitable-bordered dt-responsive nowrap"
                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                     <tr>
@@ -19,7 +22,7 @@
                         <th  class="th-table-coust">Name<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
                         <th  class="th-table-coust">Job Title<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
                         <th  class="th-table-coust">Phone<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
-                        <th  class="th-table-coust">Email<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
+                        <th  class="th-table-coust">Email<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
                         <th  class="th-table-coust">Modified<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
                         <th  class="th-table-coust">Actions</th>
                     </tr>
@@ -30,11 +33,12 @@
                     @php
                         $i = 0;
                     @endphp
+                 
                     @foreach ($users as $user)
                         <tr class="userRow{{ $user->id }}">
                             <td>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input checkbox-coust" name="" id="" value="checkedValue">
+                                <div class="form-check  ">
+                                    <input type="checkbox" class="form-check-input checkbox-coust table-checkbox" name="" id="" value="checkedValue">
                                 </div>
                             </td>
                             <td>{{ ++$i }}</td>
@@ -90,12 +94,11 @@
 
             });
         });
-    </script>
+     </script>
 @endsection
 
 @section('plugins')
     <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
-
     <!-- Required datatable js -->
     <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
@@ -108,6 +111,7 @@
     <script src="{{ asset('plugins/datatables/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/buttons.print.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/buttons.colVis.min.js') }}"></script>
+    <script src="{{asset('plugins/datatables/selected_delete.js')}}"></script><!--new file -->
     <!-- Responsive examples -->
     <script src="{{ asset('plugins/datatables/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/responsive.bootstrap4.min.js') }}"></script>

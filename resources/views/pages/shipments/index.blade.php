@@ -7,7 +7,9 @@ Shipments
         <a href="{{ route('shipments.show',4) }}"> <button class="btn">show</button></a>-->
         <div class="card border-radius-coust" >
             <div class="card-body ">
-                <a href="{{ route('shipments.create') }}">  <button type="button" class="btn btn-primary border-radius-coust col-1 waves-effect waves-light float-right"><i class="ti-plus"> </i> New</button></a>
+                <a href="{{ route('shipments.create') }}">  <button type="button" class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right"><i class="ti-plus"> </i> New</button></a>
+                <input  type="submit" value="Delete " class="btn btn-danger float-right col-1" id="checkerButton"/>
+
                 <table id="datatable-buttons" class="table  mt-3 dt-responsive nowrap" style=" border-bottom:1px solid #F4F4F4; width: 100%; background-color: white;">
                     <thead style="background-color: #f3f3f3 ; ">
                     <tr>
@@ -39,6 +41,9 @@ Shipments
                     <script src="{{ asset('plugins/datatables/buttons.html5.min.js') }}"></script>
                     <script src="{{ asset('plugins/datatables/buttons.print.min.js') }}"></script>
                     <script src="{{ asset('plugins/datatables/buttons.colVis.min.js') }}"></script>
+                    <script src="{{asset('plugins/datatables/selected_delete.js')}}"></script><!--new file -->
+                    
+
                     <!-- Responsive examples -->
                     <script src="{{ asset('plugins/datatables/dataTables.responsive.min.js') }}"></script>
                     <script src="{{ asset('plugins/datatables/responsive.bootstrap4.min.js') }}"></script>

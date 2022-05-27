@@ -5,7 +5,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <h5>view user details</h5>
+        <h5>add new user</h5>
     @foreach ($errors->all() as $error)
         {{ $error }}
     @endforeach
@@ -38,9 +38,9 @@
         <div class="col-5 mb-3 d-inline-block mr-5"  >    <label for="confirm_password" class="col-sm-5 col-form-label">Confirm Password</label>
         <input class="form-control" type="password" id="password_confirmation" name="password_confirmation"></div>
         <br>
-        <h6>Access Permissions</h6>
+        <h6 class="ml-3">Access Permissions</h6>
         <br>
-        <div class="form-check form-check-inline">
+        <div class="form-check form-check-inline ml-3">
             <label class="form-check-label">
                 <input type="checkbox" class="form-check-input checkbox-coust" name="modules[]" value="users" id=""> Users </label>
         </div>
@@ -75,15 +75,15 @@
             </label>
         </div>
         <br><br>
-        <div class="form-check form-check-inline">
+        <div class="form-check form-check-inline ml-3">
             <input type='hidden' name="access" >Read only 
             <input type="checkbox" name="access" value="write" id="switch" switch="none" />
             <label for="switch" class="label-switch ml-3 mr-3" data-on-label="" data-off-label=""></label>Read & Write
         </div>
         <br><br>
-        <button type="submit" class="btn btn-primary waves-effect waves-light border-radius-coust col-1 ">Add</button>
+        <button type="submit" class="btn btn-primary waves-effect waves-light border-radius-coust col-1 ml-3 mr-3">Add</button>
         <a href="{{ route('users.index') }}"> <button type="button"
-                class="btn btn-danger waves-effect waves-light border-radius-coust col-1">Cancel</button></a>
+                class="btn btn-danger waves-effect waves-light border-radius-coust col-1 ml-3">Cancel</button></a>
     </form>
     </div></div>
 @endsection

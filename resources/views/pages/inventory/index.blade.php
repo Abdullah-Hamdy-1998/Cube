@@ -4,7 +4,6 @@
 @endsection
 @section('content')
     <style>
-        .inventory-card-coust:hover{background-color: #3B86FF;color: white }
 
     </style>
     <a href="{{ route('inventory.show') }}">

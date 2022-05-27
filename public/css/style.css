@@ -3864,16 +3864,22 @@ Invoice
 .home-icon-coust{font-size: 60px;}
 .home-coust{font-size: 16px;min-width: 250px;}
 .home-coust:hover{background-color: #3B86FF;color:white;}
-.home-card-coust{display: inline;}
-.avater-table-coust{max-height: 100px;}
+.home-card-coust{display: inline;margin-top: -25px;margin-bottom: 10px;}
+.avater-table-coust{max-height: 40px;}
 .all-buttons-coust{box-shadow: none; min-width: 100px;}
 input{border-radius: 12px !important;min-width: 50px !important;}
-.checkbox-coust{min-width: auto !important;}
+.checkbox-coust{min-width: auto !important; width: 17px;height: 17px;}
 .th-table-coust{min-width: 100px;}
 td{background-color: white!important;}
 th{background-color: #f3f3f3;}
-label:disabled{background-color:red !important ;}
 label{min-width: 100px;}
-.label-switch {min-width: 10px !important;}
+.label-switch {min-width: 10px !important; }
 button{min-width: 100px !important;box-shadow: none !important;}
+.inventory-card-coust:hover{background-color: #3B86FF;color: white }
+table{border-top-style: hidden;}
+.table-margin-coust{margin: 10px;}
+.table-checkbox{margin-top: -35% !important;}
+input[switch]+label {background-color: #536270 !important;}
+input[switch]:checked+label {background-color: #1B82EC !important;}
+
 /*# sourceMappingURL=style.css.map */

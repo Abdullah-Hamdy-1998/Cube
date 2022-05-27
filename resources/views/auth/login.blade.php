@@ -29,7 +29,7 @@
 
         <h5 class="text-center m-0 text-white mb-4">cube</h5>
 
-        <div class="card border-radius-coust">
+        <div class="card border-radius-coust  mx-auto d-flex justify-content-center col-10">
             <div class="card-body">
 
 
@@ -57,9 +57,9 @@
                             {{ $message }}
                         @enderror
 
-                        <div class="form-group row m-t-20">
-                            <div class="col-8 text-right">
-                                <button class="btn btn-primary w-md waves-effect waves-light border-radius-coust" type="submit">Log
+                        <div class="form-group row m-t-20   ">
+                            <div class="col-8 text-right ">
+                                <button class="btn btn-primary w-md waves-effect waves-light border-radius-coust mt-3" type="submit">Log
                                     In</button>
                             </div>
                         </div>

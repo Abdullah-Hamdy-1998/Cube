@@ -146,6 +146,7 @@
     <div class="card" style="border-radius:10px;">
         <div class="card-body pt-0 shadow-sm">
             <label class="label-coust pt-4 pb-4 " style="font-size: 19px; ">Shipment Items</label>
+            <form>
             <table class="table table-coust" id="table" style=" border-top-style: hidden">
                 <thead>
                     <tr>
@@ -162,6 +163,7 @@
                 <tbody>
                 </tbody>
             </table>
+            </form>
         </div>
     </div>
     <div class="row align-items-start">
@@ -193,8 +195,8 @@
                     class="btn  col-2 dropdown-coust ml-1  mb-4">Add</button>
             </div>
             <div class="col-6 pl-0">
-                <button type="button" style="border-radius: 12px ;box-shadow: none;" class="btn  col-4 d-inline   "
-                    disabled>Add</button>
+                <button type="submit" style="border-radius: 12px ;box-shadow: none;" class="btn  col-4 d-inline   "
+                    >Add</button>
                 <button type="button" style="border-radius: 12px ;box-shadow: none;"
                     class="btn btn-danger  ml-2  col-4 d-inline   ">Cancel</button>
 
@@ -376,6 +378,7 @@
     <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
     <!-- Buttons examples -->
+    <script src="{{asset('plugins/datatables/table_data.js')}}"></script><!--new file -->
     <script src="{{ asset('plugins/datatables/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/jszip.min.js') }}"></script>
