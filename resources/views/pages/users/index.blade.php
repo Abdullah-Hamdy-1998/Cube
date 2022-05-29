@@ -83,7 +83,6 @@
             e.preventDefault();
             var id = $(this).data("id");
             var route = $(this).data("route");
-
             $.ajax({
                 type: "POST",
                 url: route,

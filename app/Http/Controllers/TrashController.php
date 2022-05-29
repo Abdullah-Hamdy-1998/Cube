@@ -2,14 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TrashController extends Controller
 {
     public function viewUsers()
     {
-        return view('pages.trash.users');
+        $deletedUsers = User::onlyTrashed()->get();
+        return view('pages.trash.users', [
+            'deletedUsers' => $deletedUsers
+        ]);
     }
+
+    public function restoreUser(Request $request)
+    {
+        $user = User::onlyTrashed()->find($request->id);
+        $user->restore();
+    }
+    public function destroyUser(Request $request)
+    {
+        $user = User::onlyTrashed()->find($request->id);
+        $user->forceDelete();
+    }
+
     public function viewItems()
     {
         return view('pages.trash.items');

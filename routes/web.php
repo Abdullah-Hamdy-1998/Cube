@@ -39,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::get('reports', ReportController::class)->name('reports')->middleware('can:read-reports');
 
     Route::get('trash/users', [TrashController::class, 'viewUsers'])->name('trash.users')->middleware('can:read-trash');
+    Route::delete('trash/user-delete', [TrashController::class, 'destroyUser'])->name('trash.user-delete')->middleware('can:write-trash');
+    Route::post('trash/user-restore', [TrashController::class, 'restoreUser'])->name('trash.user-restore')->middleware('can:write-trash');
     Route::get('trash/items', [TrashController::class, 'viewItems'])->name('trash.items')->middleware('can:read-trash');
     Route::get('trash/suppliers', [TrashController::class, 'viewSuppliers'])->name('trash.suppliers')->middleware('can:read-trash');
     Route::get('trash/customers', [TrashController::class, 'viewCustomers'])->name('trash.customers')->middleware('can:read-trash');
