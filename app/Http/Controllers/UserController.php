@@ -91,9 +91,9 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
 
-    public function destroy(Request $request, User $user)
+    public function destroy(Request $request)
     {
-        $this->authorize('write-users', $user);
+        $this->authorize('write-users');
 
         $user = User::find($request->id);
         $user->delete();
