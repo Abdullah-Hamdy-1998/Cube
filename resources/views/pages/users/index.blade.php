@@ -3,8 +3,6 @@
     Users
 @endsection
 @section('content')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
     <div class="card border-radius-coust">
         <div class="card-body">
             @can('write-users')
@@ -37,7 +35,7 @@
                     @endphp
 
                     @foreach ($users as $user)
-                        <tr class="userRow{{ $user->id }}">
+                        <tr class="row{{ $user->id }}">
                             <td>
                                 <div class="form-check  ">
                                     <input type="checkbox" class="form-check-input checkbox-coust table-checkbox" name=""
@@ -60,9 +58,10 @@
                                                 class="btn btn-primary mr-2 border-radius-coust"><i
                                                     class="eva eva-eye-outline"></i></button></a>
                                     </div>
-                                    <div class="d-inline"> @can('write-users')
+                                    <div class="d-inline">
+                                        @can('write-users')
                                             <button class="btn btn-danger delete_btn border-radius-coust"
-                                                data-id="{{ $user->id }}" data-route="user-delete/"><i
+                                                data-id="{{ $user->id }}" data-route="user-delete"><i
                                                     class="eva eva-trash"></i></button>
                                         @endcan
                                     </div>
@@ -91,14 +90,12 @@
                 data: {
                     id: id,
                     _token: "{{ csrf_token() }}",
-                    _method: "DELETE",
+                    _method: 'DELETE'
+
                 },
-                success: function(data) {
-                    $('.userRow' + id).remove();
+                success: function() {
+                    $('.row' + id).remove();
                 },
-                error: function(data) {
-                    alert(data.message);
-                }
             });
         });
     </script>

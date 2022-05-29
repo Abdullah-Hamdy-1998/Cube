@@ -29,7 +29,7 @@
                         $i = 0;
                     @endphp
                     @foreach ($items as $item)
-                        <tr>
+                        <tr class="row{{ $item->id }}">
                             <td>
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
@@ -42,18 +42,14 @@
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->description }}</td>
                             <td>
-                                
+
                                 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group mr-2" role="group" aria-label="First group">
                                         <a href="{{ route('items.show', $item) }}"> <button type="button"
                                                 class="btn btn-primary"><i class="eva eva-eye-outline"></i></button></a>
-                                        <form action="{{ route('items.destroy', $item) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger"><i
-                                                    class="eva eva-trash"></i></button>
-                                        </form>
-
+                                        <button type="submit" class="btn btn-danger delete_btn"
+                                            data-id="{{ $item->id }}" data-route="item-delete"><i
+                                                class="eva eva-trash"></i></button>
                                     </div>
                                 </div>
                             </td>
@@ -65,6 +61,31 @@
         </div>
     </div>
 @endsection
+
+@section('jquery')
+    <script>
+        $(document).on('click', '.delete_btn', function(e) {
+
+            e.preventDefault();
+            var id = $(this).data("id");
+            var route = $(this).data("route");
+
+            $.ajax({
+                type: "POST",
+                url: route,
+                data: {
+                    id: id,
+                    _token: "{{ csrf_token() }}",
+                    _method: "DELETE",
+                },
+                success: function() {
+                    $('.row' + id).remove();
+                },
+            });
+        });
+    </script>
+@endsection
+
 @section('plugins')
     <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 

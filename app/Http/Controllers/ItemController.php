@@ -59,10 +59,11 @@ class ItemController extends Controller
         return redirect()->route('items.index');
     }
 
-    public function destroy(Item $item)
+    public function destroy(Request $request)
     {
         $this->authorize('write-data');
+
+        $item = Item::findOrFail($request->id);
         $item->delete();
-        return redirect()->route('items.index');
     }
 }
