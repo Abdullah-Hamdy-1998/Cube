@@ -41,10 +41,22 @@ Route::middleware('auth')->group(function () {
     Route::get('trash/users', [TrashController::class, 'viewUsers'])->name('trash.users')->middleware('can:read-trash');
     Route::delete('trash/user-delete', [TrashController::class, 'destroyUser'])->name('trash.user-delete')->middleware('can:write-trash');
     Route::post('trash/user-restore', [TrashController::class, 'restoreUser'])->name('trash.user-restore')->middleware('can:write-trash');
+
     Route::get('trash/items', [TrashController::class, 'viewItems'])->name('trash.items')->middleware('can:read-trash');
+    Route::delete('trash/item-delete', [TrashController::class, 'destroyItem'])->name('trash.item-delete')->middleware('can:write-trash');
+    Route::post('trash/item-restore', [TrashController::class, 'restoreItem'])->name('trash.item-restore')->middleware('can:write-trash');
+
     Route::get('trash/suppliers', [TrashController::class, 'viewSuppliers'])->name('trash.suppliers')->middleware('can:read-trash');
+    Route::delete('trash/supplier-delete', [TrashController::class, 'destroySupplier'])->name('trash.supplier-delete')->middleware('can:write-trash');
+    Route::post('trash/supplier-restore', [TrashController::class, 'restoreSupplier'])->name('trash.supplier-restore')->middleware('can:write-trash');
+
     Route::get('trash/customers', [TrashController::class, 'viewCustomers'])->name('trash.customers')->middleware('can:read-trash');
+    Route::delete('trash/customer-delete', [TrashController::class, 'destroyCustomer'])->name('trash.customer-delete')->middleware('can:write-trash');
+    Route::post('trash/customer-restore', [TrashController::class, 'restoreCustomer'])->name('trash.customer-restore')->middleware('can:write-trash');
+
     Route::get('trash/shipments-types', [TrashController::class, 'viewShipmentsTypes'])->name('trash.shipments-types')->middleware('can:read-trash');
+    Route::delete('trash/shipments-type-delete', [TrashController::class, 'destroyShipmentsType'])->name('trash.shipments-type-delete')->middleware('can:write-trash');
+    Route::post('trash/shipments-type-restore', [TrashController::class, 'restoreShipmentsType'])->name('trash.shipments-type-restore')->middleware('can:write-trash');
 
     Route::get('settings', SettingController::class)->name('settings')->middleware('can:read-settings');
 
