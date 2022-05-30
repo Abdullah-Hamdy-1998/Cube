@@ -4,6 +4,7 @@
 @endsection
 @section('content')
     <script src="{{ asset('plugins\datatables\table.js') }}"></script>
+    
     <style>
         input[type=checkbox] {
             transform: scale(1.5);
@@ -107,6 +108,8 @@
         }
 
     </style>
+
+    
     <div class="card shadow-sm pt-3 pl-2 " style="border-radius:10px;">
         <form class=" text-capitalize">
             <div class="form-group  d-inline-block col-5 w-50 ">
@@ -114,7 +117,10 @@
                 <div class="div-coust">
                     <label class="placeholder-coustt placeholder-couust">shipment type</label>
                 </div>
-                <select id="myselect" class="form-control  select2 mb-3 " style=" border-radius: 10px  ">
+                <select id="dropdown1" class="form-control  select2 mb-3 " required="" value="default"style=" border-radius: 10px  ">
+                    <option style="min-height: 30%">Select </option>
+                    <option style="min-height: 30%">Select </option>
+                    <option style="min-height: 30%">Select </option>
                     <option style="min-height: 30%">Select </option>
                     @foreach ($shipmentTypes as $shipmentType)
                         <option value="{{ $shipmentType->id }}">{{ $shipmentType->type }}</option>
@@ -125,7 +131,10 @@
                 <div class="div-coust">
                     <label class="placeholder-coustt">coustmer/supplier</label>
                 </div>
-                <select id="mytext" id="timeagain" class="form-control select2 " style="border-radius: 12px   ">
+                <select id="dropdown2" class="form-control select2 " disabled style="border-radius: 12px   ">
+                    <option value="default">Select </option>
+                    <option>Select </option>
+                    <option>Select </option>
                     <option>Select </option>
                     @foreach ($customers as $customer)
                         <option value="{{ $customer->id }}">{{ $customer->name }}</option>
@@ -170,7 +179,7 @@
         <div class="d-inline-block col-6  m-0">
             <div class="card   shadow-sm p-3 pl-4 pt-4" style="border-radius:10px;">
                 <label class="pb-1 label-coust" style="font-size: 19px;">Add shipment item</label>
-                <form class=" text-capitalize">
+                <form class=" text-capitalize" onchange="validate();" action="" method="post" id="submitform">
                     <div class="pl-0 col-12   ">
                         <div class="div-coust">
                             <label class="placeholder-coustt " style="left:12px;">shipment item</label>
@@ -182,7 +191,7 @@
                             @endforeach
                         </select>
                     </div>
-                </form>
+                
                 <div class="div-coust pl-0  pb-4 form-floating col-12">
                     <input type="number" class="form-control" style="border-radius: 12px  " placeholder="weight"
                         id="WSum">
@@ -191,11 +200,11 @@
                     <input type="number" class="form-control" style="border-radius: 12px  " placeholder="Quantity"
                         id="Quantity">
                 </div>
-                <button type="button" onclick="table_again();" style="border-radius: 12px ;box-shadow: none;"
+                <button type="button" onclick="table_again();"id="submit" disabled=true style="border-radius: 12px ;box-shadow: none;"
                     class="btn  col-2 dropdown-coust ml-1  mb-4">Add</button>
-            </div>
+                </form>  </div>
             <div class="col-6 pl-0">
-                <button type="submit" style="border-radius: 12px ;box-shadow: none;" class="btn  col-4 d-inline   "
+                <button type="submit" style="border-radius: 12px ;box-shadow: none;"id="submi_final" disabled=true class="btn  col-4 d-inline   "
                     >Add</button>
                 <button type="button" style="border-radius: 12px ;box-shadow: none;"
                     class="btn btn-danger  ml-2  col-4 d-inline   ">Cancel</button>
@@ -377,6 +386,7 @@
     <!-- Required datatable js -->
     <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('plugins/datatables/disable_dropdown.js') }}"></script>
     <!-- Buttons examples -->
     <script src="{{asset('plugins/datatables/table_data.js')}}"></script><!--new file -->
     <script src="{{ asset('plugins/datatables/dataTables.buttons.min.js') }}"></script>
