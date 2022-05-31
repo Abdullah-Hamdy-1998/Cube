@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\ShipmentInfo;
 use Illuminate\Http\Request;
 
-use function GuzzleHttp\Promise\all;
-
 class ShipmentInfoController extends Controller
 {
 
