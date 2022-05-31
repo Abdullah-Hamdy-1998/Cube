@@ -19,7 +19,7 @@
                         <th>Job Title</th>
                         <th>Phone</th>
                         <th>Email</th>
-                        <th>Modified</th>
+                        <th>Deleted At</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -45,7 +45,7 @@
                             <td>{{ $user->job_title }}</td>
                             <td>{{ $user->phone }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>{{ $user->updated_at }}</td>
+                            <td>{{ $user->deleted_at }}</td>
                             <td>
                                 <div class="d-flex">
                                     <div class="btn-group mr-2" role="group" aria-label="First group">

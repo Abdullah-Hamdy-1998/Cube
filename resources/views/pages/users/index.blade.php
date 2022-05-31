@@ -52,8 +52,27 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->updated_at }}</td>
                             <td>
-                                <div class="d-flex">
-                                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                                <div class="dropdown">
+                                    <button class="btn btn-link" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        @can('read-users')
+                                            <a class="dropdown-item" href="{{ route('users.show', $user) }}">
+                                                <i class="eva eva-eye m-2"></i> View</a>
+                                        @endcan
+                                        @can('write-users')
+                                            <a class="dropdown-item" href="{{ route('users.edit', $user) }}">
+                                                <i class="eva eva-edit m-2"></i> Edit</a>
+                                        @endcan
+                                        @can('write-users')
+                                            <a class="dropdown-item delete_btn" href="#" data-id="{{ $user->id }}"
+                                                data-route="user-delete">
+                                                <i class="eva eva-trash-2 m-2"></i> Delete</a>
+                                        @endcan
+                                    </div>
+                                    {{-- <div class="btn-group mr-2" role="group" aria-label="First group">
                                         <a href="{{ route('users.show', $user) }}"> <button type="button"
                                                 class="btn btn-primary mr-2 border-radius-coust"><i
                                                     class="eva eva-eye-outline"></i></button></a>
@@ -64,9 +83,7 @@
                                                 data-id="{{ $user->id }}" data-route="user-delete"><i
                                                     class="eva eva-trash"></i></button>
                                         @endcan
-                                    </div>
-                                </div>
-
+                                    </div> --}}
                             </td>
                         </tr>
                     @endforeach
@@ -79,7 +96,6 @@
 @section('jquery')
     <script>
         $(document).on('click', '.delete_btn', function(e) {
-
             e.preventDefault();
             var id = $(this).data("id");
             var route = $(this).data("route");
