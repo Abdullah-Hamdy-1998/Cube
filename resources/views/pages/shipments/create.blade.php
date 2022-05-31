@@ -3,7 +3,6 @@
     Shipments
 @endsection
 @section('content')
-    <script src="{{ asset('plugins\datatables\table.js') }}"></script>
     
     <style>
         input[type=checkbox] {
@@ -118,10 +117,7 @@
                     <label class="placeholder-coustt placeholder-couust">shipment type</label>
                 </div>
                 <select id="dropdown1" class="form-control  select2 mb-3 " required="" value="default"style=" border-radius: 10px  ">
-                    <option style="min-height: 30%">Select </option>
-                    <option style="min-height: 30%">Select </option>
-                    <option style="min-height: 30%">Select </option>
-                    <option style="min-height: 30%">Select </option>
+                    <option value="" disabled selected style="min-height: 30%">Select </option>
                     @foreach ($shipmentTypes as $shipmentType)
                         <option value="{{ $shipmentType->id }}">{{ $shipmentType->type }}</option>
                     @endforeach
@@ -132,10 +128,7 @@
                     <label class="placeholder-coustt">coustmer/supplier</label>
                 </div>
                 <select id="dropdown2" class="form-control select2 " disabled style="border-radius: 12px   ">
-                    <option value="default">Select </option>
-                    <option>Select </option>
-                    <option>Select </option>
-                    <option>Select </option>
+                    <option  disabled selected value="default">Select </option>
                     @foreach ($customers as $customer)
                         <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                     @endforeach
@@ -185,7 +178,7 @@
                             <label class="placeholder-coustt " style="left:12px;">shipment item</label>
                         </div>
                         <select id="submitagain" class="form-control select2 mb-4  " style="border-radius: 12px  ">
-                            <option> Select </option>
+                            <option value="" disabled selected> Select </option>
                             @foreach ($items as $item)
                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                             @endforeach
@@ -204,7 +197,7 @@
                     class="btn  col-2 dropdown-coust ml-1  mb-4">Add</button>
                 </form>  </div>
             <div class="col-6 pl-0">
-                <button type="submit" style="border-radius: 12px ;box-shadow: none;"id="submi_final" disabled=true class="btn  col-4 d-inline   "
+                <button onclick="json_obj()" type="submit" style="border-radius: 12px ;box-shadow: none;"id="submi_final" disabled=true class="btn  col-4 d-inline   "
                     >Add</button>
                 <button type="button" style="border-radius: 12px ;box-shadow: none;"
                     class="btn btn-danger  ml-2  col-4 d-inline   ">Cancel</button>
@@ -239,6 +232,7 @@
                             <th class=" pl-5" scope="col">No</th>
                             <th scope="col">Weight</th>
                             <th scope="col"></th>
+                            <th scope="col"></th>
 
                         </tr>
                     </thead>
@@ -256,130 +250,6 @@
     </div>
 
 
-    <script>
-        var weights = [];
-        var wSum = 0;
-        var str = 0;
-        var strr = 1;
-
-        function Add_Sum() {
-
-            var input = document.getElementById('myInput').value;
-
-            weights = [
-                [parseInt(input)]
-            ];
-            str++;
-            wSum += parseInt(weights);
-
-            document.getElementById('WSum').value = wSum;
-            var table = document.getElementById('fetch');
-            var newRow = table.insertRow();
-            var newCell1 = newRow.insertCell(0);
-            var newCell2 = newRow.insertCell(1);
-            var newText1 = document.createTextNode(str);
-            var newText2 = document.createTextNode(input);
-            newCell1.appendChild(newText1);
-            newCell2.appendChild(newText2);
-
-        }
-
-        function table_again() {
-            var date = new Date();
-            var name = document.getElementById('submitagain').value;
-            var w = document.getElementById('WSum').value;
-            var Quantity = document.getElementById('Quantity').value;
-            var tableagain = document.getElementById('table');
-            var newcolumn = tableagain.insertRow();
-            var newCelll1 = newcolumn.insertCell(0);
-            var newCelll2 = newcolumn.insertCell(1);
-            var newCelll3 = newcolumn.insertCell(1);
-            var newCelll4 = newcolumn.insertCell(1);
-            var newCelll5 = newcolumn.insertCell(1);
-            var newCelll6 = newcolumn.insertCell(1);
-            var newTextt1 = document.createTextNode(strr++);
-            var newTextt2 = document.createTextNode(date.getDate() + "-" + (date.getUTCMonth() + 1) + "-" + date
-                .getFullYear());
-            var newTextt3 = document.createTextNode(Quantity);
-            var newTextt4 = document.createTextNode(w);
-            var newTextt5 = document.createTextNode(name);
-            var newTextt6 = document.createTextNode("");
-            newCelll1.appendChild(newTextt1);
-            newCelll2.appendChild(newTextt2);
-            newCelll3.appendChild(newTextt3);
-            newCelll4.appendChild(newTextt4);
-            newCelll5.appendChild(newTextt5);
-            newCelll6.appendChild(newTextt6);
-        }
-
-
-
-
-
-        // socket creating
-        let socket;
-
-        // socket connecting
-        function SocketOn() {
-            socket = new WebSocket('ws://192.168.43.235/');
-            socket.onopen = function(e) {
-                getElementById(connect).innerHTML("connected-192.168.43.235 ")
-            };
-
-            // messages detecting & recognizing
-            socket.onmessage = function(event) {
-                let data = event.data;
-                console.log(data);
-                // cases of messages
-                if (data.includes("IP")) {
-                    document.getElementById('ip').innerHTML = data;
-                } else if (data.includes("Test")) {
-                    // Not Req.
-                } else {
-                    document.getElementById('myInput').value = data;
-                }
-            };
-        }
-
-        // socket disconnecting
-        function SocketOff() {
-            socket.close();
-            socket.onclose = function(event) {
-                if (event.wasClean) {
-                    alert(`[close] Connection closed cleanly`);
-                } else {
-                    alert('[close] Connection died');
-                }
-            };
-            socket.onerror = function(error) {
-                alert(`[error] ${error.message}`);
-            };
-            document.getElementById('ip').innerHTML = "IP : UNKNOWN";
-            document.getElementById('weight').innerHTML = "off";
-            document.getElementById('AddedWeight').innerHTML = "Added Weights : ";
-        }
-
-        // send for ip
-        function aIP() {
-            socket.send("ip");
-        }
-
-        // testing send
-        function test() {
-            socket.send("test");
-        }
-
-        // save spacific weights
-        function AddWeight() {
-            var paragraph = document.getElementById("AddedWeight");
-            var text = document.createTextNode(" (" + document.getElementById('weight').innerHTML + ") ");
-            paragraph.appendChild(text);
-        }
-
-        window.addEventListener("beforeunload", function(e) {
-            SocketOff();
-        }, false);
-    </script>
 @endsection
 @section('plugins')
     <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
@@ -389,6 +259,8 @@
     <script src="{{ asset('plugins/datatables/disable_dropdown.js') }}"></script>
     <!-- Buttons examples -->
     <script src="{{asset('plugins/datatables/table_data.js')}}"></script><!--new file -->
+    <script src="{{asset('plugins/datatables/table_create.js')}}"></script><!--new file -->
+    <script src="{{asset('plugins/datatables/shipmets_soket.js')}}"></script><!--new file -->
     <script src="{{ asset('plugins/datatables/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/jszip.min.js') }}"></script>

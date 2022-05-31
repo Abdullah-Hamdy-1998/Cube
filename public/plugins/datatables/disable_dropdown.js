@@ -1,23 +1,13 @@
 $(function() {
-
-    // Generic logic
-    var toggleDropdown = function(dropdown1) {
-      // hasdropdown1 is a boolean store
+    var Dropdown1 = function(dropdown1) {
       var hasdropdown1 = typeof dropdown1 !== typeof undefined && dropdown1;
-    
-      // Use boolean to decide whether to disable/enable co-dropdown1 field
       $('#dropdown2').prop('disabled', !hasdropdown1).val('');
     }
-    
-    // Trigger logic when #dropdown1 is updated
     $('#dropdown1').on('change', function() {
-      toggleDropdown($(this).val());
     });
     
-    // Trigger logic on DOM ready
-    toggleDropdown();
+    Dropdown1();
     });
-
 
     function validate(){
         var submit = document.getElementById('submit');
@@ -29,7 +19,7 @@ $(function() {
         filled? submit.disabled=false: submit.disabled=true;
         filled? submi_final.disabled=false: submi_final.disabled=true;
     };
-
+    
     $("#dropdown2").change(function() {
         var disabled = ( this.value == "default");
         console.log(disabled);
