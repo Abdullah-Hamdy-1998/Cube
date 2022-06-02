@@ -94,9 +94,18 @@ class UserController extends Controller
     public function destroy(Request $request)
     {
         $this->authorize('write-users');
-
         $user = User::find($request->id);
         $user->delete();
         return redirect()->route('users.index');
+    }
+    public function multipleDelete(Request $request)
+    {
+        $this->authorize('write-users');
+
+        dd($request->ids);
+        $users = User::whereIn('id', $request->ids)->get();
+        foreach ($users as $user) {
+            $user->delete();
+        }
     }
 }

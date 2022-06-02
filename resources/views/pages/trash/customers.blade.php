@@ -18,7 +18,7 @@
                         <th>Delegate</th>
                         <th>Phone</th>
                         <th>Email</th>
-                        <th>Modified</th>
+                        <th>Deleted At</th>
                         <th>Actions</th>
                     </tr>
                 </thead>

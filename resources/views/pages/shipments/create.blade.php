@@ -3,7 +3,6 @@
     Shipments
 @endsection
 @section('content')
-    
     <style>
         input[type=checkbox] {
             transform: scale(1.5);
@@ -108,7 +107,7 @@
 
     </style>
 
-    
+
     <div class="card shadow-sm pt-3 pl-2 " style="border-radius:10px;">
         <form class=" text-capitalize">
             <div class="form-group  d-inline-block col-5 w-50 ">
@@ -116,7 +115,8 @@
                 <div class="div-coust">
                     <label class="placeholder-coustt placeholder-couust">shipment type</label>
                 </div>
-                <select id="dropdown1" class="form-control  select2 mb-3 " required="" value="default"style=" border-radius: 10px  ">
+                <select id="dropdown1" class="form-control  select2 mb-3 " required="" value="default"
+                    style=" border-radius: 10px  ">
                     <option value="" disabled selected style="min-height: 30%">Select </option>
                     @foreach ($shipmentTypes as $shipmentType)
                         <option value="{{ $shipmentType->id }}">{{ $shipmentType->type }}</option>
@@ -128,7 +128,7 @@
                     <label class="placeholder-coustt">coustmer/supplier</label>
                 </div>
                 <select id="dropdown2" class="form-control select2 " disabled style="border-radius: 12px   ">
-                    <option  disabled selected value="default">Select </option>
+                    <option disabled selected value="default">Select </option>
                     @foreach ($customers as $customer)
                         <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                     @endforeach
@@ -149,22 +149,22 @@
         <div class="card-body pt-0 shadow-sm">
             <label class="label-coust pt-4 pb-4 " style="font-size: 19px; ">Shipment Items</label>
             <form>
-            <table class="table table-coust" id="table" style=" border-top-style: hidden">
-                <thead>
-                    <tr>
+                <table class="table table-coust" id="table" style=" border-top-style: hidden">
+                    <thead>
+                        <tr>
 
-                        <th class="pl-5 " scope="col">ID</th>
-                        <th scope="col">Avatar</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Weight</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Modified</th>
+                            <th class="pl-5 " scope="col">ID</th>
+                            <th scope="col">Avatar</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Weight</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Modified</th>
 
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </form>
         </div>
     </div>
@@ -184,32 +184,36 @@
                             @endforeach
                         </select>
                     </div>
-                
-                <div class="div-coust pl-0  pb-4 form-floating col-12">
-                    <input type="number" class="form-control" style="border-radius: 12px  " placeholder="weight"
-                        id="WSum">
-                </div>
-                <div class=" pl-0  pb-4 form-floating col-12">
-                    <input type="number" class="form-control" style="border-radius: 12px  " placeholder="Quantity"
-                        id="Quantity">
-                </div>
-                <button type="button" onclick="table_again();"id="submit" disabled=true style="border-radius: 12px ;box-shadow: none;"
-                    class="btn  col-2 dropdown-coust ml-1  mb-4">Add</button>
-                </form>  </div>
+
+                    <div class="div-coust pl-0  pb-4 form-floating col-12">
+                        <input type="number" class="form-control" style="border-radius: 12px  " placeholder="weight"
+                            id="WSum">
+                    </div>
+                    <div class=" pl-0  pb-4 form-floating col-12">
+                        <input type="number" class="form-control" style="border-radius: 12px  " placeholder="Quantity"
+                            id="Quantity">
+                    </div>
+                    <button type="button" onclick="table_again();" id="submit" disabled=true
+                        style="border-radius: 12px ;box-shadow: none;"
+                        class="btn  col-2 dropdown-coust ml-1  mb-4">Add</button>
+                </form>
+            </div>
             <div class="col-6 pl-0">
-                <button onclick="json_obj()" type="submit" style="border-radius: 12px ;box-shadow: none;"id="submi_final" disabled=true class="btn  col-4 d-inline   "
-                    >Add</button>
+                <button onclick="json_obj()" type="submit" style="border-radius: 12px ;box-shadow: none;" id="submi_final"
+                    disabled=true class="btn  col-4 d-inline   ">Add</button>
                 <button type="button" style="border-radius: 12px ;box-shadow: none;"
                     class="btn btn-danger  ml-2  col-4 d-inline   ">Cancel</button>
 
             </div>
         </div>
         <div class="d-inline-block col-6 ml-auto">
-            <div class="card   shadow-sm p-3 pl-4 pt-4" style="border-radius:10px;">
+            <div class="card shadow-sm p-3 pl-4 pt-4" style="border-radius:10px;">
                 <div>
-                    <button class="btn btn-danger" onclick="SocketOff();" style="float: right;: 70%">off</button>
-                    <button class="btn" onclick="SocketOn();" style="float: right;">on</button>
-                    <label class="label-coust pb-1 label-coust" style="font-size: 19px;">weight point</label>
+                    <label class="label-coust pb-1 label-coust" style="font-size: 19px;">Weight Point</label>
+                    <div class="form-check form-check-inline ml-3 float-right">
+                        <input type="checkbox" id="socket" switch="none" onclick="toggleSocket();" />
+                        <label for="socket" class="label-switch ml-3 mr-3" data-on-label="" data-off-label=""></label>
+                    </div>
                 </div>
 
                 <div class=" f-flex pl-0 pb-4 form-floating col-12">
@@ -248,8 +252,6 @@
 
         </div>
     </div>
-
-
 @endsection
 @section('plugins')
     <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
@@ -258,9 +260,12 @@
     <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/disable_dropdown.js') }}"></script>
     <!-- Buttons examples -->
-    <script src="{{asset('plugins/datatables/table_data.js')}}"></script><!--new file -->
-    <script src="{{asset('plugins/datatables/table_create.js')}}"></script><!--new file -->
-    <script src="{{asset('plugins/datatables/shipmets_soket.js')}}"></script><!--new file -->
+    <script src="{{ asset('plugins/datatables/table_data.js') }}"></script>
+    <!--new file -->
+    <script src="{{ asset('plugins/datatables/table_create.js') }}"></script>
+    <!--new file -->
+    <script src="{{ asset('plugins/datatables/shipmets_socket.js') }}"></script>
+    <!--new file -->
     <script src="{{ asset('plugins/datatables/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/jszip.min.js') }}"></script>
