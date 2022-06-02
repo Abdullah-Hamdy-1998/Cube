@@ -60,15 +60,6 @@ function test() {
     socket.send("test");
 }
 
-// save spacific weights
-function AddWeight() {
-    var paragraph = document.getElementById("AddedWeight");
-    var text = document.createTextNode(
-        " (" + document.getElementById("weight").innerHTML + ") "
-    );
-    paragraph.appendChild(text);
-}
-
 window.addEventListener(
     "beforeunload",
     function (e) {

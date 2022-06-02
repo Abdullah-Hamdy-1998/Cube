@@ -11,7 +11,9 @@
                         class="btn btn-primary ml-3 all-buttons-coust  border-radius-coust col-1 table-coust waves-effect waves-light float-right"><i
                             class="ti-plus"> </i> Add</button></a>
             @endcan
-            <input type="submit" value="Delete " class="btn btn-danger float-right col-1" id="checkerButton" />
+            {{-- button danger --}}
+            <button class="btn btn-danger float-right col-1" id="mdelete-button" style="display: none">Delete</button>
+
             <table id="datatable-buttons" class="table table-striped mt-3 text-center bitable-bordered dt-responsive nowrap"
                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
@@ -37,9 +39,9 @@
                     @foreach ($users as $user)
                         <tr class="row{{ $user->id }}">
                             <td>
-                                <div class="form-check  ">
+                                <div class="form-check">
                                     <input type="checkbox" class="form-check-input checkbox-coust table-checkbox" name=""
-                                        id="" value="checkedValue">
+                                        id="row-checkbox" value="{{ $user->id }}" style="display: none">
                                 </div>
                             </td>
                             <td>{{ ++$i }}</td>
@@ -72,18 +74,6 @@
                                                 <i class="eva eva-trash-2 m-2"></i> Delete</a>
                                         @endcan
                                     </div>
-                                    {{-- <div class="btn-group mr-2" role="group" aria-label="First group">
-                                        <a href="{{ route('users.show', $user) }}"> <button type="button"
-                                                class="btn btn-primary mr-2 border-radius-coust"><i
-                                                    class="eva eva-eye-outline"></i></button></a>
-                                    </div>
-                                    <div class="d-inline">
-                                        @can('write-users')
-                                            <button class="btn btn-danger delete_btn border-radius-coust"
-                                                data-id="{{ $user->id }}" data-route="user-delete"><i
-                                                    class="eva eva-trash"></i></button>
-                                        @endcan
-                                    </div> --}}
                             </td>
                         </tr>
                     @endforeach
@@ -130,7 +120,7 @@
     <script src="{{ asset('plugins/datatables/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/buttons.print.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/buttons.colVis.min.js') }}"></script>
-    <script src="{{ asset('plugins/datatables/selected_delete.js') }}"></script>
+    <script src="{{ asset('plugins/datatables/multiple_delete.js') }}"></script>
     <!--new file -->
     <!-- Responsive examples -->
     <script src="{{ asset('plugins/datatables/dataTables.responsive.min.js') }}"></script>
