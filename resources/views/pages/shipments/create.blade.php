@@ -118,7 +118,6 @@
                 </div>
                 <select id="dropdown1" class="form-control  select2 mb-3 " required="" value="default"style=" border-radius: 10px  ">
                     <option value="" disabled selected style="min-height: 30%">Select </option>
-                    <option>aya</option>
                     @foreach ($shipmentTypes as $shipmentType)
                         <option value="{{ $shipmentType->id }}">{{ $shipmentType->type }}</option>
                     @endforeach

@@ -3878,8 +3878,37 @@ button{min-width: 100px !important;box-shadow: none !important;}
 .inventory-card-coust:hover{background-color: #3B86FF;color: white }
 table{border-top-style: hidden;}
 .table-margin-coust{margin: 10px;}
+.toogle-coust{margin-bottom: -8px;}
 .table-checkbox{margin-top: -35% !important;}
 input[switch]+label {background-color: #536270 !important;}
 input[switch]:checked+label {background-color: #1B82EC !important;}
-
+.button-disabled:disabled{background-color:#949595}
+.input-side-button{position: absolute;
+    border-bottom-left-radius:0px;
+    border-top-left-radius:0px;
+     right:15px;
+     border: none;
+     height: 61%;
+}
+.fa {
+    padding: 10px;
+    font-size: 40px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+.fa-facebook{
+    background: #3B5998;
+    color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
 /*# sourceMappingURL=style.css.map */
