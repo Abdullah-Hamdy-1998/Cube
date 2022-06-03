@@ -5,9 +5,6 @@
 @section('content')
     <div class="card border-radius-coust">
         <div class="card-body ">
-            <button type="button"
-                class="btn btn-primary all-buttons-coust  border-radius-coust col-1 table-coust waves-effect waves-light float-right"><i
-                    class="ti-plus"> </i> New</button>
             <table id="datatable-buttons" class="table  mt-3 dt-responsive nowrap"
                 style=" width: 100%; background-color: white;">
                 <thead style="background-color: #f3f3f3 ; ">

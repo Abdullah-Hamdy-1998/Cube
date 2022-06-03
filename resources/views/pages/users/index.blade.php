@@ -3,6 +3,7 @@
     Users
 @endsection
 @section('content')
+
     <div class="card border-radius-coust">
         <div class="card-body">
             @can('write-users')
@@ -26,7 +27,7 @@
                         <th class="th-table-coust">Phone<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
                         <th class="th-table-coust">Email<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
                         <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
-                        <th class="th-table-coust">Actions</th>
+                        <th class="th-table-coust"></th>
                     </tr>
                 </thead>
 
@@ -37,10 +38,10 @@
                     @endphp
 
                     @foreach ($users as $user)
-                        <tr class="row{{ $user->id }}">
+                        <tr class="select row{{ $user->id }}">
                             <td>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input checkbox-coust table-checkbox" name=""
+                                    <input type="checkbox"onchange="closest('tr').classList.toggle('table-row-selected')" class="form-check-input checkbox-coust table-checkbox" name=""
                                         id="row-checkbox" value="{{ $user->id }}" style="display: none">
                                 </div>
                             </td>
@@ -54,7 +55,7 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->updated_at }}</td>
                             <td>
-                                <div class="dropdown">
+                                <div class="dropdown" >
                                     <button class="btn btn-link" type="button" id="dropdownMenuButton"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-h"></i>

@@ -11,7 +11,6 @@
     <link rel="shortcut icon" href="{{ asset('images/cube_logo.svg') }}">
 
     <link rel="stylesheet" href="{{ asset('plugins/morris/morris.css') }}">
-
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/metismenu.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/icons.css') }}" rel="stylesheet" type="text/css">
@@ -24,17 +23,18 @@
     <!-- Background -->
     <div class="account-pages"></div>
     <!-- Begin page -->
-    <div class="wrapper-page">
+    <div class="wrapper-page content-coust">
         <img src="{{ asset('images/cube_logo.svg') }}" height="77" alt="logo" class="logo mx-auto d-block">
 
         <h5 class="text-center m-0 text-white mb-4">cube</h5>
 
         <div class="card border-radius-coust  mx-auto d-flex justify-content-center col-10">
             <div class="card-body">
+                <img src="{{ asset('images/avatars/user-default.png') }}" height="90" alt="logo" class="logo mx-auto mt-4 d-block"style="filter:opacity(.3)">
 
 
                 <div class="p-3">
-                    <form class="form-horizontal m-t-30" action="{{ route('login') }}" method="POST"
+                    <form  action="{{ route('login') }}" method="POST"
                         autocomplete="off">
                         @csrf
                         <div class="form-group">
@@ -68,12 +68,14 @@
 
             </div>
         </div>
-
-        <div class="m-t-40 text-center">
-            <p class="text-white text-stroke">© {{ now()->year }} Cube. Crafted with <i
-                    class="mdi mdi-heart text-danger"></i>
-                by
-                TechX</p>
+        <div class="text-center mt-3">
+            <img src="{{ asset('images/facebook.svg') }}"style="max-height:40px;filter:invert(1)"class="mt-5" >
+            <img src="{{ asset('images/twitter.svg') }}"style="max-height:40px;filter:invert(1)"class="mt-5" >
+            <img src="{{ asset('images/linkedin.svg') }}"style="max-height:40px;filter:invert(1)" class="mt-5">
+                    </div>    
+        <div class=" text-center mt-1">
+            <p class="text-white text-stroke"> powered by techX team 2021  ©
+                </p>
         </div>
 
     </div>

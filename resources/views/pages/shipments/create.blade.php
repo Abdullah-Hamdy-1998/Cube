@@ -118,6 +118,7 @@
                 <select id="dropdown1" class="form-control  select2 mb-3 " required="" value="default"
                     style=" border-radius: 10px  ">
                     <option value="" disabled selected style="min-height: 30%">Select </option>
+                    <option>aya</option>
                     @foreach ($shipmentTypes as $shipmentType)
                         <option value="{{ $shipmentType->id }}">{{ $shipmentType->type }}</option>
                     @endforeach
@@ -129,6 +130,8 @@
                 </div>
                 <select id="dropdown2" class="form-control select2 " disabled style="border-radius: 12px   ">
                     <option disabled selected value="default">Select </option>
+                    <option>aya</option>
+
                     @foreach ($customers as $customer)
                         <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                     @endforeach
@@ -179,6 +182,7 @@
                         </div>
                         <select id="submitagain" class="form-control select2 mb-4  " style="border-radius: 12px  ">
                             <option value="" disabled selected> Select </option>
+                            <option>sys</option>
                             @foreach ($items as $item)
                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                             @endforeach
