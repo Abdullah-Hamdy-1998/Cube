@@ -4,106 +4,7 @@
 @endsection
 @section('content')
     <style>
-        input[type=checkbox] {
-            transform: scale(1.5);
-        }
-
-        button {
-            background-color: #3B86FF;
-            color: white;
-            font-size: 16px;
-        }
-
-        button:disabled {
-            background-color: #949595;
-        }
-
-        tr {
-            background-color: white
-        }
-
-        th {
-            background-color: #f3f3f3
-        }
-
-        .hover-table:hover {
-            background-color: antiquewhite
-        }
-
-        ;
-
-        .placeholder-coust {
-            font-weight: normal
-        }
-
-        .label-coust {
-            color: #656565
-        }
-
-        .placeholder-coust {
-            color: #949595;
-            position: absolute;
-            left: 16px;
-            top: 9px
-        }
-
-        .button-coust {
-            position: absolute;
-            right: 16px;
-            border-radius: 12px;
-            border-bottom-left-radius: 0px;
-            border-top-left-radius: 0px;
-            background-color: #E9ECEF;
-            border-color: transparent;
-            font-size: 20px;
-            cursor: text;
-            color: #384044
-        }
-
-        ;
-
-        form {
-            position: relative;
-        }
-
-        input:focus~label {
-            transform: translateY(-10px);
-            background-color: white;
-            left: 11px;
-            top: .5px;
-            font-size: 12.5px;
-            padding-left: 5px;
-            padding-right: 5px;
-            color: #3B86FF;
-        }
-
-        input:valid~label {
-            transform: translateY(-10px);
-            background-color: white;
-            top: .5px;
-            font-size: 12.5px;
-            padding-left: 5px;
-            padding-right: 5px;
-            left: 11px;
-        }
-
-        .placeholder-coustt {
-            background-color: white;
-            position: absolute;
-            bottom: 19.5px;
-            font-size: 12.5px;
-            padding-left: 5px;
-            padding-right: 5px;
-            left: 28px;
-        }
-
-        .placeholder-couust {
-            bottom: 35px;
-        }
-
-        .div-coust {
-            display: flex;
-        }
+     
 
     </style>
 
@@ -126,7 +27,7 @@
             </div>
             <div class="form-group  d-inline-block col-5 ml-5 ">
                 <div class="div-coust">
-                    <label class="placeholder-coustt">coustmer/supplier</label>
+                    <label class="placeholder-coustt">customer/supplier</label>
                 </div>
                 <select id="dropdown2" class="form-control select2 " disabled style="border-radius: 12px   ">
                     <option disabled selected value="default">Select </option>
@@ -189,13 +90,15 @@
                         </select>
                     </div>
 
-                    <div class="div-coust pl-0  pb-4 form-floating col-12">
-                        <input type="number" class="form-control" style="border-radius: 12px  " placeholder="weight"
+                    <div class="div-coust  pl-0  pb-4 form-floating col-12">
+                        <input type="number" class="form-control" style="border-radius: 12px  " 
                             id="WSum">
+                            <label class="placeholder-coust">weight</label>
                     </div>
                     <div class=" pl-0  pb-4 form-floating col-12">
-                        <input type="number" class="form-control" style="border-radius: 12px  " placeholder="Quantity"
+                        <input type="number" class="form-control" style="border-radius: 12px  " 
                             id="Quantity">
+                            <label class="placeholder-coust">Quantity</label>
                     </div>
                     <button type="button" onclick="table_again();" id="submit" disabled=true
                         style="border-radius: 12px ;box-shadow: none;"

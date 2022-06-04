@@ -8,30 +8,27 @@
         <div class="card-body">
             @can('write-users')
                 <a href="{{ route('users.create') }}">
-                    <button type="button"
-                        class="btn btn-primary ml-3 all-buttons-coust  border-radius-coust col-1 table-coust waves-effect waves-light float-right"><i
-                            class="ti-plus"> </i> Add</button></a>
-            @endcan
+                    <button type="button" class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right"><i class="ti-plus"> </i> Add</button></a>          @endcan
             {{-- button danger --}}
             <button class="btn btn-danger float-right col-1" id="mdelete-button" style="display: none">Delete</button>
 
-            <table id="datatable-buttons" class="table table-striped mt-3 text-center bitable-bordered dt-responsive nowrap"
+            <table id="datatable-buttons" class="table mt-3 text-center bitable-bordered dt-responsive nowrap""
                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th class="th-table-coust">ID <i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
-                        <th class="th-table-coust">Avatar<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
-                        <th class="th-table-coust">Name<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
-                        <th class="th-table-coust">Job Title<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
-                        <th class="th-table-coust">Phone<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
-                        <th class="th-table-coust">Email<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
-                        <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
-                        <th class="th-table-coust"></th>
+
+
+                <thead >
+                    <tr >
+                    <th></th>
+                    <th  class="th-table-coust">ID<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                    <th  class="th-table-coust"> Avatar<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                    <th  class="th-table-coust">Name<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                    <th  class="th-table-coust">Job Title<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                    <th  class="th-table-coust">Phone<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                    <th  class="th-table-coust">Email<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                    <th  class="th-table-coust">Modified<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                    <th></th>
                     </tr>
-                </thead>
-
-
+                    </thead>
                 <tbody>
                     @php
                         $i = 0;
@@ -41,7 +38,7 @@
                         <tr class="select row{{ $user->id }}">
                             <td>
                                 <div class="form-check">
-                                    <input type="checkbox"onchange="closest('tr').classList.toggle('table-row-selected')" class="form-check-input checkbox-coust table-checkbox" name=""
+                                    <input type="checkbox"onchange="closest('tr').classList.toggle('table-row-selected')" class=" checkbox-coust table-checkbox" name=""
                                         id="row-checkbox" value="{{ $user->id }}" style="display: none">
                                 </div>
                             </td>
@@ -104,6 +101,10 @@
                 },
             });
         });
+
+
+
+        
     </script>
 @endsection
 

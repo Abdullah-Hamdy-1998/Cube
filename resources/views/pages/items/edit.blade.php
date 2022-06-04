@@ -8,18 +8,18 @@
 <form action="{{ route('items.update',$item) }}" method="POST" enctype="multipart/form-data" autocomplete="off">
     @csrf
     @method('PUT')
-    <label class="form-label" for="image">Upload Avatar</label>
-    <input type="file" class="form-control" name="image" accept=".jpg,.jpeg,.png" />
+    <div class="col-5 mb-3 d-inline-block mr-5"  >  <label class="form-label" for="image">Upload Avatar</label>
+    <input type="file" class="form-control" name="image" accept=".jpg,.jpeg,.png" /></div>
 
-    <label for="name" class="col-sm-2 col-form-label">Name</label>
-    <input class="form-control" type="text" id="name" name="name" value="{{ $item->name }}" >
+    <div class="col-5 mb-3 d-inline-block mr-5"  >   <label for="name" class="col-sm-2 col-form-label">Name</label>
+    <input class="form-control" type="text" id="name" name="name" value="{{ $item->name }}" ></div>
 
-    <label for="description" class="col-sm-2 col-form-label">Description</label>
-    <input class="form-control" type="text" id="description" name="description" value="{{ $item->description }}" >
+    <div class="col-5 mb-3 d-inline-block mr-5"  >   <label for="description" class="col-sm-2 col-form-label">Description</label>
+    <input class="form-control" type="text" id="description" name="description" value="{{ $item->description }}" ></div>
     <br><br>
-    <button type="submit" class="btn btn-primary waves-effect waves-light ">Save</button>
+    <button type="submit" class="btn btn-primary waves-effect waves-light border-radius-coust col-1">Save</button>
     <a href="{{ route('items.index') }}"> <button type="button"
-            class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
+            class="btn btn-danger waves-effect waves-light border-radius-coust col-1">Cancel</button></a>
 </form>
     </div></div>
 @endsection

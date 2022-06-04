@@ -11,19 +11,19 @@
                             style="margin:5px; font-size:14px;"></i> Add</button></a>
             @endcan
 
-            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
+            <table id="datatable-buttons" class="table table-striped mt-3 text-center bitable-bordered dt-responsive nowrap"
                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
 
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>ID</th>
-                        <th>Avatar</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Modified</th>
+                <thead class="">
+                    <tr >
+                    <th></th>
+                    <th  class="th-table-coust">iD<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                    <th  class="th-table-coust"> Avatar<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                    <th  class="th-table-coust">Name<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                    <th  class="th-table-coust">Description<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                    <th  class="th-table-coust">Modified<i class="fas fa-sort-alpha-down  mt-1"></i></th>
                     </tr>
-                </thead>
+                    </thead>
                 <tbody>
                     @php
                         $i = 0;
