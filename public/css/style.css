@@ -3871,7 +3871,7 @@ Invoice
 td{background-color: white!important;}
 thead th {background-color: #F9F9FB !important;border-bottom-color: transparent;}
 table thead tr th{border-bottom:2px solid #F9F9FB !important;}
-
+table {border-bottom: hidden !important;}
 label{min-width: 100px;}
 .label-switch {min-width: 10px !important; }
 button{min-width: 100px !important;box-shadow: none !important;}
@@ -3958,19 +3958,7 @@ table tr:hover td{
             top: 9px
         }
 
-        .button-coust {
-            position: absolute;
-            right: 16px;
-            border-radius: 12px;
-            border-bottom-left-radius: 0px;
-            border-top-left-radius: 0px;
-            background-color: #E9ECEF;
-            border-color: transparent;
-            font-size: 20px;
-            cursor: text;
-            color: #384044
-        }
-
+       
         ;
 
         form {
@@ -4043,6 +4031,21 @@ table tr:hover td{
             top: 2px;
             left: 6px;
           }
+          .button-coust {
+            position: absolute;
+            right: 16px;
+            border-radius: 12px;
+            border-bottom-left-radius: 0px;
+            border-top-left-radius: 0px;
+            background-color: #E9ECEF;
+            border-color: transparent;
+            font-size: 20px;
+            cursor: text;
+            color: #384044
+        }
+
           input[type="checkbox"]{transform: scale(1.2);margin-right: 13% !important;}
-.field-label{color:#384044 !important;}
-.field-coust{box-shadow: none !important; height:calc(3rem + 2px) !important; border-radius: 12px !important;}
+.field-label{color:#949595 !important;}
+.field-coust{box-shadow: none !important;  border-radius: 12px !important;}
+.add-button-coust{background-color:#3B86FF ;color: white;}
+.add-button-coust:hover{color: white;}
