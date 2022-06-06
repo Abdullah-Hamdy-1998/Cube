@@ -102,7 +102,7 @@ class UserController extends Controller
     {
         $this->authorize('write-users');
 
-        dd($request->ids);
+        dd($request);
         $users = User::whereIn('id', $request->ids)->get();
         foreach ($users as $user) {
             $user->delete();

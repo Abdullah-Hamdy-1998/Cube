@@ -130,17 +130,17 @@
                 <select id="dropdown2" class="form-control select2 " disabled style="border-radius: 12px   ">
                     <option disabled selected value="default">Select </option>
                     @foreach ($customers as $customer)
-                        <option value="{{ $customer->id }}">{{ $customer->name }}</option>
+                        <option value="customer{{ $customer->id }}">{{ $customer->name }}</option>
                     @endforeach
                     @foreach ($suppliers as $supplier)
-                        <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
+                        <option value="supplier{{ $supplier->id }}">{{ $supplier->name }}</option>
                     @endforeach
                     </optgroup>
                 </select>
             </div>
             <div class=" div-coust mb-2 pb-4 form-floating col-5">
-                <input type="text" class="form-control pl-3" id="text" required="" id="floatinginput type=" text""
-                    style="border-radius: 12px;"><label class=" placeholder-coust  ml-3 ">Description</label>
+                <input type="text" class="form-control pl-3" id="text" id="floatinginput"
+                    style="border-radius: 12px;"><label class="placeholder-coust  ml-3">Description</label>
             </div>
         </form>
     </div>

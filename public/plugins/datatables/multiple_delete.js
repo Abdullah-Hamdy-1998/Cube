@@ -20,11 +20,30 @@ $(document).ready(function () {
     });
 });
 
-//when clicking the delete button, apply multiple delete
+//when clicking the delete button, apply multiple delete function
+
 $("#mdelete-button").click(function () {
     var ids = [];
     $("input[type=checkbox]:checked").each(function () {
         ids.push($(this).val());
     });
-    alert(ids);
+    $.ajax({
+        url: "users-delete",
+        type: "POST",
+        data: {
+            ids: ids,
+            _token: $('meta[name="csrf-token"]').attr("content"),
+            _method: "DELETE",
+        },
+        //delete the rows, if successful
+        success: function () {
+            $("input[type=checkbox]:checked").each(function () {
+                $(this).closest("tr").remove();
+            });
+            $("#mdelete-button").hide();
+        },
+        error: function (data) {
+            console.log(data);
+        },
+    });
 });

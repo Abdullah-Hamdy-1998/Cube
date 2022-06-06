@@ -26,7 +26,7 @@
                         <th class="th-table-coust">Phone<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
                         <th class="th-table-coust">Email<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
                         <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
-                        <th class="th-table-coust">Actions</th>
+                        <th class="th-table-coust"></th>
                     </tr>
                 </thead>
 

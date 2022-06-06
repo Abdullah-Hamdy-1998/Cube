@@ -22,7 +22,6 @@ function Add_Sum() {
     var newText1 = document.createTextNode(str);
     var newText2 = document.createTextNode(input);
     var newText3 = document.createElement("div");
-   // newText3.innerText='<i class="far fa-address-book" ></i>   ';
     newCell1.appendChild(newText1);
     newCell2.appendChild(newText2);
     newCell3.appendChild(newText3);
