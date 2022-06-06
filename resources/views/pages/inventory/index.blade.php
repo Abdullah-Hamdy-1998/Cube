@@ -7,8 +7,8 @@
 
     </style>
     <a href="{{ route('inventory.show') }}">
-        <div class="card  inventory-card-coust border-radius-coust pl-5 mr-4 col-3 d-inline-block" style="max-width:300px; min-width:300px;">
-            <div class="card-body ">
+        <div class="card  inventory-card-coust border-radius-coust  mr-4 col-3 d-inline-block" style="max-width:300px; min-width:300px;">
+            <div class="card-body text-center ">
                 <div class="mb-4"> <img src="{{ asset('images/tomato.WEBP') }}" class="d-inline mr-5"
                         style="max-height:30px;">
                     <p class="d-inline "><b>Tomato</b></p>

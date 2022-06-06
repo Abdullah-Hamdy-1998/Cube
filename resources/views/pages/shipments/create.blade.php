@@ -16,9 +16,9 @@
                 <div class="pl-0 col-12 form-floating  ">
                         
                     <select  id="dropdown1" value="default" class="form-select mb-4 field-coust" >
-                        <option class=" field-label"value="" disabled selected>Select</option>
+                        <option class=" field-label "value="" disabled selected>Select</option>
                         @foreach ($shipmentTypes as $shipmentType)
-                        <option value="{{ $shipmentType->id }}">{{ $shipmentType->type }}</option>
+                        <option  value="{{ $shipmentType->id }}">{{ $shipmentType->type }}</option>
                     @endforeach
                     <option>aya</option>
 
@@ -108,7 +108,7 @@
                     </div>
                     <button type="button" onclick="table_again();" id="submit" disabled=true
                         style="border-radius: 12px ;box-shadow: none;"
-                        class="btn  col-2 dropdown-coust ml-1 add-button-coust mb-4">Add</button>
+                        class="btn  col-2 dropdown-coust  add-button-coust mb-4">Add</button>
                 </form>
             </div>
             <div class="col-6 pl-0">

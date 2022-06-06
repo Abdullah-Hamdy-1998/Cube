@@ -28,7 +28,7 @@
 </div></div>
 <div class="card border-radius-coust">
     <div class="card-body pl-4">
-        <h5 class="mb-4" >General</h5>
+        <h5 class="mb-4 " >General</h5>
         <div class="form-floating d-flex mb-4 mt-3">
             <input type="text" class="form-control field-coust col-5"  placeholder="Name"  >
             <label  class="field-label">Address</label>
@@ -36,7 +36,7 @@
 
           
         <h5 >Default Deletion Mode</h5>
-        <div class="mt-4">
+        <div class="mt-4 mb-2">
         <input type="checkbox" name="access" value="write" class=""id="switch" switch="none" />Soft Delete
         <label for="switch" class="label-switch ml-2 mr-2 toogle-coust" data-on-label="" data-off-label=""></label>Hard Delete
         </div>
@@ -81,7 +81,7 @@
                 <input class=" checkbox-coust" type="checkbox" name="modules[]" value="settings" id="">Settings
             </label>
         </div>
-        <div class="mt-4">
+        <div class="mt-4 mb-2">
             <input type="checkbox" name="access" value="write" class=""id="switch" switch="none" /> Read only
             <label for="switch" class="label-switch ml-2 mr-2 toogle-coust" data-on-label="" data-off-label=""></label>Read & Write
             </div>

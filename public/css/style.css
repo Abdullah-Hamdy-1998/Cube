@@ -3858,10 +3858,10 @@ Invoice
 
 
 .paragraph-coust{font-size: 15px;}
-.border-radius-coust{border-radius: 12px ;}
+.border-radius-coust{border-radius: 12px !important ;}
 .table-coust{color:#5B626B}
-.home-icon-coust{font-size: 60px;max-height:40px;filter:opacity(.5)}
-.home-coust{font-size: 16px;min-width: 250px;margin-top: 15px;}
+.home-icon-coust{font-size: 60px;max-height:45px;filter:opacity(.5)}
+.home-coust{font-size: 16px;min-width: 250px;margin-top: 15px;min-height: 130px;}
 .home-coust:hover{background-color: #3B86FF;color:white;}
 .home-coust:hover .home-icon-coust{filter: invert(1);}
 .home-card-coust{display: inline;margin-top: -25px;margin-bottom: 10px;}
