@@ -5,16 +5,18 @@
 @section('content')
 <div class="card card-body "style="border-radius:10px;">
 <table id="datatable-buttons" class="table   dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%; background-color: white;">
-    <thead style="background-color: #f3f3f3 ; ">
-    <tr>
-        <th>id</th>
-        <th>user</th>
-        <th>module</th>
-        <th>action</th>
-        <th>data date</th>
-        <th>modified</th>
-    </tr>
-    </thead>
+    <thead class="">
+        <tr >
+        <th></th>
+        <th  class="th-table-coust">ID<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+        <th  class="th-table-coust"> Shipment Type<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+        <th  class="th-table-coust">Cus.-Sup.<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+        <th  class="th-table-coust">Weight<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+        <th  class="th-table-coust">Quantity<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+        <th  class="th-table-coust">Modified<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+        <th></th>
+        </tr>
+        </thead>
 
 
     <tbody>
