@@ -8,9 +8,9 @@
 </style>
 
 <div class="row align-items-start ml-1">
-    <div class="home-card-coust col-3  mr-1"><div class="card p-0  card-body col-12 border-radius-coust home-coust text-center "><div class=" mb-4 d-inline" ><img src="{{ asset('images/person-add.svg') }}" class="mt-4 home-icon-coust">   <br>Add User</div></div></div>
-    <div class="home-card-coust col-3 mr-1"><div class="card p-0  card-body col-12 border-radius-coust home-coust text-center "><div class=" mb-4 d-inline" ><img src="{{ asset('images/shopping-bag.svg') }}" class="mt-4 home-icon-coust"><br>New Shipment</div></div></div>
-    <div class="home-card-coust col-3 mr-1"><div class="card p-0  card-body col-12 border-radius-coust home-coust text-center "><div class=" mb-4 d-inline" ><img src="{{ asset('images/smartphone.svg') }}" class="mt-4 home-icon-coust"><br>Weight Point</div></div></div>
+    <div class="home-card-coust col-3  mr-1 "><div class="card p-0  card-body col-12 border-radius-coust home-coust text-center "><div class=" mb-4 mt-2 d-inline" ><img src="{{ asset('images/person-add.svg') }}" class="mt-4 home-icon-coust">   <br>Add User</div></div></div>
+    <div class="home-card-coust col-3 mr-1"><div class="card p-0  card-body col-12 border-radius-coust home-coust text-center "><div class=" mb-4 mt-2 d-inline" ><img src="{{ asset('images/shopping-bag.svg') }}" class="mt-4 home-icon-coust"><br>New Shipment</div></div></div>
+    <div class="home-card-coust col-3 mr-1"><div class="card p-0  card-body col-12 border-radius-coust home-coust text-center "><div class=" mb-4 mt-2  d-inline" ><img src="{{ asset('images/smartphone.svg') }}" class="mt-4 home-icon-coust"><br>Weight Point</div></div></div>
 </div>
 <div class="card border-radius-coust" >
     <div class="card-body table-margin-coust"style="margin-top:-2px">

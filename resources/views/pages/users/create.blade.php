@@ -3,7 +3,7 @@
     Users
 @endsection
 @section('content')
-<div class="card">
+<div class="card border-radius-coust">
     <div class="card-body">
         <h5>add new user</h5>
     @foreach ($errors->all() as $error)
@@ -33,7 +33,7 @@
 
         <div class="col-5 form-floating d-inline-block ml-5"  >    
         <input class="form-control field-coust" type="text" id="address" name="address"placeholder="aya" value="{{ old('address') }}">
-        <label for="address" class="col-sm- col-form-label ml-3 field-label">Address</label></div>
+        <label for="address" class="col-sm-2 col-form-label ml-3 field-label">Address</label></div>
 
         <div class="col-5 mb-3 form-floating d-inline-block mr-5"  >      
         <input class="form-control field-coust" type="text" id="note" name="note"placeholder="Note" value="{{ old('note') }}">
@@ -65,7 +65,7 @@
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class=" checkbox-coust" type="checkbox" name="modules[]" value="inventory" id="">Inventory
+                <input class=" checkbox-coust"  type="checkbox" name="modules[]" value="inventory" id="">Inventory
             </label>
         </div>
         <div class="form-check form-check-inline">
@@ -91,9 +91,9 @@
         </div>
   
         <br><br>
-        <button type="submit" class="btn btn-primary waves-effect waves-light border-radius-coust col-1 ml-3 mr-3">Add</button>
+        <button type="submit" class="btn btn-primary waves-effect waves-light border-radius-coust col-1 mb-3 mt-1 ml-3 mr-3">Add</button>
         <a href="{{ route('users.index') }}"> <button type="button"
-                class="btn btn-danger waves-effect waves-light border-radius-coust col-1 ml-3">Cancel</button></a>
+                class="btn btn-danger waves-effect waves-light border-radius-coust col-1 mb-3 ml-3">Cancel</button></a>
     </form>
     </div></div>
 @endsection

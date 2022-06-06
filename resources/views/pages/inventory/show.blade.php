@@ -5,10 +5,10 @@
 @section('content')
 <div class="card border-radius-coust">
     <div class="card-body "style="min-width:100px;">
-      <h5 class="mb-4">item stock</h5>
-    <div class="text-center">
-    <img src="{{ asset('images/tomato.WEBP') }}"style="max-height:30px;"class="  d-inline">
-    <p class="ml-5 d-inline font-weight-bold paragraph-coust mr-5">tomato</p>
+      <h5 class="mb-4" >Item Stock</h5>
+    <div class="text-center mb-3">
+    <img src="{{ asset('images/tomato.WEBP') }}"style="max-height:40px;"class="  d-inline">
+    <p class="ml-5 d-inline font-weight-bold paragraph-coust mr-5" style="font-size: 18px !important;">Tomato</p>
     <p class="ml-5 d-inline  paragraph-coust ">Weight</p>   
     <p class="ml-5 d-inline  paragraph-coust mr-5">45 Kg</p>
     <p class="ml-5 d-inline  paragraph-coust ">Quantity</p>   

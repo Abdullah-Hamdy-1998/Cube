@@ -11,7 +11,9 @@
                 <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5"></i> Profile</a>
                 <a class="dropdown-item d-block" href="#"><i class="mdi mdi-settings m-r-5"></i>
                     Settings</a>
-                <div class="dropdown-divider"></div>
+                    <a class="dropdown-item d-block" href="#"><i class="mdi mdi-settings m-r-5"></i>
+                        Lock</a>
+                    <div class="dropdown-divider"></div>
                 <a class="dropdown-item text-danger" href="{{ route('logout') }}"
                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                     <i class="mdi mdi-power text-danger"></i>Logout

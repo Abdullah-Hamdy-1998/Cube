@@ -8,7 +8,6 @@
     <title>Cube | Login</title>
     <meta content="Admin Dashboard" name="description" />
     <meta content="Themesbrand" name="author" />
-    <link rel="shortcut icon" href="{{ asset('images/about-logo.svg') }}">
 
     <link rel="stylesheet" href="{{ asset('plugins/morris/morris.css') }}">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
@@ -24,17 +23,16 @@
 
     <!-- Background -->
     <div class="account-pages">
-        <div style="background-color: black ;width: 100% ;height:100% ;filter: opacity(.6)"></div>
+        <div style="background-color: black ;width: 100% ;height:100% ;filter: opacity(.7)"></div>
     </div>
     <!-- Begin page -->
-    <div class="wrapper-page content-coust">
-        <img src="{{ asset('images/cube_logo.svg') }}" height="77" alt="logo" class="logo mx-auto d-block">
+    <div class="wrapper-page content-coust mb-0">
+        <img src="{{ asset('images/cube_logo.svg') }}" height="120" alt="logo" class="logo mb-4 mx-auto d-block">
 
-        <h5 class="text-center m-0 text-white mb-4">Cube</h5>
 
         <div class="card border-radius-coust  mx-auto d-flex justify-content-center col-10">
             <div class="card-body">
-                <img src="{{ asset('images/avatars/user-default.png') }}" height="90" alt="logo" class="logo mx-auto mt-4 d-block"style="filter:opacity(.3)">
+                <img src="{{ asset('images/avatars/user-default.png') }}" height="110" alt="logo" class="logo mx-auto mt-4 d-block"style="filter:opacity(.3)">
 
 
                 <div class="p-3">
@@ -73,12 +71,12 @@
             </div>
         </div>
         <div class="text-center mt-3">
-            <img src="{{ asset('images/facebook.svg') }}"style="max-height:40px;filter:invert(1)"class="mt-5" >
-            <img src="{{ asset('images/twitter.svg') }}"style="max-height:40px;filter:invert(1)"class="mt-5" >
-            <img src="{{ asset('images/linkedin.svg') }}"style="max-height:40px;filter:invert(1)" class="mt-5">
+            <img src="{{ asset('images/facebook.svg') }}"style="max-height:40px;filter:invert(1)"class="mt-5 mr-1" >
+            <img src="{{ asset('images/twitter.svg') }}"style="max-height:40px;filter:invert(1)"class="mt-5 mr-1" >
+            <img src="{{ asset('images/linkedin.svg') }}"style="max-height:40px;filter:invert(1)" class="mt-5" >
                     </div>    
-        <div class=" text-center mt-1">
-            <p class="text-white text-stroke"> Powered By TechX Team 2021  ©
+        <div class=" text-center mb-4">
+            <p class="text-white text-stroke mb-0"> Powered By TechX Team 2021  ©
                 </p>
         </div>
 

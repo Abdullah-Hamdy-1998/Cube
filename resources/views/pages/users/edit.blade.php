@@ -3,7 +3,7 @@
     Users
 @endsection
 @section('content')
-<div class="card">
+<div class="card border-radius-coust">
     <div class="card-body">
     @foreach ($errors->all() as $error)
         {{ $error }}
