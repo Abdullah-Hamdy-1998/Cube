@@ -225,12 +225,6 @@
                     </div>
                 </div>
 
-               <!-- <div class=" f-flex pl-0 inputField mb-4   col-12">
-                    <input type="text" class="form-control " required placeholder=" " id="floatinginput" id=" connect"
-                        type="text" ><label>Scale Status</label><button class="input-button"><i
-                            class="fas fa-redo"></i></button>
-                     
-                </div>-->
                 <div class=" d-flex pl-0 mb-4  inputField col-12 ">
                     <input type="text" class="form-control  border-radius-coust" placeholder=" " required  > <label>Weight</label><button class="mr-3  border-radius-coust input-button" style="background-color: #536270">
                         <img src="{{ asset('images/refresh-outline.svg') }}" height="30" alt="logo" class="logo mx-auto "style="filter:invert(1)">

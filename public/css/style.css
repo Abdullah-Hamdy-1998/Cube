@@ -57,9 +57,8 @@ body {
     background-repeat: repeat;
     background: #f3f3f3;
     font-family: "Roboto", sans-serif;
-    color: #5b626b;
     font-size: 13.5px;
-    text-transform: capitalize;
+    color:#384044 !important;    
 
 }
 .logo{color: #ffffff}
@@ -3900,7 +3899,6 @@ input[switch]:checked+label {background-color: #1B82EC !important;}
     padding-top: 18px;
     border: 1.8px solid rgba(107, 107, 107, 0.4);
     border-radius: 3px;
-    color: black;
     min-height:50px ;
   }
   .selectField select {

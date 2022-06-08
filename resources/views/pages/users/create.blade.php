@@ -47,9 +47,6 @@
                 <input class="form-control field-coust" type="password"Required placeholder=" " id="password_confirmation" name="password_confirmation">
                 <label for="password_confirmation" class=" ">confirmation</label></div>
        
-       <!-- <div class="col-5 mb-3 inputField d-inline-block mr-5"  >   
-        <input class="form-control field-coust" type="password" Requiredid="password_confirmation"placeholder=" " name="password_confirmation">
-        <label for="confirm_password" class="">Confirm Password</label></div>-->
         <br>
         <h6 class="ml-3">Access Permissions</h6>
         <br>
