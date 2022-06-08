@@ -22,35 +22,37 @@
 <body>
 
     <!-- Background -->
-    <div class="account-pages"></div>
+    <div class="account-pages">
+        <div style="background-color: black ;width: 100% ;height:100% ;filter: opacity(.7)"></div>
+    </div>
     <!-- Begin page -->
-    <div class="wrapper-page">
-        <img src="{{ asset('images/cube_logo.svg') }}" height="77" alt="logo" class="logo mx-auto d-block">
-
-        <h5 class="text-center m-0 text-white mb-4">cube</h5>
+    <div class="wrapper-page  mb-0">
+        <img src="{{ asset('images/cube_logo.svg') }}" height="120" alt="logo" class="logo mb-4 mx-auto d-block">
 
         <div class="card border-radius-coust  mx-auto d-flex justify-content-center col-10">
             <div class="card-body">
-
+                <img src="{{ asset('images/avatars/user-default.png') }}" height="110" alt="logo" class="logo mx-auto mt-4 d-block"style="filter:opacity(.3)">
 
                 <div class="p-3">
                     <form class="form-horizontal m-t-30" action="{{ route('login') }}" method="POST"
                         autocomplete="off">
                         @csrf
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" class="form-control border-radius-coust" id="email" placeholder="Enter email"
+                        <div class="form-group inputField mb-4">
+                            <input type="text" name="email" class="form-control border-radius-coust" id="email" placeholder=" "
                                 value="{{ old('email') }}">
+                                <label for="email">Email</label>
+
                         </div>
 
                         @error('email')
                             {{ $message }}
                         @enderror
 
-                        <div class="form-group">
-                            <label for="userpassword">Password</label>
+                        <div class="form-group inputField ">
                             <input type="password" name="password" class="form-control border-radius-coust" id="userpassword"
-                                placeholder="Enter password">
+                                placeholder=" ">
+                            <label for="userpassword">Password</label>
+
                         </div>
 
                         @error('password')
@@ -58,8 +60,8 @@
                         @enderror
 
                         <div class="form-group row m-t-20   ">
-                            <div class="col-8 text-right ">
-                                <button class="btn btn-primary w-md waves-effect waves-light border-radius-coust mt-3" type="submit">Log
+                            <div class="col-8 ml-2  text-right ">
+                                <button class="btn btn-primary all-buttons-coust w-md waves-effect  waves-light border-radius-coust mt-3" type="submit"style="border-radius:12px">Log
                                     In</button>
                             </div>
                         </div>
@@ -69,13 +71,15 @@
             </div>
         </div>
 
-        <div class="m-t-40 text-center">
-            <p class="text-white text-stroke">© {{ now()->year }} Cube. Crafted with <i
-                    class="mdi mdi-heart text-danger"></i>
-                by
-                TechX</p>
+        <div class="text-center mt-3">
+            <img src="{{ asset('images/facebook.svg') }}"style="max-height:40px;filter:invert(1)"class="mt-5 mr-1" >
+            <img src="{{ asset('images/twitter.svg') }}"style="max-height:40px;filter:invert(1)"class="mt-5 mr-1" >
+            <img src="{{ asset('images/linkedin.svg') }}"style="max-height:40px;filter:invert(1)" class="mt-5" >
+                    </div>    
+        <div class=" text-center mb-4">
+            <p class="text-white text-stroke mb-0"> Powered By TechX Team 2021  ©
+                </p>
         </div>
-
     </div>
 
     <!-- END wrapper -->

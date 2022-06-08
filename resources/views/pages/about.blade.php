@@ -25,6 +25,7 @@ Copyright (C) 2022 TechX Team
         <div class=" d-inline-block mr-4"> <img src="{{ asset('images/twitter (3).svg') }}" height="50" alt="logo" class="logo d-inline mx-auto d-block" > </div>
         <div class=" d-inline-block mr-4"> <img src="{{ asset('images/linkdin.svg') }}" height="50" alt="logo" class="logo d-inline mx-auto d-block" > </div>
         </div>
+        
         </div>
 </div>
 

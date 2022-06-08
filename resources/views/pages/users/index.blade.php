@@ -14,8 +14,8 @@
             {{-- button danger --}}
             <button class="btn btn-danger float-right col-1" id="mdelete-button" style="display: none">Delete</button>
 
-            <table id="datatable-buttons" class="table table-striped mt-3 text-center bitable-bordered dt-responsive nowrap"
-                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+            <table id="datatable-buttons" class="table mt-3 text-center bitable-bordered dt-responsive nowrap""
+                        style=" border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                     <tr>
                         <th></th>
@@ -26,7 +26,7 @@
                         <th class="th-table-coust">Phone<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
                         <th class="th-table-coust">Email<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
                         <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down float-right mt-1"></i></th>
-                        <th class="th-table-coust">Actions</th>
+                        <th class="th-table-coust"></th>
                     </tr>
                 </thead>
 
