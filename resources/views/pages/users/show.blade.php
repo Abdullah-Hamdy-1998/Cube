@@ -3,27 +3,33 @@
     Users
 @endsection
 @section('content')
-<div class="card">
+<div class="card border-radius-coust">
     <div class="card-body">
     <img src="{{ asset('images/avatars/' . $user->avatar) }}" alt="user" class="rounded-circle mx-auto d-block" style="max-width: 25% ;max-height: 100px;">
 
-    <div class="col-5 mb-3 d-inline-block mr-5"  >  <label for="username" class="col-sm-2 col-form-label">Username</label>
-    <input class="form-control" type="text" id="name" name="name" value="{{ $user->name }}" disabled></div>
+    <div class="col-5 mb-3 mt-3 inputField d-inline-block mr-5"  > 
+    <input class="form-control field-coust"required type="text" id="name" placeholder="Name" name="name" value="{{ $user->name }}" disabled>
+    <label for="username" >Username</label></div>
 
-    <div class="col-5 mb-3 d-inline-block ml-5"  >  <label for="job_title" class="col-sm-2 col-form-label">Job Title</label>
-    <input class="form-control" type="text" id="job_title" name="job_title" value="{{ $user->job_title }}" disabled></div>
+    <div class="col-5 mb-3 mt-3 inputField d-inline-block mr-5"  > 
+        <input class="form-control field-coust"required type="text" id="job_title" placeholder="Job Title" name="job_title" value="{{ $user->job_title }}" disabled>
+    <label for="job_title" >Job Title</label></div>
 
-    <div class="col-5 mb-3 d-inline-block mr-5"  >   <label for="phone" class="col-sm-2 col-form-label">Phone</label>
-    <input class="form-control" type="text" id="phone" name="phone" value="{{ $user->phone }}" disabled></div>
+    <div class="col-5 mb-3 inputField d-inline-block mr-5"  > 
+        <input class="form-control field-coust"required type="text" id="phone" name="phone" placeholder="Phone" value="{{ $user->phone }}" disabled>
+    <label for="phone" >Phone</label></div>
 
-    <div class="col-5 mb-3 d-inline-block ml-5"  >    <label for="email" class="col-sm-2 col-form-label">Email</label>
-    <input class="form-control" type="text" id="email" name="email" value="{{ $user->email }}" disabled></div>
+    <div class="col-5 mb-3 inputField d-inline-block mr-5"  > 
+        <input class="form-control field-coust"required type="text" id="email" name="email" placeholder="Email" value="{{ $user->email }}" disabled>
+    <label for="email" >Email</label></div>
 
-    <div class="col-5 mb-3 d-inline-block mr-5"  >   <label for="address" class="col-sm-2 col-form-label">Address</label>
-    <input class="form-control" type="text" id="address" name="address" value="{{ $user->address }}" disabled></div>
+    <div class="col-5 mb-3 inputField d-inline-block mr-5"  > 
+        <input class="form-control field-coust"required type="text" id="address" name="address"placeholder="Address" value="{{ $user->address }}" disabled>
+    <label for="address" >Address</label></div>
 
-    <div class="col-5 mb-3 d-inline-block ml-5"  >   <label for="note" class="col-sm-2 col-form-label">Note</label>
-    <input class="form-control" type="text" id="note" name="note" value="{{ $user->note }}" disabled></div>
+    <div class="col-5 mb-3 inputField d-inline-block mr-5"  > 
+        <input class="form-control field-coust" required type="text" id="note"placeholder="Note" name="note" value="{{ $user->note }}" disabled>
+    <label for="note" >Note</label></div>
 
     <br>
     <h6>Access Permissions</h6>
@@ -80,7 +86,7 @@
     <br><br>
     @can('write-users')
     <a href="{{ route('users.edit', $user) }}"><button type="button"
-        class="btn btn-primary waves-effect waves-light border-radius-coust col-1">Edit</button></a>
+        class="btn btn-primary waves-effect waves-light border-radius-coust mr-3 col-1">Edit</button></a>
     @endcan
     <a href="{{ route('users.index') }}"> <button type="button"
             class="btn btn-danger waves-effect waves-light border-radius-coust col-1">Cancel</button></a>

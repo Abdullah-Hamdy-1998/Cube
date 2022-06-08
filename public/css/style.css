@@ -3869,7 +3869,7 @@ Invoice
 .text_anchor:hover {text-decoration: underline;}
         .text_anchor{color:#3B86FF !important;}
 .avater-table-coust{max-height: 40px;}
-.all-buttons-coust{box-shadow: none; min-width: 100px;height: 75%;}
+.all-buttons-coust{box-shadow: none; min-width: 100px;}
 input{border-radius: 12px !important;min-width: 50px !important;}
 .checkbox-coust{min-width: auto !important; width: 17px;height: 17px;}
 .th-table-coust{min-width: 100px;}
@@ -3912,7 +3912,7 @@ input[switch]:checked+label {background-color: #1B82EC !important;}
     opacity: 0.5;
     position: absolute;
     padding-left: 20px;
-    left: 0;
+    left: 3;
     top: 50%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -3920,14 +3920,19 @@ input[switch]:checked+label {background-color: #1B82EC !important;}
   }
   
   .inputField input:focus+label,
+  .inputField input:valid+label,
   .inputField input:not(:placeholder-shown)+label {
-    top: 5px;
+    top: 7px;
     -webkit-transform: scale(0.7) translateY(-10%) translateX(-8.5px);
-    transform: scale(0.7) translateY(-21%) translateX(-13.1px);
-    color:#3B86FF;
+    transform: scale(0.7) translateY(-11%) translateX(-12.5px);
+    color:#949595;
     font-size: 18px;
+    
 ;
   }
+  .inputField input:focus+label{ color:#3B86FF}
+
+
   
   .inputField input,
   .inputField label {
