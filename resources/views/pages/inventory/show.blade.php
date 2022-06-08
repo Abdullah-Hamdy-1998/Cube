@@ -5,30 +5,31 @@
 @section('content')
 <div class="card border-radius-coust">
     <div class="card-body "style="min-width:100px;">
-      <h5 class="mb-4">item stock</h5>
-    <div class="ml-5">
-    <img src="{{ asset('images/tomato.WEBP') }}"style="max-height:30px;"class="ml-5  d-inline">
-    <p class="ml-5 d-inline font-weight-bold paragraph-coust mr-5">tomato</p>
-    <p class="ml-5 d-inline  paragraph-coust ">weight</p>   
-    <p class="ml-5 d-inline  paragraph-coust mr-5">45 kg</p>
-    <p class="ml-5 d-inline  paragraph-coust ">quantity</p>   
-    <p class="ml-5 d-inline  paragraph-coust ">32 u</p>
+      <h5 class="mb-4" >Item Stock</h5>
+    <div class="text-center mb-3">
+    <img src="{{ asset('images/tomato.WEBP') }}"style="max-height:40px;"class="  d-inline">
+    <p class="ml-5 d-inline font-weight-bold paragraph-coust mr-5" style="font-size: 18px !important;">Tomato</p>
+    <p class="ml-5 d-inline  paragraph-coust ">Weight</p>   
+    <p class="ml-5 d-inline  paragraph-coust mr-5">45 Kg</p>
+    <p class="ml-5 d-inline  paragraph-coust ">Quantity</p>   
+    <p class="ml-5 d-inline  paragraph-coust ">32 U</p>
     </div>
     </div>
     </div>
 </div>
 <div class="card border-radius-coust" >
 <div class="card-body ">
-  <button type="button" class="btn btn-primary border-radius-coust col-1 table-coust waves-effect waves-light float-right"><i class="ti-plus"> </i> New</button>
-    <table id="datatable-buttons" class="table  mt-3 dt-responsive nowrap" style=" width: 100%; background-color: white;">
-      <thead style="background-color: #f3f3f3 ; ">
+  <button type="button" class="btn btn-primary border-radius-coust col-1  waves-effect waves-light float-right"><i class="ti-plus"> </i> New</button>
+  <table id="datatable-buttons" class="table mt-3 text-center bitable-bordered dt-responsive nowrap""
+  style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+<thead >
       <tr>
         <th></th>
-        <th>id</th>
-        <th>shipment type</th>
-        <th>cus.-sup.</th>
-        <th>description</th>
-        <th>modified</th>
+        <th class="th-table-coust">ID <i class="fas fa-sort-alpha-down  mt-1"></i></th>
+        <th class="th-table-coust">Shipment Type <i class="fas fa-sort-alpha-down  mt-1"></i></th>
+        <th class="th-table-coust">Cus.-Sup. <i class="fas fa-sort-alpha-down  mt-1"></i></th>
+        <th class="th-table-coust">Description <i class="fas fa-sort-alpha-down  mt-1"></i></th>
+        <th class="th-table-coust">Modified <i class="fas fa-sort-alpha-down  mt-1"></i></th>
       </tr>
       </thead>
   
