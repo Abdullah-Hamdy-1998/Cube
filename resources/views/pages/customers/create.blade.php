@@ -9,30 +9,40 @@
     <form action="{{ route('customers.store') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
         @csrf
         <div class="card">
-            <div class="card-body"
-        <label for="name" class="col-sm-2 col-form-label">Name</label>
-        <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}">
+            <div class="card-body">
+                <h5 class="mb-5 ml-3"> Add New Customer</h5>
+                <div class="col-5 d-inline-block inputField mr-5">  
+                <input class="form-control" type="text" id="name" name="name" required placeholder=" " value="{{ old('name') }}">
+            <label for="name">Name</label>
+        </div>
 
-        <label for="delegate" class="col-sm-2 col-form-label">Delegate</label>
-        <input class="form-control" type="text" id="delegate" name="delegate" value="{{ old('delegate') }}">
+        <div class="col-5 d-inline-block mb-3 inputField ml-5">  
+        <input class="form-control" type="text" id="delegate" name="delegate"required placeholder=" " value="{{ old('delegate') }}">
+        <label for="delegate">Delegate</label>
+        </div>
 
-        <label for="phone" class="col-sm-2 col-form-label">Phone</label>
-        <input class="form-control" type="text" id="phone" name="phone" value="{{ old('phone') }}">
+        <div class="col-5 d-inline-block inputField mr-5">  
+        <input class="form-control" type="text" id="phone" name="phone"required placeholder=" " value="{{ old('phone') }}">
+        <label for="phone">Phone</label>
+        </div>
+        <div class="col-5 d-inline-block inputField mb-3 ml-5">  
+        <input class="form-control" type="text" id="email" name="email"required placeholder=" " value="{{ old('email') }}">
+        <label for="email">Email</label>
+        </div>
 
-        <label for="email" class="col-sm-2 col-form-label">Email</label>
-        <input class="form-control" type="text" id="email" name="email" value="{{ old('email') }}">
-
-        <label for="address" class="col-sm-2 col-form-label">Address</label>
-        <input class="form-control" type="text" id="address" name="address" value="{{ old('address') }}">
-
-        <label for="note" class="col-sm-2 col-form-label">Note</label>
-        <input class="form-control" type="text" id="note" name="note" value="{{ old('note') }}">
-
+        <div class="col-5 d-inline-block inputField mb-3 mr-5">  
+        <input class="form-control" type="text" id="address" name="address"required placeholder=" " value="{{ old('address') }}">
+        <label for="address">Address</label>
+        </div>
+        <div class="col-5 d-inline-block inputField mb-3 ml-5">  
+        <input class="form-control"  type="text" id="note" name="note" placeholder=" "required value="{{ old('note') }}">
+        <label for="note">Note</label>
+        </div>
         <br><br>
 
-        <button type="submit" class="btn btn-primary waves-effect waves-light ">Add</button>
+        <button type="submit" class="btn btn-primary ml-3 waves-effect waves-light mr-3 border-radius-coust col-1">Save</button>
         <a href="{{ route('customers.create') }}"> <button type="button"
-                class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
-    </form>
+            class="btn btn-danger waves-effect waves-light border-radius-coust col-1">Cancel</button></a>
+        </form>
 <div></div>
 @endsection

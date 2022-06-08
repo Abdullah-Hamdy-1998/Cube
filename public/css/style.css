@@ -3896,7 +3896,7 @@ input[switch]:checked+label {background-color: #1B82EC !important;}
   }
 
   .inputField input {
-    padding: 8px 20px;
+    padding: 8px 17px;
     padding-top: 18px;
     border: 1.8px solid rgba(107, 107, 107, 0.4);
     border-radius: 3px;
