@@ -225,19 +225,26 @@
                     </div>
                 </div>
 
-                <div class=" f-flex pl-0 pb-4 form-floating col-12">
-                    <input type="text" class="form-control" placeholder="Unknown" id="floatinginput" id=" connect"
-                        type="text" ></input type="text"><button class="all-buttons-coust border-radius-coust"
-                        style=" box-shadow: none;color:white;background-color:#6c757d;Top:1px;cursor: pointer"><i
+               <!-- <div class=" f-flex pl-0 inputField mb-4   col-12">
+                    <input type="text" class="form-control " required placeholder=" " id="floatinginput" id=" connect"
+                        type="text" ><label>Scale Status</label><button class="input-button"><i
                             class="fas fa-redo"></i></button>
+                     
+                </div>-->
+                <div class=" d-flex pl-0 mb-4  inputField col-12 ">
+                    <input type="text" class="form-control  border-radius-coust" placeholder=" " required  > <label>Weight</label><button class="mr-3  border-radius-coust input-button" style="background-color: #536270">
+                        <img src="{{ asset('images/refresh-outline.svg') }}" height="30" alt="logo" class="logo mx-auto "style="filter:invert(1)">
+                    </button>
+                       
                 </div>
-                <div class=" d-flex pl-0 pb-4 form-floating col-12 ">
-                    <input type="number" class="form-control border-radius-coust" style="height: 70px;"
-                        placeholder="Weight" id="myInput" id="AddedWeight" ><button
-                        class="ml-0 button-coust border-radius-coust" style="box-shadow: none;height: 70px;  ">Kg</button>
+
+                <div class=" d-flex pl-0 mb-4  inputField col-12 ">
+                    <input type="number" class="form-control text-center border-radius-coust" style="height: 70px;font-size:250%;font-family: 'Orbitron', sans-serif;"
+                        placeholder=" " required id="myInput" id="AddedWeight" > <label>Weight</label><button class="mr-3 border-radius-coust input-button" > Kg</button>
+                       
                 </div>
                 <label class=" label-coust all pt-4 pb-4 d-inline  " style="font-size: 19px;">Cumulative Weights 
-                    <button onclick="Add_Sum();" type="button" class="btn ml-auto float-right mr- border-radius-coust all-buttons-coust col-2 d-inline  ">Add</button>
+                    <button onclick="Add_Sum();" type="button" class="btn ml-auto float-right mr-3 border-radius-coust all-buttons-coust col-2 d-inline  ">Add</button>
                 </label>
                 <table class="table " id="fetch" style="border-top-style: hidden">
                     <thead style="background-color: #f3f3f3">

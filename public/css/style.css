@@ -3884,7 +3884,7 @@ table{border-top-style: hidden;}
 .table-checkbox{margin-top: -35% !important;}
 input[switch]+label {background-color: #536270 !important;}
 input[switch]:checked+label {background-color: #1B82EC !important;}
-
+.input-button{position: absolute;right:0;height: 100%;border-bottom-left-radius: 0px;border-top-left-radius: 0px;border: 1.8px solid rgba(107, 107, 107, 0.4);box-shadow;:none}
 
 /*# sourceMappingURL=style.css.map */
 
