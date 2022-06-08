@@ -3,9 +3,9 @@
     Customers
 @endsection
 @section('content')
-    <div class="card">
+<div class="card border-radius-coust">
         <div class="card-body">
-            <h5 class="mb-5 ml-3"> View Customer Details</h5>
+            <h5 class="mb-4 ml-3"> View Customer Details</h5>
 
             <div class="col-5 mb-3 mt-3 inputField d-inline-block mr-5"  > 
     <input class="form-control" type="text" id="name" name="name"required placeholder=" " value="{{ $customer->name }}" disabled>

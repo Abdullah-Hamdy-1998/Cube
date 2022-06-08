@@ -3,9 +3,9 @@
     Customers
 @endsection
 @section('content')
-<div class="card">
+<div class="card border-radius-coust">
     <div class="card-body">
-        <h5 class="mb-5 ml-3"> Edit Customer Details</h5>
+        <h5 class="mb-4 ml-3"> Edit Customer Details</h5>
 
     <form action="{{ route('customers.update', $customer) }}" method="POST" autocomplete="off">
         @csrf

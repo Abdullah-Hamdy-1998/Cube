@@ -3,7 +3,7 @@
     Reports
 @endsection
 @section('content')
-<div class="card card-body "style="border-radius:10px;">
+<div class="card card-body border-radius-coust">
 <table id="datatable-buttons" class="table   dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%; background-color: white;">
     <thead style="background-color: #f3f3f3 ; ">
     <tr>

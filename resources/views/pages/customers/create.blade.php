@@ -8,9 +8,9 @@
     @endforeach
     <form action="{{ route('customers.store') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
         @csrf
-        <div class="card">
-            <div class="card-body">
-                <h5 class="mb-5 ml-3"> Add New Customer</h5>
+        <div class="card border-radius-coust">
+            <div class="card-body mb-3">
+                <h5 class="mb-4 ml-3"> Add New Customer</h5>
                 <div class="col-5 d-inline-block inputField mr-5">  
                 <input class="form-control" type="text" id="name" name="name" required placeholder=" " value="{{ old('name') }}">
             <label for="name">Name</label>

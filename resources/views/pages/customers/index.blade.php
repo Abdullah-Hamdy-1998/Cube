@@ -3,8 +3,8 @@
     Customers
 @endsection
 @section('content')
-    <div class="card">
-        <div class="card-body">
+<div class="card border-radius-coust">
+    <div class="card-body">
             @can('write-data')
                 <a href="{{ route('customers.create') }}"> 
                     <button type="button"

@@ -3,7 +3,7 @@
     Suppliers
 @endsection
 @section('content')
-<div class="card">
+<div class="card border-radius-coust">
     <div class="card-body">
         <h5 class="mb-5 ml-3"> View Supplier Details</h5>
 
