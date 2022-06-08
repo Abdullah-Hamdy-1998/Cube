@@ -8,7 +8,7 @@
     <title>Cube | Login</title>
     <meta content="Admin Dashboard" name="description" />
     <meta content="Themesbrand" name="author" />
-    <link rel="shortcut icon" href="{{ asset('images/cube_logo.svg') }}">
+    <link rel="shortcut icon" href="{{ asset('images/about-logo.svg') }}">
 
     <link rel="stylesheet" href="{{ asset('plugins/morris/morris.css') }}">
 
@@ -38,7 +38,7 @@
                         autocomplete="off">
                         @csrf
                         <div class="form-group inputField mb-4">
-                            <input type="text" name="email" class="form-control border-radius-coust" id="email" placeholder=" "
+                            <input type="text" name="email" class="form-control border-radius-coust" id="email" placeholder=" "required
                                 value="{{ old('email') }}">
                                 <label for="email">Email</label>
 
@@ -49,7 +49,7 @@
                         @enderror
 
                         <div class="form-group inputField ">
-                            <input type="password" name="password" class="form-control border-radius-coust" id="userpassword"
+                            <input type="password" name="password" class="form-control border-radius-coust" id="userpassword"required
                                 placeholder=" ">
                             <label for="userpassword">Password</label>
 
