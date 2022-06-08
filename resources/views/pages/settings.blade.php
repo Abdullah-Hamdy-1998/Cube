@@ -9,27 +9,28 @@
         <h5 class="mb-4">Company Info.</h5>
         <div class="inputField  mb-4 mt-3">
             <input type="text" class="form-control  col-5"  placeholder=" " required >
+            <label  >Name</label>
+          </div>
+
+        <div class="inputField  mb-4 mt-3">
+            <input type="text" class="form-control  col-5"  placeholder=" " required >
             <label  >Delegated</label>
           </div>
           <div class="inputField  mb-4 mt-3">
             <input type="text" class="form-control  col-5"  placeholder=" " required >
             <label  >Address</label>
           </div>
-          <div class="inputField  mb-4 mt-3">
-            <input type="text" class="form-control  col-5"  placeholder=" " required >
-            <label  >Logo</label>
-          </div>
           
           <div class=" d-flex pl-0 mb-4  inputField col-5 ">
             <input type="" class="form-control border-radius-coust" 
-                placeholder=" " required id="getFile" > <label>Weight</label><button class=" border-radius-coust input-button"onclick="document.getElementById('getFile').click()"style="background-color:#536270 !important; color:white" >        <input onclick="get();"type='file' id="getFile" style="display:none">      <i class="mdi mdi-image mr-1" ></i> Choose File
+                placeholder=" " required id="getFile" > <label>Logo</label><button class=" border-radius-coust col-4 input-button"onclick="document.getElementById('getFile').click()"style="background-color:#536270 !important; color:white" >        <input onclick="get();"type='file' id="getFile" style="display:none">      <i class="mdi mdi-image mr-1" ></i> Choose File
                 </button> </div>
             </button>
                
         </div></div>
 
 <div class="card border-radius-coust">
-    <div class="card-body pl-4">
+    <div class="card-body pl-3">
         <h5 class="mb-4 " >General</h5>
         <div class=" d-flex pl-0 mb-4  inputField col-5 ">
             <input type="number" class="form-control  border-radius-coust" 
@@ -40,9 +41,9 @@
           
         <h5 >Default Deletion Mode</h5>
         <div class="form-check form-check-inline ml-3">
-            <input type='hidden' name="access" >Read only 
+            <input type='hidden' name="access" >Soft Delete 
             <input type="checkbox" name="access" value="write" id="switch" switch="none" />
-            <label for="switch" class="label-switch ml-3 mr-3" data-on-label="" data-off-label=""></label>Read & Write
+            <label for="switch" class="label-switch ml-3 mr-3" data-on-label="" data-off-label=""></label>Hard Delete
         </div>
     </div></div>
 </div>
