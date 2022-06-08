@@ -3891,9 +3891,20 @@ input[switch]:checked+label {background-color: #1B82EC !important;}
 .inputField {
     position: relative;
   }
-  
+  .selectField {
+    position: relative;
+  }
+
   .inputField input {
     padding: 8px 20px;
+    padding-top: 18px;
+    border: 1.8px solid rgba(107, 107, 107, 0.4);
+    border-radius: 3px;
+    color: black;
+    min-height:50px ;
+  }
+  .selectField select {
+    padding: 8px 13px;
     padding-top: 18px;
     border: 1.8px solid rgba(107, 107, 107, 0.4);
     border-radius: 3px;
@@ -3918,6 +3929,18 @@ input[switch]:checked+label {background-color: #1B82EC !important;}
     transform: translateY(-50%);
     cursor: text;
   }
+  .selectField label {
+    pointer-events: none;
+    opacity: 0.5;
+    position: absolute;
+    padding-left: 18px;
+    left: 50;
+    top: 30%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: text;
+  }
+  
   
   .inputField input:focus+label,
   .inputField input:valid+label,

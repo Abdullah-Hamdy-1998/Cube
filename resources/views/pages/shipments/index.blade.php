@@ -10,17 +10,17 @@ Shipments
                 <a href="{{ route('shipments.create') }}">  <button type="button" class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right"><i class="ti-plus"> </i> New</button></a>
                 <input  type="submit" value="Delete " class="btn btn-danger float-right col-1" id="checkerButton"/>
 
-                <table id="datatable-buttons" class="table  mt-3 dt-responsive nowrap" style=" border-bottom:1px solid #F4F4F4; width: 100%; background-color: white;">
-                    <thead style="background-color: #f3f3f3 ; ">
-                    <tr>
+                <table id="datatable-buttons" class="table table-striped mt-3 text-center bitable-bordered dt-responsive nowrap" style=" border-bottom:1px solid #F4F4F4; width: 100%; background-color: white;">
+                    <thead class="">
+                        <tr >
                         <th></th>
-                        <th>id</th>
-                        <th>shipment type</th>
-                        <th>cus.-sup.</th>
-                        <th>description</th>
-                        <th>modified</th>
-                    </tr>
-                    </thead>
+                        <th  class="th-table-coust">ID<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                        <th  class="th-table-coust"> Shipment Type<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                        <th  class="th-table-coust">Cus.-Sup.<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                        <th  class="th-table-coust">Description<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                        <th  class="th-table-coust">Modified<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                        </tr>
+                        </thead>
                 
                     <tbody>
                     </tbody>

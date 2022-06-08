@@ -3,7 +3,7 @@
     Shipments
 @endsection
 @section('content')
-    <style>
+  <!--  <style>
         input[type=checkbox] {
             transform: scale(1.5);
         }
@@ -105,7 +105,7 @@
             display: flex;
         }
 
-    </style>
+    </style>-->
 
 
     <div class="card shadow-sm pt-3 pl-2 " style="border-radius:10px;">
@@ -113,8 +113,8 @@
             <div class="form-group  d-inline-block col-5 w-50 ">
                 <label class="label-coust control-label mb-3 mt-2" style="font-size: 19px;">shipment basic info</label>
                 <div class="div-coust">
-                    <label class="placeholder-coustt placeholder-couust">shipment type</label>
                 </div>
+                <div class="selectField"> 
                 <select id="dropdown1" class="form-control  select2 mb-3 " required="" value="default"
                     style=" border-radius: 10px  ">
                     <option value="" disabled selected style="min-height: 30%">Select </option>
@@ -123,12 +123,15 @@
                         <option value="{{ $shipmentType->id }}">{{ $shipmentType->type }}</option>
                     @endforeach
                 </select>
-            </div>
+            
+                <label >Select Shipment Type</label>
+            </div></div>
             <div class="form-group  d-inline-block col-5 ml-5 ">
                 <div class="div-coust">
                     <label class="placeholder-coustt">coustmer/supplier</label>
                 </div>
-                <select id="dropdown2" class="form-control select2 " disabled style="border-radius: 12px   ">
+                <div class="selectField">
+                <select id="dropdown2" class="form-control  select2 " disabled style="border-radius: 12px   ">
                     <option disabled selected value="default">Select </option>
                     @foreach ($customers as $customer)
                         <option value="{{ $customer->id }}">{{ $customer->name }}</option>
@@ -138,10 +141,12 @@
                     @endforeach
                     </optgroup>
                 </select>
-            </div>
-            <div class=" div-coust mb-2 pb-4 form-floating col-5">
-                <input type="text" class="form-control pl-3" id="text" required="" id="floatinginput type=" text""
-                    style="border-radius: 12px;"><label class=" placeholder-coust  ml-3 ">Description</label>
+                <label >coustmer/supplier</label>
+            </div></div>
+            <div class=" div-coust inputField mb-4  form-floating col-5">
+                <input type="text" class="form-control " id="text" required placeholder=" " id="floatinginput type=" text""
+                    style="border-radius: 12px;">
+                    <label >Description</label>
             </div>
         </form>
     </div>
