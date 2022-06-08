@@ -3867,9 +3867,9 @@ Invoice
 .home-coust:hover .home-icon-coust{filter: invert(1);}
 .home-card-coust{display: inline;margin-top: -25px;margin-bottom: 10px;}
 .text_anchor:hover {text-decoration: underline;}
-        .text_anchor{color:#3B86FF !important;}
+.text_anchor{color:#3B86FF !important;}
 .avater-table-coust{max-height: 40px;}
-.all-buttons-coust{box-shadow: none; min-width: 100px;}
+.all-buttons-coust{box-shadow: none; min-width: 100px;background-color: #3B86FF !important;color:white;}
 input{border-radius: 12px !important;min-width: 50px !important;}
 .checkbox-coust{min-width: auto !important; width: 17px;height: 17px;}
 .th-table-coust{min-width: 100px;}
