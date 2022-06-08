@@ -6,7 +6,7 @@
 
 <meta content="Admin Dashboard" name="description" />
 <meta content="Themesbrand" name="author" />
-<link rel="shortcut icon" href="{{ asset('images/cube_logo.svg') }}">
+<link rel="shortcut icon" href="{{ asset('images/about-logo.svg') }}">
 
 <link rel="stylesheet" href="{{ asset('plugins/morris/morris.css') }}">
 
