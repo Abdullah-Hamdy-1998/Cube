@@ -3,11 +3,10 @@
     Home
 @endsection
 @section('content')
-<div class="row align-items-start ml-1">
-    <div class="home-card-coust   mr-4 "><div class="card p-0   card-body col-3 border-radius-coust home-coust text-center "><div class="carddd mb-4 d-inline" ><i class="ion-person-add mt-4 mx-auto d-block home-icon-coust"></i>add user</div></div></div>
-    <div class="home-card-coust  mr-4"><div class="card p-0  card-body col-3 border-radius-coust home-coust text-center "><div class="carddd mb-4 d-inline" ><i class="ion-person-add mt-4  mx-auto d-block home-icon-coust"></i>new shipment</div></div></div>
-    <div class="home-card-coust  mr-4"><div class="card p-0  card-body col-3 border-radius-coust home-coust text-center "><div class="carddd mb-4 d-inline" ><i class="ion-person-add mt-4 mx-auto d-block home-icon-coust"></i>weight point</div></div></div>
-    <div class="home-card-coust  mr-4"><div class="card p-0  card-body col-3 border-radius-coust home-coust text-center "><div class="carddd mb-4 d-inline" ><i class="ion-person-add mt-4 mx-auto d-block home-icon-coust"></i>weight point</div></div></div>
+<div class="row align-items-start mt-0  ml-0">
+    <div class="home-card-coust  col-3 pl-0 mr-1 "><div class="card p-0  card-body col-12 border-radius-coust home-coust text-center "><div class=" mb-4 mt-2 d-inline" ><img src="{{ asset('images/person-add.svg') }}" class="mt-4 home-icon-coust">   <br>Add User</div></div></div>
+    <div class="home-card-coust  col-3 mr-1"><div class="card p-0  card-body col-12 border-radius-coust home-coust text-center "><div class=" mb-4 mt-2 d-inline" ><img src="{{ asset('images/shopping-bag.svg') }}" class="mt-4 home-icon-coust"><br>New Shipment</div></div></div>
+    <div class="home-card-coust  col-3 mr-1"><div class="card p-0  card-body col-12 border-radius-coust home-coust text-center "><div class=" mb-4 mt-2  d-inline" ><img src="{{ asset('images/smartphone.svg') }}" class="mt-4 home-icon-coust"><br>Weight Point</div></div></div>
 </div>
 <div class="card border-radius-coust" >
     <div class="card-body table-margin-coust">

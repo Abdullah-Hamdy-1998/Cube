@@ -3861,9 +3861,10 @@ Invoice
 .paragraph-coust{font-size: 15px;}
 .border-radius-coust{border-radius: 12px;}
 .table-coust{border-bottom: 1px solid #F4F4F4;}
-.home-icon-coust{font-size: 60px;}
+.home-icon-coust{font-size: 60px;max-height:45px;filter:opacity(.5)}
 .home-coust{font-size: 16px;min-width: 250px;}
 .home-coust:hover{background-color: #3B86FF;color:white;}
+.home-coust:hover .home-icon-coust{filter: invert(1);}
 .home-card-coust{display: inline;margin-top: -25px;margin-bottom: 10px;}
 .avater-table-coust{max-height: 40px;}
 .all-buttons-coust{box-shadow: none; min-width: 100px;}
