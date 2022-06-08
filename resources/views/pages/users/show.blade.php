@@ -5,6 +5,8 @@
 @section('content')
 <div class="card border-radius-coust">
     <div class="card-body">
+        <h5 class="mb-5 ml-3"> View User Details</h5>
+
     <img src="{{ asset('images/avatars/' . $user->avatar) }}" alt="user" class="rounded-circle mx-auto d-block" style="max-width: 25% ;max-height: 100px;">
 
     <div class="col-5 mb-3 mt-3 inputField d-inline-block mr-5"  > 

@@ -5,31 +5,45 @@
 @section('content')
 <div class="card">
     <div class="card-body">
+        <h5 class="mb-5 ml-3"> Edit Supplier Details</h5>
+
     <form action="{{ route('suppliers.update', $supplier) }}" method="POST" autocomplete="off">
         @csrf
         @method('PUT')
-        <label for="name" class="col-sm-2 col-form-label">Name</label>
-        <input class="form-control" type="text" id="name" name="name" value="{{ $supplier->name }}">
+        <div class="col-5 mb-3 inputField d-inline-block mr-5"  >   
+        <input class="form-control" type="text" id="name" name="name"required placeholder=" " value="{{ $supplier->name }}">
+        <label for="name" >Name</label>
+        </div>
 
-        <label for="delegate" class="col-sm-2 col-form-label">Delegate</label>
-        <input class="form-control" type="text" id="delegate" name="delegate" value="{{ $supplier->delegate }}">
+        <div class="col-5 mb-3 inputField d-inline-block mr-5"  >   
+        <input class="form-control" type="text" id="delegate" name="delegate"required placeholder=" " value="{{ $supplier->delegate }}">
+        <label for="delegate">Delegate</label>
+        </div>
 
-        <label for="phone" class="col-sm-2 col-form-label">Phone</label>
-        <input class="form-control" type="text" id="phone" name="phone" value="{{ $supplier->phone }}">
+        <div class="col-5 mb-3 inputField d-inline-block mr-5"  >   
+        <input class="form-control" type="text" id="phone" name="phone" placeholder=" " required value="{{ $supplier->phone }}">
+        <label for="phone">Phone</label>
+        </div>
 
-        <label for="email" class="col-sm-2 col-form-label">Email</label>
-        <input class="form-control" type="text" id="email" name="email" value="{{ $supplier->email }}">
+        <div class="col-5 mb-3 inputField d-inline-block mr-5"  >   
+        <input class="form-control" type="text" id="email" name="email" placeholder=" " required value="{{ $supplier->email }}">
+        <label for="email">Email</label>
+        </div>
 
-        <label for="address" class="col-sm-2 col-form-label">Address</label>
-        <input class="form-control" type="text" id="address" name="address" value="{{ $supplier->address }}">
+        <div class="col-5 mb-3 inputField d-inline-block mr-5"  >   
+        <input class="form-control" type="text" id="address" name="address"placeholder=" "required value="{{ $supplier->address }}">
+        <label for="address">Address</label>
+        </div>
 
-        <label for="note" class="col-sm-2 col-form-label">Note</label>
-        <input class="form-control" type="text" id="note" name="note" value="{{ $supplier->note }}">
+        <div class="col-5 mb-3 inputField d-inline-block mr-5"  >   
+        <input class="form-control" type="text" id="note" name="note"placeholder=" "required value="{{ $supplier->note }}">
+        <label for="note">Note</label>
+        </div>
 
         <br><br>
 
-        <button type="submit" class="btn btn-primary waves-effect waves-light ">Save</button>
+        <button type="submit" class="btn btn-primary ml-3 waves-effect waves-light mr-3 border-radius-coust col-1">Save</button>
         <a href="{{ route('suppliers.index') }}"> <button type="button"
-                class="btn btn-danger waves-effect waves-light ">Cancel</button></a>
-    </form></div></div>
+            class="btn btn-danger waves-effect waves-light border-radius-coust col-1">Cancel</button></a>
+        </form></div></div>
 @endsection

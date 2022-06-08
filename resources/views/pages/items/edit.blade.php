@@ -24,7 +24,7 @@
     </div>
     <br><br>
 
-    <button type="submit" lass="btn btn-primary waves-effect waves-light border-radius-coust mr-3 col-1">Edit</button>
+    <button type="submit" class="btn btn-primary waves-effect waves-light border-radius-coust mr-3 col-1">Edit</button>
     <a href="{{ route('items.index') }}"> <button type="button"
             class="btn btn-danger waves-effect waves-light border-radius-coust col-1">Cancel</button></a>
 </form>

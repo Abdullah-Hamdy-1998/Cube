@@ -5,6 +5,8 @@
 @section('content')
 <div class="card border-radius-coust">
     <div class="card-body">
+        <h5 class="mb-5 ml-3"> Edit User Details</h5>
+
     @foreach ($errors->all() as $error)
         {{ $error }}
     @endforeach

@@ -5,7 +5,7 @@
 @section('content')
 <div class="card border-radius-coust">
     <div class="card-body">
-        <h5>add new user</h5>
+        <h5>Add New User</h5>
     @foreach ($errors->all() as $error)
         {{ $error }}
     @endforeach
