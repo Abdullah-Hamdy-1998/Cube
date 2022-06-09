@@ -3967,4 +3967,4 @@ input[switch]:checked+label {background-color: #1B82EC !important;}
     -webkit-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
-  
+  .margin-coust{margin-left: 5% !important;}

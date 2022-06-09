@@ -4,8 +4,8 @@
 @endsection
 @section('content')
 <div class="card border-radius-coust">
-    <div class="card-body">
-        <h5 class="mb-5 ml-3"> Edit User Details</h5>
+    <div class="card-body mb-3">
+        <h5 class="mb-4 ml-3"> Edit User Details</h5>
 
     @foreach ($errors->all() as $error)
         {{ $error }}
@@ -49,6 +49,7 @@
         <label for="confirm_password" >Confirmation </label></div>
 
         <br>
+        <div class="ml-3">
         <h6>Access Permissions</h6>
         <br>
         <div class="form-check form-check-inline">
@@ -104,6 +105,6 @@
         <button type="submit" class="btn btn-primary waves-effect waves-light mr-3 border-radius-coust col-1">Save</button>
         <a href="{{ route('users.index') }}"> <button type="button"
                 class="btn btn-danger waves-effect waves-light border-radius-coust col-1">Cancel</button></a>
-    </form>
+    </form></div>
     </div></div>
 @endsection
