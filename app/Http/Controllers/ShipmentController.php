@@ -26,27 +26,21 @@ class ShipmentController extends Controller
         return view('pages.shipments.create', ['shipmentTypes' => $shipmentTypes, 'customers' => $customers, 'suppliers' => $suppliers, 'items' => $items]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Shipment $shipment)
     {
+        //create shipment
+        // $shipment->create($request->all());
+        //create shipment items in shipment_items table
+
+        // $shipment->create($request->all());
+        // $shipment->items()->attach($request->items);
+
+        dd($request->all());
     }
 
     public function show()
     {
         return view('pages.shipments.show');
     }
-
-    public function edit(Shipment $shipment)
-    {
-        //
-    }
-
-    public function update(Request $request, Shipment $shipment)
-    {
-        //
-    }
-
-    public function destroy(Shipment $shipment)
-    {
-        //
-    }
+    
 }

@@ -21,6 +21,7 @@ $(document).ready(function () {
 });
 
 //when clicking the delete button, apply multiple delete
+
 $("#mdelete-button").click(function () {
     var ids = [];
     $("input[type=checkbox]:checked").each(function () {
