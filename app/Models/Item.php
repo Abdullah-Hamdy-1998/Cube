@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Item extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name','description','avatar'];
+    protected $fillable = ['name', 'description', 'avatar'];
+
+    public function shipments()
+    {
+        return $this->belongsToMany(Shipment::class);
+    }
 }

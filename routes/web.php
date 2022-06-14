@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('shipments', [ShipmentController::class, 'index'])->name('shipments.index')->middleware('can:read-shipments');
     Route::get('shipments/create', [ShipmentController::class, 'create'])->name('shipments.create')->middleware('can:write-shipments');
     Route::get('shipments/{id}/show', [ShipmentController::class, 'show'])->name('shipments.show')->middleware('can:read-shipments');
-    Route::post('shipments-store', [ShipmentController::class, 'store'])->name('shipments.store')->middleware('can:write-shipmentss');
+    Route::post('shipments/store', [ShipmentController::class, 'store'])->name('shipments.store')->middleware('can:write-shipments');
 
     Route::get('inventory', [InventoryController::class, 'index'])->name('inventory.index')->middleware('can:read-inventory');
     Route::get('inventory/show', [InventoryController::class, 'show'])->name('inventory.show')->middleware('can:read-inventory');

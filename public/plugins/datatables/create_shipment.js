@@ -22,6 +22,6 @@ function getData() {
             shipment.push(shipment_item);
         }
     }
-    console.log(shipment);
     return shipment;
 }
+

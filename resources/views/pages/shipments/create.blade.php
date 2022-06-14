@@ -93,13 +93,13 @@
                     <label>Quantity</label>
 
                 </div>
-                <button type="button" onclick="insert_item();" id="submit"
+                <button type="button" onclick="insert_item();"
                     class="btn  col-2 dropdown-coust  ml-1 border-radius-coust  mb-4 all-buttons-coust">Add</button>
             </div>
             <div class="col-6">
-                <button onclick="sendData();" type="submit" id="submi_final"
-                    class="btn  col-4 d-inline border-radius-coust all-buttons-coust  ">Add</button>
-                <button type="button" class="btn btn-danger border-radius-coust  ml-2  col-4 d-inline">Cancel</button>
+                <button id="submit" class="btn  col-4 d-inline border-radius-coust all-buttons-coust  ">Add</button>
+                <a href="{{ route('shipments.index') }}"> <button type="button"
+                        class="btn btn-danger border-radius-coust  ml-2  col-4 d-inline">Cancel</button></a>
             </div>
         </div>
         <div class="d-inline-block col-6 ml-auto">
@@ -153,7 +153,8 @@
 @endsection
 @section('jquery')
     <script>
-        function sendData() {
+        $(document).on('click', '#submit', function(e) {
+            e.preventDefault();
             var shipment = getData();
             if (shipment.length > 0) {
                 $.ajax({
@@ -163,14 +164,12 @@
                         shipment: JSON.stringify(shipment),
                         _token: "{{ csrf_token() }}",
                     },
-                    success: function(data) {
-                        console.log(data);
+                    success: function() {
                         alert("Shipment Created");
-                        window.location.href = "{{ route('shipments.index') }}";
                     },
                 });
             }
-        }
+        });
     </script>
 @endsection
 @section('plugins')

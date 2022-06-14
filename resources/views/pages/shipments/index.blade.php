@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <!--    <a href="{{ route('shipments.create') }}"> <button class="btn">add</button></a>
-                <a href="{{ route('shipments.show', 4) }}"> <button class="btn">show</button></a>-->
+                                            <a href="{{ route('shipments.show', 4) }}"> <button class="btn">show</button></a>-->
     <div class="card border-radius-coust">
         <div class="card-body ">
             <a href="{{ route('shipments.create') }}"> <button type="button"
@@ -23,8 +23,27 @@
                         <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down  mt-1"></i></th>
                     </tr>
                 </thead>
-
                 <tbody>
+                    @php
+                        $i = 0;
+                    @endphp
+
+                    @foreach ($shipments as $shipment)
+                        <tr class="row{{ $shipment->id }}">
+                            <td>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input checkbox-coust table-checkbox" name=""
+                                        id="row-checkbox" value="{{ $shipment->id }}" style="display: none">
+                                </div>
+                            </td>
+                            <td>{{ ++$i }}</td>
+                            <td>{{ $shipment->shipmentInfo->type }}</td>
+                            <td>{{ $shipment->shipmentable->name }}</td>
+                            <td>{{ $shipment->description }}</td>
+                            <td>{{ $shipment->updated_at }}</td>
+                        </tr>
+                    @endforeach
+
                 </tbody>
             </table>
         </div>
