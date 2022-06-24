@@ -11,8 +11,8 @@
                 </div>
                 <div class="selectField">
                     <select id="shipment_type" class="form-control  select2 mb-3 " required="" value="default"
-                        style=" border-radius: 10px  ">
-                        <option selected style="min-height: 30%">Select </option>
+                        style="border-radius: 10px">
+                        <option style="min-height: 30%" selected disabled>Select </option>
                         @foreach ($shipmentTypes as $shipmentType)
                             <option value="{{ $shipmentType->id }}">{{ $shipmentType->type }}</option>
                         @endforeach
@@ -23,10 +23,10 @@
             </div>
             <div class="form-group  d-inline-block col-5 ml-5 ">
                 <div class="div-coust">
-                    <label class="placeholder-coustt">coustmer/supplier</label>
+                    <label class="placeholder-coustt">customer/supplier</label>
                 </div>
                 <div class="selectField">
-                    <select id="shipmentable" class="form-control  select2" style="border-radius: 12px   ">
+                    <select id="shipmentable" class="form-control  select2" style="border-radius: 12px" disabled>
                         <option disabled selected value="default">Select</option>
                         @foreach ($customers as $customer)
                             <option value="{{ $customer->id }}" data-type="customer">{{ $customer->name }}</option>
@@ -35,11 +35,12 @@
                             <option value="{{ $supplier->id }}" data-type="supplier">{{ $supplier->name }}</option>
                         @endforeach
                     </select>
-                    <label>coustmer/supplier</label>
+                    <label>customer/supplier</label>
                 </div>
             </div>
             <div class=" div-coust inputField mb-4  form-floating col-5">
-                <input type="text" class="form-control " id="description" placeholder=" " style="border-radius: 12px;">
+                <input type="text" class="form-control " id="description" placeholder=" " style="border-radius: 12px;"
+                    disabled>
                 <label>Description</label>
             </div>
         </form>
@@ -73,7 +74,7 @@
                     <div class="div-coust">
                     </div>
                     <div class="selectField">
-                        <select id="items" class="form-control  select2 mb-4" style="border-radius: 12px;">
+                        <select id="items" class="form-control  select2 mb-4" style="border-radius: 12px;" disabled>
                             <option disabled selected> Select </option>
                             @foreach ($items as $item)
                                 <option value="{{ $item->id }}">{{ $item->name }}
@@ -85,11 +86,13 @@
                 </div>
 
                 <div class="div-coust pl-0  mb-4 inputField col-12">
-                    <input type="text" class="form-control border-radius-coust" required placeholder=" " id="cum_weight">
+                    <input type="text" class="form-control border-radius-coust" required placeholder=" " id="cum_weight"
+                        disabled>
                     <label>Weight</label>
                 </div>
                 <div class=" pl-0  mb-4 inputField col-12">
-                    <input type="text" class="form-control border-radius-coust" required placeholder=" " id="quantity">
+                    <input type="text" class="form-control border-radius-coust" required placeholder=" " id="quantity"
+                        disabled>
                     <label>Quantity</label>
 
                 </div>
@@ -113,11 +116,12 @@
                 </div>
 
                 <div class=" d-flex pl-0 mb-4  inputField col-12 ">
-                    <input type="text" class="form-control  border-radius-coust" placeholder=" " required>
+                    <input type="text" class="form-control  border-radius-coust" placeholder=" " required disabled
+                        id="socket_ip">
                     <label>Weight</label><button class="mr-3  border-radius-coust input-button"
                         style="background-color: #536270">
-                        <img src="{{ asset('images/refresh-outline.svg') }}" height="30" alt="logo" class="logo mx-auto "
-                            style="filter:invert(1)">
+                        <img src="{{ asset('images/refresh-outline.svg') }}" height="30" alt="logo"
+                            class="logo mx-auto " style="filter:invert(1)">
                     </button>
 
                 </div>
@@ -125,7 +129,7 @@
                 <div class=" d-flex pl-0 mb-4  inputField col-12 ">
                     <input type="text" class="form-control text-center border-radius-coust"
                         style="height: 70px;font-size:250%;font-family: 'Orbitron', sans-serif;" placeholder=" " required
-                        id="socket_weight">
+                        id="socket_weight" disabled>
                     <label>Weight</label><button class="mr-3 border-radius-coust input-button">Kg</button>
 
                 </div>
@@ -165,6 +169,7 @@
                         _token: "{{ csrf_token() }}",
                     },
                     success: function() {
+                        window.location = '{{ route('shipments.index') }}'
                         alert("Shipment Created");
                     },
                 });
@@ -177,7 +182,7 @@
     <!-- Required datatable js -->
     <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('plugins/datatables/disable_dropdown.js') }}"></script>
+    <script src="{{ asset('plugins/datatables/enable_inputs.js') }}"></script>
     <!-- Insert Shipment Items -->
     <script src="{{ asset('plugins/datatables/shipment_items.js') }}"></script>
     <!-- Insert Cumulative Weights -->
