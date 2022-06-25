@@ -21,7 +21,7 @@ class Supplier extends Model
 
     public function shipments()
     {
-        return $this->morphToMany(Shipment::class,'shipmentable');
+        return $this->morphMany(Shipment::class,'shipmentable');
     }
 
     public function getRouteKeyName()

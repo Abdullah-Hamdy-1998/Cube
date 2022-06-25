@@ -17,7 +17,7 @@
             <div class="topbar-left topbar-left-dark">
                 <a href="{{ route('home') }}" class="logo">
                     <span>
-                        <img src="{{ asset('images/cube_logo.svg') }}"class="logo mt-4 mb-5"alt="" height="77">
+                        <img src="{{ asset('images/cube_logo.svg') }}" class="logo mt-4 mb-5" alt="" height="77">
                     </span>
                     <i>
                         <img src="{{ asset('images/cube_logo.svg') }}" alt="" height="22">
@@ -52,39 +52,36 @@
 
                         <div class="row">
                             <div class="col-12">
-
-
-                                    <div >
-
-                                        <!-- Demo purpose only -->
-                                        <div >
-                                            <p class="page label"></p>
-                                            @yield('content')
-                                        </div>
+                                <div>
+                                    <!-- Demo purpose only -->
+                                    <div>
+                                        <p class="page label"></p>
+                                        @yield('content')
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- end page content-->
+                </div>
+                <!-- end page content-->
 
-                </div> <!-- container-fluid -->
+            </div> <!-- container-fluid -->
 
-            </div> <!-- content -->
-
-
-          
-        </div>
+        </div> <!-- content -->
 
 
-        <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 
-        <!-- App js -->
-        <script src="{{ asset('js/app.js') }}"></script>
+    </div>
 
-        <script src="{{ asset('icons/eva-icons/eva.min.js') }}"></script>
-        <script src="{{ asset('icons/eva-icons/eva.js') }}"></script>
-        @yield('plugins')
+
+    <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+
+    <!-- App js -->
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    <script src="{{ asset('icons/eva-icons/eva.min.js') }}"></script>
+    <script src="{{ asset('icons/eva-icons/eva.js') }}"></script>
+    @yield('plugins')
 </body>
 
 </html>

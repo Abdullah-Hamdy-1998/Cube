@@ -13,6 +13,11 @@ class ShipmentInfo extends Model
     protected $table = 'shipment_info';
     protected $fillable = ['type'];
 
+    public function shipments()
+    {
+        return $this->hasMany(Shipment::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'type';

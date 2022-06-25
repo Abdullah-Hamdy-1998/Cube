@@ -14,7 +14,7 @@
             {{-- button danger --}}
             <button class="btn btn-danger float-right col-1" id="mdelete-button" style="display: none">Delete</button>
 
-            <table id="datatable-buttons" class="table mt-3 text-center bitable-bordered dt-responsive nowrap""
+            <table id="datatable-buttons" class="table mt-3 text-center bitable-bordered dt-responsive nowrap"
                         style=" border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                     <tr>
