@@ -12,9 +12,11 @@ class ItemController extends Controller
 {
     use SaveImageTrait;
 
+
     public function index()
     {
         $this->authorize('read-data');
+
         $items = Item::all();
         return view('pages.items.index', ['items' => $items]);
     }

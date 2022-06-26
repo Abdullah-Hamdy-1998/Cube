@@ -2,16 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
+use App\Models\Shipment;
 use Illuminate\Http\Request;
 
 class InventoryController extends Controller
 {
     public function index()
     {
-        return view('pages.inventory.index');
+        $this->authorize('read-inventory');
+
+        $items = Item::with('shipments')->get();
+        return view('pages.inventory.index', ['items' => $items]);
     }
-    public function show()
+    public function show($id)
     {
-        return view('pages.inventory.show');
+        $this->authorize('read-inventory');
+
+        $item = Item::find($id);
+        $shipments = $item->shipments;
+     
+
+        return view('pages.inventory.show', ['item' => $item, 'shipments' => $shipments]);
     }
 }

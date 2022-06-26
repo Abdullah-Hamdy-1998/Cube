@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->unsignedInteger('quantity')->nullable();
             $table->string('avatar')->default();
-            $table->decimal('amount', $precision = 8, $scale = 3)->nullable();
+            $table->decimal('weight', $precision = 8, $scale = 3)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

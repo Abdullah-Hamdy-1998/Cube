@@ -35,8 +35,9 @@ Route::middleware('auth')->group(function () {
     Route::get('shipments/{id}/show', [ShipmentController::class, 'show'])->name('shipments.show')->middleware('can:read-shipments');
     Route::post('shipments/store', [ShipmentController::class, 'store'])->name('shipments.store')->middleware('can:write-shipments');
 
-    Route::get('inventory', [InventoryController::class, 'index'])->name('inventory.index')->middleware('can:read-inventory');
-    Route::get('inventory/show', [InventoryController::class, 'show'])->name('inventory.show')->middleware('can:read-inventory');
+    // Route::get('inventory', [InventoryController::class, 'index'])->name('inventory.index')->middleware('can:read-inventory');
+    // Route::get('inventory/show', [InventoryController::class, 'show'])->name('inventory.show')->middleware('can:read-inventory');
+    Route::resource('inventory',InventoryController::class)->only(['index','show'])->middleware('can:read-inventory');
 
     Route::get('reports', ReportController::class)->name('reports')->middleware('can:read-reports');
 

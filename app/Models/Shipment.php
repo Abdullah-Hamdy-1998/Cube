@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use AjCastro\EagerLoadPivotRelations\EagerLoadPivotTrait;
 
 class Shipment extends Model
 {
-    use HasFactory;
+    use HasFactory, EagerLoadPivotTrait;
 
+    protected $with = ['shipmentInfo', 'shipmentable'];
 
     protected $fillable = [
         'user_id',
@@ -28,7 +30,7 @@ class Shipment extends Model
 
     public function items()
     {
-        return $this->belongsToMany(Item::class);
+        return $this->belongsToMany(Item::class)->withPivot(['quantity', 'weight']);
     }
 
     public function shipmentInfo()
