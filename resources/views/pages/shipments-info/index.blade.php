@@ -3,8 +3,8 @@
     Shipments Info
 @endsection
 @section('content')
-    <div class="card">
-        <div class="card-body">
+<div class="card border-radius-coust">
+    <div class="card-body">
             @can('write-data')
                 <a href="{{ route('infos.create') }}"> 
                     <button type="button" class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right"><i class="ti-plus"> </i> Add</button>  </a>         

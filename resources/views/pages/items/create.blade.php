@@ -3,7 +3,7 @@
     Items
 @endsection
 @section('content')
-<div class="card">
+<div class="card border-radius-coust">
     <div class="card-body">
     <form action="{{ route('items.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
         @foreach ($errors->all() as $error)

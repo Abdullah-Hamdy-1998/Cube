@@ -3,10 +3,12 @@
     Shipments
 @endsection
 @section('content')
-    <!--    <a href="{{ route('shipments.create') }}"> <button class="btn">add</button></a>
-                                            <a href="{{ route('shipments.show', 4) }}"> <button class="btn">show</button></a>-->
     <div class="card border-radius-coust">
-        <div class="card-body ">
+        <div class="card-body " > 
+            <td>        <a href="{{ route('shipments.create') }}"> <button class="btn">add</button></a>
+                <a href="{{ route('shipments.show', 4) }}"> <button class="btn">show</button></a>
+</td>
+
             <a href="{{ route('shipments.create') }}"> <button type="button"
                     class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right"><i
                         class="ti-plus"> </i> New</button></a>

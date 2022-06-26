@@ -16,7 +16,7 @@ Copyright (C) 2022 TechX Team
 
     </div>
 </div>
-<div class="card border-radius-coust border-radius-coust">
+<div class="card border-radius-coust ">
     <div class="card-body">
         <h5 class="d-inline">TechX Team </h5>
         <p class="mt-4">Lacinia quam aliquet pellentesque laoreet. Suspendisse eget nibh vitae massa vulputate luctus. Nullam porttitor magna non mi facilisis porttitor. Ut ultrices nulla non ante lobortis, vel ullamcorper dolor cursus. Vivamus ac lorem ex. Ut venenatis dignissim dui. Etiam pretium tellus eu nunc ultricies, volutpat rhoncus urna varius. Quisque eu eros ut nisi congue pellentesque in et sem.</p>

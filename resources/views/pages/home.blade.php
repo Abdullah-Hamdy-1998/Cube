@@ -3,8 +3,8 @@
     Home
 @endsection
 @section('content')
-    <div class="row align-items-start ml-0">
-        <div class="home-card-coust  col-3 pl-0 mr-1 ">
+ <!--   <div class="row align-items-start ml-0">
+      <div class="home-card-coust  col-3 pl-0 mr-1 ">
             <div class="card p-0  card-body col-12 border-radius-coust home-coust text-center ">
                 <div class=" mb-4 mt-2 d-inline"><img src="{{ asset('images/person-add.svg') }}"
                         class="mt-4 home-icon-coust"> <br>Add User</div>
@@ -22,7 +22,30 @@
                         class="mt-4 home-icon-coust"><br>Weight Point</div>
             </div>
         </div>
+    </div>-->
+
+    <div class="card  inventory-card-coust border-radius-coust home-card-coust mr-4 col-3 d-inline-block"
+    style="max-width:260px; min-width:260px;">
+    <div class="card-body home-coust  text-center ">
+        <img src="{{ asset('images/person-add.svg') }}"class=" home-icon-coust"> 
+        <p class="mb-0"> Add User</p>
     </div>
+</div>
+<div class="card  inventory-card-coust border-radius-coust  mr-4 col-3 d-inline-block"
+style="max-width:260px; min-width:260px;">
+<div class="card-body home-coust text-center ">
+    <img src="{{ asset('images/shopping-bag.svg') }}"class=" home-icon-coust"> 
+    <p class="mb-0">New Shipment</p>
+</div>
+</div>
+<div class="card  inventory-card-coust border-radius-coust  mr-4 col-3 d-inline-block"
+style="max-width:260px; min-width:260px;">
+<div class="card-body  home-coust text-center ">
+    <img src="{{ asset('images/smartphone.svg') }}"class=" home-icon-coust"> 
+    <p class="mb-0">Weight Point </p>
+</div>
+</div>
+
     <div class="card border-radius-coust">
         <div class="card-body table-margin-coust">
             <a>

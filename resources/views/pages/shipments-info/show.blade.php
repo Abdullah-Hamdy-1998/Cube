@@ -3,7 +3,7 @@
     Shipments Info
 @endsection
 @section('content')
-<div class="card">
+<div class="card border-radius-coust">
     <div class="card-body">
         <div class="col-5 mb-3 inputField d-inline-block mr-5"  >  
             <input class="form-control field-coust"  type="text" id="type" name="type"Required placeholder=" " value="{{ $shipment_info->type}}">

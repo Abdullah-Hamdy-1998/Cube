@@ -16,6 +16,7 @@
                         @foreach ($shipmentTypes as $shipmentType)
                             <option value="{{ $shipmentType->id }}">{{ $shipmentType->type }}</option>
                         @endforeach
+
                     </select>
 
                     <label>Select Shipment Type</label>
@@ -34,6 +35,7 @@
                         @foreach ($suppliers as $supplier)
                             <option value="{{ $supplier->id }}" data-type="supplier">{{ $supplier->name }}</option>
                         @endforeach
+
                     </select>
                     <label>customer/supplier</label>
                 </div>
@@ -101,7 +103,8 @@
             </div>
             <div class="col-6">
                 <button id="submit" class="btn  col-4 d-inline border-radius-coust all-buttons-coust  ">Add</button>
-                <a href="{{ route('shipments.index') }}"> <button type="button"
+                <a href="{{ route('shipments.index') }}"> 
+                    <button type="button"
                         class="btn btn-danger border-radius-coust  ml-2  col-4 d-inline">Cancel</button></a>
             </div>
         </div>

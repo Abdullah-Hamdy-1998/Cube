@@ -3861,10 +3861,10 @@ Invoice
 .border-radius-coust{border-radius: 12px;}
 .table-coust{border-bottom: 1px solid #F4F4F4;}
 .home-icon-coust{font-size: 60px;max-height:45px;filter:opacity(.5)}
-.home-coust{font-size: 16px;min-width: 250px;}
+.home-coust{font-size: 16px;min-width: 100%;}
 .home-coust:hover{background-color: #3B86FF;color:white;}
 .home-coust:hover .home-icon-coust{filter: invert(1);}
-.home-card-coust{display: inline;margin-top: -25px;margin-bottom: 10px;}
+.home-card-coust{min-height: 10%;}
 .text_anchor:hover {text-decoration: underline;}
 .text_anchor{color:#3B86FF !important;}
 .avater-table-coust{max-height: 40px;}
@@ -3896,7 +3896,7 @@ input[switch]:checked+label {background-color: #1B82EC !important;}
   }
 
   .inputField input {
-    padding: 8px 20px;
+    padding: 8px 18px;
     padding-top: 18px;
     border: 1.8px solid rgba(107, 107, 107, 0.4);
     border-radius: 3px;
@@ -3967,4 +3967,4 @@ input[switch]:checked+label {background-color: #1B82EC !important;}
     -webkit-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
-  
+  .margin-coust{margin-left: 5% !important;}

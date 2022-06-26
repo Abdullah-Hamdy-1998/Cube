@@ -3,25 +3,28 @@
     Customers
 @endsection
 @section('content')
-    <div class="card">
-        <div class="card-body">
+<div class="card border-radius-coust">
+    <div class="card-body">
             @can('write-data')
-                <a href="{{ route('customers.create') }}"> <button type="button"
-                        class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
+                <a href="{{ route('customers.create') }}"> 
+                    <button type="button"
+                        class="btn btn-primary ml-3 all-buttons-coust  border-radius-coust col-1 table-coust waves-effect waves-light float-right"><i
+                            class="ti-plus"> </i> Add</button></a>
             @endcan
-            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
-                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+            <table id="datatable-buttons" class="table mt-3 text-center bitable-bordered dt-responsive nowrap""
+                        style=" border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                     <tr>
                         <th></th>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Delegate</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Modified</th>
-                        <th>Actions</th>
+                        <th class="th-table-coust">ID <i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Name<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Delegate<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Phone<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Email<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust"></th>
                     </tr>
+
                 </thead>
 
 
