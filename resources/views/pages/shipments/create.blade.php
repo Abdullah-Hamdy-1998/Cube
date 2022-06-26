@@ -16,7 +16,6 @@
                         @foreach ($shipmentTypes as $shipmentType)
                             <option value="{{ $shipmentType->id }}">{{ $shipmentType->type }}</option>
                         @endforeach
-                        <option>aya</option>
 
                     </select>
 
@@ -36,7 +35,6 @@
                         @foreach ($suppliers as $supplier)
                             <option value="{{ $supplier->id }}" data-type="supplier">{{ $supplier->name }}</option>
                         @endforeach
-                        <option>aya</option>
 
                     </select>
                     <label>customer/supplier</label>

@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="card border-radius-coust">
-        <div class="card-body ">
+        <div class="card-body " > 
             <td>        <a href="{{ route('shipments.create') }}"> <button class="btn">add</button></a>
                 <a href="{{ route('shipments.show', 4) }}"> <button class="btn">show</button></a>
 </td>
