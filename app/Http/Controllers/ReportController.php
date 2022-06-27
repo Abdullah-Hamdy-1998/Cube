@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\ActivityLog;
+use Illuminate\Support\Facades\DB;
+
 
 class ReportController extends Controller
 {
     public function __invoke()
     {
-        return view('pages.reports.index');
+        $this->authorize('read-reports');
+
+        $logs = ActivityLog::with(['user', 'loggable'])->get();
+
+        return view('pages.reports.index', ['logs' => $logs]);
     }
 }

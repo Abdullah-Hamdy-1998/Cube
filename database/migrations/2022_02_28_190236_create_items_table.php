@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('log_id')->unique()->constrained()->cascadeOnUpdate();
             $table->string('name');
             $table->text('description')->nullable();
             $table->unsignedInteger('quantity')->nullable();

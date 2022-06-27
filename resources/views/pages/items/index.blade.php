@@ -3,25 +3,28 @@
     Items
 @endsection
 @section('content')
-    <div class="card border-radius-coust" >
+    <div class="card border-radius-coust">
         <div class="card-body">
             @can('write-data')
                 <a href="{{ route('items.create') }}">
-                    <button type="button" class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right"><i class="ti-plus"> </i> Add</button>  </a>          @endcan
+                    <button type="button"
+                        class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right"><i
+                            class="ti-plus"> </i> Add</button> </a>
+            @endcan
 
-                    <table id="datatable-buttons" class="table mt-3 text-center bitable-bordered dt-responsive nowrap""
-                    style=" border-collapse: collapse; border-spacing: 0; width: 100%;">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th class="th-table-coust">ID <i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
-                    <th class="th-table-coust">Avatar<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
-                    <th class="th-table-coust">Name<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
-                    <th class="th-table-coust">Description<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
-                    <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
-                    <th class="th-table-coust"></th>
-                </tr>
-            </thead>
+            <table id="datatable-buttons" class="table mt-3 text-center bitable-bordered dt-responsive nowrap""
+                style=" border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="th-table-coust">ID <i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Avatar<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Name<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Description<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust"></th>
+                    </tr>
+                </thead>
 
                 <tbody>
                     @php
@@ -31,7 +34,8 @@
                         <tr class="row{{ $item->id }}">
                             <td>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                                    <input type="checkbox" class="form-check-input" name="" id=""
+                                        value="checkedValue">
                                 </div>
                             </td>
                             <td>{{ ++$i }}</td>

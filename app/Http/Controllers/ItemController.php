@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Traits\SaveImageTrait;
 use App\Http\Requests\StoreItemRequest;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller
 {
@@ -33,7 +34,11 @@ class ItemController extends Controller
         if ($request->hasFile('image')) {
             $request->merge(['avatar' => $this->saveImage($request, 'images/avatars')]);
         }
-        Item::create($request->all());
+        $item = Item::create($request->all());
+
+        //Log the action
+        $item->logs()->create(['user_id' => Auth::id(), 'action' => 'Create', 'data' => $item->name]);
+
         return redirect()->route('items.index');
     }
 
@@ -58,6 +63,10 @@ class ItemController extends Controller
             $request->merge(['avatar' => $this->saveImage($request, 'images/avatars')]);
         }
         $item->update($request->all());
+
+        //Log the action
+        $item->logs()->create(['user_id' => Auth::id(), 'action' => 'Update', 'data' => $item->name]);
+
         return redirect()->route('items.index');
     }
 
@@ -67,5 +76,8 @@ class ItemController extends Controller
 
         $item = Item::findOrFail($request->id);
         $item->delete();
+
+        //Log the action
+        $item->logs()->create(['user_id' => Auth::id(), 'action' => 'Delete', 'data' => $item->name]);
     }
 }

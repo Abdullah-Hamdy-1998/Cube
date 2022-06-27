@@ -60,6 +60,11 @@ class ShipmentController extends Controller
         }
         foreach ($shipmentItems as $item) {
             $shipment->items()->attach($item->item_id, ['quantity' => $item->item_quantity, 'weight' => $item->item_weight]);
+            $shipment->logs()->create([
+                'user_id' => Auth::id(),
+                'action' => 'Create',
+                'data' => $shipmentItem->description,
+            ]);
             if ($shipmentItem->shipment_type == IMPORT) {
                 $item_ = Item::find($item->item_id);
                 $item_->weight += $item->item_weight;

@@ -42,6 +42,11 @@ class User extends Authenticatable
         return $this->hasMany(Shipment::class);
     }
 
+    public function logs()
+    {
+        return $this->hasMany(ActivityLog::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'name';

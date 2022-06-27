@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use AjCastro\EagerLoadPivotRelations\EagerLoadPivotTrait;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 
 class Shipment extends Model
 {
-    use HasFactory, EagerLoadPivotTrait;
+    use HasFactory, SoftDeletes;
 
     protected $with = ['shipmentInfo', 'shipmentable'];
 
@@ -25,7 +26,7 @@ class Shipment extends Model
 
     public function shipmentable()
     {
-        return $this->morphTo();
+        return $this->morphTo()->withTrashed();
     }
 
     public function items()
@@ -36,5 +37,10 @@ class Shipment extends Model
     public function shipmentInfo()
     {
         return $this->belongsTo(ShipmentInfo::class);
+    }
+
+    public function logs()
+    {
+        return $this->morphMany(ActivityLog::class, 'loggable');
     }
 }

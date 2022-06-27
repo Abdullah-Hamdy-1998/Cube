@@ -4,10 +4,10 @@
 @endsection
 @section('content')
     <div class="card border-radius-coust">
-        <div class="card-body " > 
-            <td>        <a href="{{ route('shipments.create') }}"> <button class="btn">add</button></a>
-                <a href="{{ route('shipments.show', 4) }}"> <button class="btn">show</button></a>
-</td>
+        <div class="card-body ">
+            <td> <a href="{{ route('shipments.create') }}"> <button class="btn">add</button></a>
+                <a href="{{ route('shipments.show', 1) }}"> <button class="btn">show</button></a>
+            </td>
 
             <a href="{{ route('shipments.create') }}"> <button type="button"
                     class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right"><i
@@ -17,7 +17,6 @@
                 style=" border-bottom:1px solid #F4F4F4; width: 100%; background-color: white;">
                 <thead class="">
                     <tr>
-                        <th></th>
                         <th class="th-table-coust">ID<i class="fas fa-sort-alpha-down  mt-1"></i></th>
                         <th class="th-table-coust"> Shipment Type<i class="fas fa-sort-alpha-down  mt-1"></i></th>
                         <th class="th-table-coust">Cus.-Sup.<i class="fas fa-sort-alpha-down  mt-1"></i></th>
@@ -32,12 +31,6 @@
 
                     @foreach ($shipments as $shipment)
                         <tr class="row{{ $shipment->id }}">
-                            <td>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input checkbox-coust table-checkbox" name=""
-                                        id="row-checkbox" value="{{ $shipment->id }}" style="display: none">
-                                </div>
-                            </td>
                             <td>{{ ++$i }}</td>
                             <td>{{ $shipment->shipmentInfo->type }}</td>
                             <td>{{ $shipment->shipmentable->name }}</td>

@@ -17,4 +17,9 @@ class Item extends Model
     {
         return $this->belongsToMany(Shipment::class)->withPivot(['weight', 'quantity']);
     }
+
+    public function logs()
+    {
+        return $this->morphMany(ActivityLog::class, 'loggable');
+    }
 }

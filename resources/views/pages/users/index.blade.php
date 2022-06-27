@@ -8,15 +8,17 @@
             @can('write-users')
                 <a href="{{ route('users.create') }}">
                     <button type="button"
-                        class="btn btn-primary ml-3 all-buttons-coust  border-radius-coust col-1 table-coust waves-effect waves-light float-right"><i
+                        class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right"><i
                             class="ti-plus"> </i> Add</button></a>
             @endcan
             {{-- button danger --}}
 
-            <button class="btn btn-danger float-right col-1" id="mdelete-button" style="display: none">Delete</button>
-            <button  onclick="window.print()" class="btn btn-primary ml-3 all-buttons-coust  border-radius-coust col-1 table-coust waves-effect waves-light float-right" id="mdelete-button" >print</button>
+            <button onclick="window.print()"
+                class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right">Print</button>
+            <button class="btn btn-danger border-radius-coust ml-3 col-1 waves-effect waves-light float-right"
+                id="mdelete-button" style="display: none">Delete</button>
             <table id="datatable-buttons" class="table mt-3 text-center bitable-bordered dt-responsive nowrap"
-                         style=" border-collapse: collapse; border-spacing: 0; width: 100%;">
+                style=" border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                     <tr>
                         <th></th>
@@ -41,8 +43,8 @@
                         <tr class="row{{ $user->id }}">
                             <td>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input checkbox-coust table-checkbox" name=""
-                                        id="row-checkbox" value="{{ $user->id }}" style="display: none">
+                                    <input type="checkbox" class="form-check-input checkbox-coust table-checkbox"
+                                        name="" id="row-checkbox" value="{{ $user->id }}" style="display: none">
                                 </div>
                             </td>
                             <td>{{ ++$i }}</td>
@@ -107,8 +109,8 @@
     </script>
 @endsection
 @section('plugins')
-<script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
-<!-- Required datatable js -->
+    <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+    <!-- Required datatable js -->
     <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
     <!-- Buttons examples -->
@@ -128,6 +130,5 @@
 
     <!-- Datatable init js -->
     <script src="{{ asset('pages/datatables.init.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js" ></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
 @endsection
