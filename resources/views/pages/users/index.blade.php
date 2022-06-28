@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="card border-radius-coust">
-        <div class="card-body"id="card-body">
+        <div class="card-body">
             @can('write-users')
                 <a href="{{ route('users.create') }}">
                     <button type="button"

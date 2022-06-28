@@ -11,9 +11,9 @@
                 <p class="ml-5 d-inline font-weight-bold paragraph-coust mr-5" style="font-size: 18px !important;">
                     {{ $item->name }}</p>
                 <p class="ml-5 d-inline  paragraph-coust ">Weight</p>
-                <p class="ml-5 d-inline  paragraph-coust mr-5">{{ $item->weight }} Kg</p>
+                <p class="ml-5 d-inline  paragraph-coust mr-5">{{ $item->weight ? $item->weight : '0.000' }} Kg</p>
                 <p class="ml-5 d-inline  paragraph-coust ">Quantity</p>
-                <p class="ml-5 d-inline  paragraph-coust ">{{ $item->quantity }} U</p>
+                <p class="ml-5 d-inline  paragraph-coust ">{{  $item->quantity ? $item->quantity : '0' }} U</p>
             </div>
         </div>
     </div>

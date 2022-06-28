@@ -57,6 +57,12 @@ class ShipmentController extends Controller
                 'shipment_info_id' => $shipmentItem->shipment_type,
                 'description' => $shipmentItem->description,
             ]);
+        } else {
+            $shipment = Shipment::create([
+                'user_id' => Auth::id(),
+                'shipment_info_id' => $shipmentItem->shipment_type,
+                'description' => $shipmentItem->description,
+            ]);
         }
         foreach ($shipmentItems as $item) {
             $shipment->items()->attach($item->item_id, ['quantity' => $item->item_quantity, 'weight' => $item->item_weight]);

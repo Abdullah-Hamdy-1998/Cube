@@ -53,4 +53,11 @@ class CustomerController extends Controller
         $customer->delete();
         return redirect()->route('customers.index');
     }
+
+    public function getCustomers()
+    {
+        $this->authorize('read-data');
+        $customers = Customer::all();
+        return response()->json($customers);
+    }
 }

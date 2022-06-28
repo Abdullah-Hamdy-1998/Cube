@@ -19,25 +19,16 @@
 
                     </select>
 
-                    <label>Select Shipment Type</label>
+                    <label>Shipment Type</label>
                 </div>
             </div>
             <div class="form-group  d-inline-block col-5 ml-5 ">
                 <div class="div-coust">
-                    <label class="placeholder-coustt">customer/supplier</label>
                 </div>
                 <div class="selectField">
-                    <select id="shipmentable" class="form-control  select2" style="border-radius: 12px" disabled>
-                        <option disabled selected value="default">Select</option>
-                        @foreach ($customers as $customer)
-                            <option value="{{ $customer->id }}" data-type="customer">{{ $customer->name }}</option>
-                        @endforeach
-                        @foreach ($suppliers as $supplier)
-                            <option value="{{ $supplier->id }}" data-type="supplier">{{ $supplier->name }}</option>
-                        @endforeach
-
+                    <select id="shipmentable" class="form-control" style="border-radius: 12px" disabled>
                     </select>
-                    <label>customer/supplier</label>
+                    <label id="label">Customer/Supplier</label>
                 </div>
             </div>
             <div class=" div-coust inputField mb-4  form-floating col-5">
@@ -55,7 +46,6 @@
                 <thead>
                     <tr>
                         <th class=" text-center " scope="col">#</th>
-                        <th scope="col">Avatar<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
                         <th scope="col">Name<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
                         <th scope="col">Weight<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
                         <th scope="col">Quantity<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
@@ -70,7 +60,7 @@
     <div class="row align-items-start">
         <div class="d-inline-block col-6  m-0">
             <div class="card   shadow-sm p-3 pl-4 pt-4" style="border-radius:10px;">
-                <label class="pb-1 label-coust" style="font-size: 19px;">Add shipment item</label>
+                <label class="pb-1 label-coust" style="font-size: 19px;">Add Shipment Item</label>
 
                 <div class="pl-0 col-12   ">
                     <div class="div-coust">
@@ -83,7 +73,7 @@
                                 </option>
                             @endforeach
                         </select>
-                        <label>shipment item</label>
+                        <label>Shipment Item</label>
                     </div>
                 </div>
 
@@ -103,7 +93,7 @@
             </div>
             <div class="col-6">
                 <button id="submit" class="btn  col-4 d-inline border-radius-coust all-buttons-coust  ">Add</button>
-                <a href="{{ route('shipments.index') }}"> 
+                <a href="{{ route('shipments.index') }}">
                     <button type="button"
                         class="btn btn-danger border-radius-coust  ml-2  col-4 d-inline">Cancel</button></a>
             </div>
@@ -121,7 +111,7 @@
                 <div class=" d-flex pl-0 mb-4  inputField col-12 ">
                     <input type="text" class="form-control  border-radius-coust" placeholder=" " required disabled
                         id="socket_ip">
-                    <label>Weight</label><button class="mr-3  border-radius-coust input-button"
+                    <label>IP</label><button class="mr-3  border-radius-coust input-button"
                         style="background-color: #536270">
                         <img src="{{ asset('images/refresh-outline.svg') }}" height="30" alt="logo"
                             class="logo mx-auto " style="filter:invert(1)">
@@ -176,6 +166,57 @@
                         alert("Shipment Created");
                     },
                 });
+            }
+        });
+
+
+        $(document).on('change', '#shipment_type', function(e) {
+            e.preventDefault();
+            var shipment_type = $('#shipment_type').val();
+            if (shipment_type == 1) {
+                $.ajax({
+                    type: "GET",
+                    url: "{{ route('ajax.suppliers.get') }}",
+                    success: function(data) {
+
+                        $('#label').show();
+                        $('#shipmentable').show();
+                        $('#shipmentable').empty();
+                        $('#shipmentable').append(
+                            '<option disabled selected value="default">Select</option>');
+                        $.each(data, function(key, value) {
+                            $('#shipmentable').append('<option data-type="supplier" value="' +
+                                value.id + '">' +
+                                value
+                                .name + '</option>');
+                        });
+                    },
+
+                });
+            } else if (shipment_type == 2) {
+                $.ajax({
+                    type: "GET",
+                    url: "{{ route('ajax.customers.get') }}",
+                    success: function(data) {
+
+                        $('#label').show();
+                        $('#shipmentable').show();
+                        $('#shipmentable').empty();
+                        $('#shipmentable').append(
+                            '<option disabled selected value="default">Select</option>');
+                        $.each(data, function(key, value) {
+                            $('#shipmentable').append('<option data-type="customer" value="' +
+                                value.id + '">' +
+                                value
+                                .name + '</option>');
+                        });
+                    },
+
+                });
+            } else {
+                $('#shipmentable').empty();
+                $('#shipmentable').hide();
+                $('#label').hide();
             }
         });
     </script>

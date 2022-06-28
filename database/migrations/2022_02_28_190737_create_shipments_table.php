@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate();
             $table->foreignId('shipment_info_id')->constrained('shipment_info')->cascadeOnUpdate();
-            $table->morphs('shipmentable');
+            $table->nullableMorphs('shipmentable');
             $table->timestamps();
             $table->softDeletes();
         });

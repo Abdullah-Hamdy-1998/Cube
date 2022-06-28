@@ -17,7 +17,6 @@
                         <th></th>
                         <th class="th-table-coust">ID <i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
                         <th class="th-table-coust">Type<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
-                        <th class="th-table-coust">Name<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
                         <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
                         <th class="th-table-coust"></th>
                     </tr>

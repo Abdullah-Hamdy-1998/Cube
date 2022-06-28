@@ -2,13 +2,11 @@ let id = 0;
 
 function insert_item() {
     var table = document.getElementById("shipment_items");
-    var rowCount = table.rows.length;
-    if (rowCount > 2) {
-        //check if data-id attribute is == to 0
-        alert(table.rows[rowCount - 1].cells[2].getAttribute("data-id"));
-    }
-
-    var avatar = "avatar";
+    // var rowCount = table.rows.length;
+    // if (rowCount > 2) {
+    //     //check if data-id attribute is == to 0
+    //     alert(table.rows[rowCount - 1].cells[2].getAttribute("data-id"));
+    // }
 
     var item = document.getElementById("items");
     var item_id = item.value;
@@ -25,12 +23,12 @@ function insert_item() {
     } else if (quantity <= 0 || isNaN(quantity)) {
         alert("Please Enter a valid Quantity");
     } else {
-        var data = [++id, avatar, item_name, cum_weight, quantity];
+        var data = [++id, item_name, cum_weight, quantity];
         var new_row = table.insertRow();
 
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 4; i++) {
             var new_cell = new_row.insertCell(i);
-            if (i == 2) {
+            if (i == 1) {
                 new_cell.setAttribute("data-id", item_id);
             }
             var new_text = document.createTextNode(data[i]);

@@ -11,7 +11,7 @@ class ShipmentInfoController extends Controller
     public function index()
     {
         $this->authorize('read-data');
-        $shipments_info = ShipmentInfo::all();
+        $shipments_info = ShipmentInfo::all()->except([1, 2]);
         return view('pages.shipments-info.index', ['shipments_info' => $shipments_info]);
     }
 

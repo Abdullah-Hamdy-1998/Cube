@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="card border-radius-coust">
-        <div class="card-body">
+        <div class="card-body" >
             @can('write-data')
                 <a href="{{ route('items.create') }}">
                     <button type="button"
@@ -12,7 +12,7 @@
                             class="ti-plus"> </i> Add</button> </a>
             @endcan
 
-            <table id="datatable-buttons" class="table mt-3 text-center bitable-bordered dt-responsive nowrap""
+            <table id="datatable-buttons" class="table mt-3 text-center bitable-bordered dt-responsive nowrap"
                 style=" border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                     <tr>
@@ -45,6 +45,7 @@
                             </td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->description }}</td>
+                            <td>{{ $item->updated_at }}</td>
                             <td>
 
                                 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">

@@ -53,4 +53,11 @@ class SupplierController extends Controller
         $supplier->delete();
         return redirect()->route('suppliers.index');
     }
+
+    public function getSuppliers()
+    {
+        $this->authorize('read-data');
+        $suppliers = Supplier::all();
+        return response()->json($suppliers);
+    }
 }

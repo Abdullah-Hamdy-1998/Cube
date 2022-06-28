@@ -33,7 +33,7 @@
                         <tr class="row{{ $shipment->id }}">
                             <td>{{ ++$i }}</td>
                             <td>{{ $shipment->shipmentInfo->type }}</td>
-                            <td>{{ $shipment->shipmentable->name }}</td>
+                            <td>{{ $shipment->shipmentable->name ?? '' }}</td>
                             <td>{{ $shipment->description }}</td>
                             <td>{{ $shipment->updated_at }}</td>
                         </tr>
