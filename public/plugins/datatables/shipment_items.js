@@ -2,6 +2,7 @@ let id = 0;
 
 function insert_item() {
     var table = document.getElementById("shipment_items");
+
     // var rowCount = table.rows.length;
     // if (rowCount > 2) {
     //     //check if data-id attribute is == to 0

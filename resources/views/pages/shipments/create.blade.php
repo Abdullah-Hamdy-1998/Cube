@@ -111,7 +111,7 @@
                 <div class=" d-flex pl-0 mb-4  inputField col-12 ">
                     <input type="text" class="form-control  border-radius-coust" placeholder=" " required disabled
                         id="socket_ip">
-                    <label>IP</label><button class="mr-3  border-radius-coust input-button"
+                    <label>Unknown</label><button class="mr-3  border-radius-coust input-button"
                         style="background-color: #536270">
                         <img src="{{ asset('images/refresh-outline.svg') }}" height="30" alt="logo"
                             class="logo mx-auto " style="filter:invert(1)">
@@ -247,6 +247,7 @@
     <script src="{{ asset('plugins/datatables/responsive.bootstrap4.min.js') }}"></script>
     <!-- Datatable init js -->
     <script src="{{ asset('pages/datatables.init.js') }}"></script>
+    <script src="{{ asset('plugins/datatables/onchange_item.js') }}"></script>
     <!-- Create Shipment -->
     <script src="{{ asset('plugins/datatables/create_shipment.js') }}"></script>
 @endsection
