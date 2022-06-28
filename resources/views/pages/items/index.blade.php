@@ -41,6 +41,7 @@
                             <td>{{ ++$i }}</td>
                             <td> <img src="{{ asset('images/avatars/' . $item->avatar) }}" alt="item"
                                     class="rounded-circle img-fluid avater-table-coust">
+
                             </td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->description }}</td>

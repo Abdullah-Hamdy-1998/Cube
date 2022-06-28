@@ -7,7 +7,7 @@
         <div class="card-body "style="min-width:100px;">
             <h5 class="mb-4">Item Stock</h5>
             <div class="text-center mb-3">
-                <img src="{{ asset('images/tomato.WEBP') }}"style="max-height:40px;"class="d-inline">
+                <img src="{{ asset('images/avatars/' . $item->avatar) }}"style="max-height:40px;"class="d-inline">
                 <p class="ml-5 d-inline font-weight-bold paragraph-coust mr-5" style="font-size: 18px !important;">
                     {{ $item->name }}</p>
                 <p class="ml-5 d-inline  paragraph-coust ">Weight</p>

@@ -3,10 +3,12 @@
 $("table tbody tr").hover(
     function () {
         $(this).find("#row-checkbox").show();
+        $(this).find("#dropdownMenuButton").show();
     },
     function () {
         if ($(this).find("#row-checkbox").is(":checked") == false)
             $(this).find("#row-checkbox").hide();
+        $(this).find("#dropdownMenuButton").hide();
     }
 );
 

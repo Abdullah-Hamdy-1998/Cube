@@ -1,6 +1,13 @@
-var counter = 0;
+let id = 0;
 
 function insert_item() {
+    var table = document.getElementById("shipment_items");
+    var rowCount = table.rows.length;
+    if (rowCount > 2) {
+        //check if data-id attribute is == to 0
+        alert(table.rows[rowCount - 1].cells[2].getAttribute("data-id"));
+    }
+
     var avatar = "avatar";
 
     var item = document.getElementById("items");
@@ -18,7 +25,7 @@ function insert_item() {
     } else if (quantity <= 0 || isNaN(quantity)) {
         alert("Please Enter a valid Quantity");
     } else {
-        var data = [++counter, avatar, item_name, cum_weight, quantity];
+        var data = [++id, avatar, item_name, cum_weight, quantity];
         var new_row = table.insertRow();
 
         for (var i = 0; i < 5; i++) {

@@ -32,19 +32,16 @@
                         <th class="th-table-coust"></th>
                     </tr>
                 </thead>
-
-
                 <tbody>
                     @php
                         $i = 0;
                     @endphp
-
                     @foreach ($users as $user)
                         <tr class="row{{ $user->id }}">
                             <td>
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input checkbox-coust table-checkbox"
-                                        name="" id="row-checkbox" value="{{ $user->id }}" style="display: none">
+                                        id="row-checkbox" value="{{ $user->id }}" style="display: none">
                                 </div>
                             </td>
                             <td>{{ ++$i }}</td>
@@ -59,7 +56,8 @@
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-link" type="button" id="dropdownMenuButton"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        style="display: none">
                                         <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

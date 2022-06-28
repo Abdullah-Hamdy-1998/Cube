@@ -17,7 +17,8 @@ class ItemFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->unique()->randomElement(['Chocolaty Sweet Piarom', 'Soft', 'Petite', 'Dry']),
+            'description' => $this->faker->text(),
         ];
     }
 }
