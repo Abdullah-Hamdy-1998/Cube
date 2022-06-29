@@ -11,11 +11,13 @@ use App\Http\Controllers\ShipmentInfoController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TrashController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
 
-    Route::view('/', 'pages.home')->name('home');
+
+    Route::get('/', HomeController::class)->name('home');
 
     Route::resource('users', UserController::class)->middleware('can:read-users');
     Route::delete('user-delete', [UserController::class, 'destroy'])->middleware('can:write-users');
@@ -25,10 +27,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('item-delete', [ItemController::class, 'destroy'])->name('ajax.items.delete')->middleware('can:write-data');
 
     Route::resource('suppliers', SupplierController::class)->middleware('can:read-data');
-   Route::get('get-suppliers', [SupplierController::class, 'getSuppliers'])->name('ajax.suppliers.get')->middleware('can:read-data');
+    Route::get('get-suppliers', [SupplierController::class, 'getSuppliers'])->name('ajax.suppliers.get')->middleware('can:read-data');
 
     Route::resource('customers', CustomerController::class)->middleware('can:read-data');
-   Route::get('get-customers', [CustomerController::class, 'getCustomers'])->name('ajax.customers.get')->middleware('can:read-data');
+    Route::get('get-customers', [CustomerController::class, 'getCustomers'])->name('ajax.customers.get')->middleware('can:read-data');
 
     Route::resource('infos', ShipmentInfoController::class)->middleware('can:read-data');
 

@@ -17,34 +17,35 @@
                 </tr>
             </thead>
 
-            @php
-                $i = 0;
-            @endphp
-            @foreach ($logs as $log)
-                <tr>
-                    <td>{{ ++$i }}</td>
-                    <td>{{ $log->user->name }}</td>
-                    <td>
-                        @if ($log->loggable_type == 'App\Models\Item')
-                            Items
-                        @elseif ($log->loggable_type == 'App\Models\Shipment')
-                            Shipments
-                        @endif
-                    </td>
-                    <td>
-                        @if ($log->action == 'Create')
-                            <span class="badge badge-pill badge-primary">{{ $log->action }}</span>
-                        @elseif ($log->action == 'Update')
-                            <span class="badge badge-pill badge-secondary">{{ $log->action }}</span>
-                        @elseif ($log->action == 'Delete')
-                            <span class="badge badge-pill badge-danger">{{ $log->action }}</span>
-                        @endif
-                    </td>
-                    <td>{{ $log->data }}</td>
-                    <td>{{ $log->created_at }}</td>
-                </tr>
-            @endforeach
             <tbody>
+
+                @php
+                    $i = 0;
+                @endphp
+                @foreach ($logs as $log)
+                    <tr>
+                        <td>{{ ++$i }}</td>
+                        <td>{{ $log->user->name }}</td>
+                        <td>
+                            @if ($log->loggable_type == 'App\Models\Item')
+                                Items
+                            @elseif ($log->loggable_type == 'App\Models\Shipment')
+                                Shipments
+                            @endif
+                        </td>
+                        <td>
+                            @if ($log->action == 'Create')
+                                <span class="badge badge-pill badge-primary">{{ $log->action }}</span>
+                            @elseif ($log->action == 'Update')
+                                <span class="badge badge-pill badge-secondary">{{ $log->action }}</span>
+                            @elseif ($log->action == 'Delete')
+                                <span class="badge badge-pill badge-danger">{{ $log->action }}</span>
+                            @endif
+                        </td>
+                        <td>{{ $log->data }}</td>
+                        <td>{{ $log->created_at }}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

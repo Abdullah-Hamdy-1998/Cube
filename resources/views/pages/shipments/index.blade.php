@@ -5,13 +5,11 @@
 @section('content')
     <div class="card border-radius-coust">
         <div class="card-body ">
-            <td> <a href="{{ route('shipments.create') }}"> <button class="btn">add</button></a>
-                <a href="{{ route('shipments.show', 1) }}"> <button class="btn">show</button></a>
-            </td>
-
-            <a href="{{ route('shipments.create') }}"> <button type="button"
-                    class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right"><i
-                        class="ti-plus"> </i> New</button></a>
+            @can('write-shipments')
+                <a href="{{ route('shipments.create') }}"> <button type="button"
+                        class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right"><i
+                            class="ti-plus"> </i> New</button></a>
+            @endcan
 
             <table id="datatable-buttons" class="table table-striped mt-3 text-center bitable-bordered dt-responsive nowrap"
                 style=" border-bottom:1px solid #F4F4F4; width: 100%; background-color: white;">
@@ -22,6 +20,7 @@
                         <th class="th-table-coust">Cus.-Sup.<i class="fas fa-sort-alpha-down  mt-1"></i></th>
                         <th class="th-table-coust">Description<i class="fas fa-sort-alpha-down  mt-1"></i></th>
                         <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down  mt-1"></i></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,6 +35,7 @@
                             <td>{{ $shipment->shipmentable->name ?? '' }}</td>
                             <td>{{ $shipment->description }}</td>
                             <td>{{ $shipment->updated_at }}</td>
+                            <td><a href="{{ route('shipments.show', $shipment) }}"><i class="eva eva-eye"></i></a></td>
                         </tr>
                     @endforeach
 

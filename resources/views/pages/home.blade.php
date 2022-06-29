@@ -21,55 +21,103 @@
             </div>
         </div>
     </a>
-    <div class="card border-radius-coust">
-        <div class="card-body table-margin-coust">
-            <a>
-                <p class="float-right text_anchor">View All</p>
-            </a>
-            <table id="datatable-buttons"onload="setId();" class="table table-coust mt-3 text-center dt-responsive nowrap "
-                style=" width: 100%; ">
-                <h5 class="m-0 mb-4">Leatest Shipments</h5>
-                <thead class="thead-coust">
-                    <tr>
-                        <th class="th-table-coust">ID<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
-                        <th class="th-table-coust">Shipment Type<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
-                        <th class="th-table-coust">Cus./Sup.<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
-                        <th class="th-table-coust">Description<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
-                        <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
-                    </tr>
-                </thead>
+    @can('read-shipments')
+        <div class="card border-radius-coust">
+            <div class="card-body table-margin-coust">
+                <a href="{{ route('shipments.index') }}" class="float-right text_anchor">All Shipments</a>
+                <h5 class="m-0 mb-4">Leatest
+                    Shipments</h5>
 
-                <tbody>
-                </tbody>
-            </table>
+                <table id="datatable-buttons" class="table table-striped mt-3 text-center bitable-bordered dt-responsive nowrap"
+                    style=" border-bottom:1px solid #F4F4F4; width: 100%; background-color: white;">
+                    <thead>
+                        <tr>
+                            <th class="th-table-coust">ID</i></th>
+                            <th class="th-table-coust"> Shipment Type</i></th>
+                            <th class="th-table-coust">Cus.Sup.</i></th>
+                            <th class="th-table-coust">Description</i></th>
+                            <th class="th-table-coust">Modified</i></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php
+                            $i = 0;
+                        @endphp
+
+                        @foreach ($shipments as $shipment)
+                            <tr class="row{{ $shipment->id }}">
+                                <td>{{ ++$i }}</td>
+                                <td>{{ $shipment->shipmentInfo->type }}</td>
+                                <td>{{ $shipment->shipmentable->name ?? '' }}</td>
+                                <td>{{ $shipment->description }}</td>
+                                <td>{{ $shipment->updated_at }}</td>
+                                <td><a href="{{ route('shipments.show', $shipment) }}"><i class="eva eva-eye"></i></a>
+                                </td>
+                            </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+
+            </div>
         </div>
-    </div>
+    @endcan
 
 
+    @can('read-reports')
+        <div class="card border-radius-coust ">
+            <div class="card-body table-margin-coust">
+                <a>
+                    <a href="{{ route('reports') }}" class="float-right text_anchor">All Activities</a>
+                </a>
+                <h5 class="m-0 mb-4">Recent Activities</h5>
+                <table id="datatable-buttons" class="table table-striped mt-3 text-center bitable-bordered dt-responsive nowrap"
+                    style=" border-bottom:1px solid #F4F4F4; width: 100%; background-color: white;">
+                    <thead>
+                        <tr>
+                            <th class="th-table-coust">ID</th>
+                            <th class="th-table-coust">User</th>
+                            <th class="th-table-coust">Module</th>
+                            <th class="th-table-coust">Action</th>
+                            <th class="th-table-coust">Data</th>
+                            <th class="th-table-coust">Logged At</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php
+                            $i = 0;
+                        @endphp
+                        @foreach ($logs as $log)
+                            <tr>
+                                <td>{{ ++$i }}</td>
+                                <td>{{ $log->user->name }}</td>
+                                <td>
+                                    @if ($log->loggable_type == 'App\Models\Item')
+                                        Items
+                                    @elseif ($log->loggable_type == 'App\Models\Shipment')
+                                        Shipments
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($log->action == 'Create')
+                                        <span class="badge badge-pill badge-primary">{{ $log->action }}</span>
+                                    @elseif ($log->action == 'Update')
+                                        <span class="badge badge-pill badge-secondary">{{ $log->action }}</span>
+                                    @elseif ($log->action == 'Delete')
+                                        <span class="badge badge-pill badge-danger">{{ $log->action }}</span>
+                                    @endif
+                                </td>
+                                <td>{{ $log->data }}</td>
+                                <td>{{ $log->created_at }}</td>
+                            </tr>
+                        @endforeach
 
-    <div class="card border-radius-coust ">
-        <div class="card-body table-margin-coust">
-            <a>
-                <p class="float-right text_anchor">View All</p>
-            </a>
-            <h5 class="m-0 mb-4">Recent Activities</h5>
-            <table id="datatable-buttons"onload="setId();" class="table table-coust mt-3 text-center dt-responsive nowrap "
-                style=" width: 100%; ">
-                <thead class="thead-coust">
-                    <tr>
-                        <th class="th-table-coust  ">ID<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
-                        <th class="th-table-coust"> Shipment Type<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
-                        <th class="th-table-coust">Cus./Sup.<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
-                        <th class="th-table-coust">Description<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
-                        <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down ml-2  mt-1"></i></th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
+    @endcan
 @endsection
 @section('plugins')
 @endsection
