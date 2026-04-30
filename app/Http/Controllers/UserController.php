@@ -8,25 +8,34 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreUserRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Traits\SaveImageTrait;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    use SaveImageTrait;
 
-    public function index()
+    public function index(User $user)
     {
-        $users = User::all()->except(auth()->id());
+        $this->authorize('read-users', $user);
+        $users = User::all()->except(['id', Auth::id()]);
         return view('pages.users.index', ['users' => $users]);
     }
 
-    public function create()
+    public function create(User $user)
     {
+        $this->authorize('write-users', $user);
+
         return view('pages.users.create');
     }
 
-    public function store(StoreUserRequest $request)
+    public function store(StoreUserRequest $request, User $user)
     {
-        if ($request->hasFile('user-avatar')) {
-            $this->saveImage($request, 'images/avatars');
+        $this->authorize('write-users', $user);
+
+        if ($request->hasFile('image')) {
+            $request->merge(['avatar' => $this->saveImage($request, 'images/avatars')]);
         }
 
         $request->merge(['password' => Hash::make($request->password)]);
@@ -51,6 +60,8 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
+        $this->authorize('write-users', $user);
+
         $permissions = $user->permissions;
         $access = $permissions[0]->pivot->access;
         foreach ($permissions as $permission) {
@@ -61,10 +72,12 @@ class UserController extends Controller
 
     public function update(UpdateUserRequest $request, User $user)
     {
-        if ($request->hasFile('user-avatar')) {
+        $this->authorize('write-users', $user);
+
+        if ($request->hasFile('image')) {
             if ($user->avatar != "user-default.png")
                 Storage::disk('avatars')->delete($user->avatar);
-            $this->saveImage($request, 'images/avatars');
+            $request->merge(['avatar' => $this->saveImage($request, 'images/avatars')]);
         }
 
         $request->merge(['password' => Hash::make($request->password)]);
@@ -78,17 +91,21 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
 
-    public function destroy(User $user)
+    public function destroy(Request $request)
     {
+        $this->authorize('write-users');
+        $user = User::find($request->id);
         $user->delete();
         return redirect()->route('users.index');
     }
-
-    protected function saveImage($request, $destinationPath)
+    public function multipleDelete(Request $request)
     {
-        $avatar = $request->file('user-avatar');
-        $userAvatar = date('YmdHis') . "." . $avatar->getClientOriginalExtension();
-        $avatar->move($destinationPath, $userAvatar);
-        $request->merge(['avatar' => $userAvatar]);
+        $this->authorize('write-users');
+
+        dd($request->ids);
+        $users = User::whereIn('id', $request->ids)->get();
+        foreach ($users as $user) {
+            $user->delete();
+        }
     }
 }

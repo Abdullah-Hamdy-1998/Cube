@@ -3,42 +3,94 @@
     Items
 @endsection
 @section('content')
-    <a href="{{ route('items.create') }}"> <button type="button"
-            class="btn btn-primary waves-effect waves-light float-right">Add</button></a>
-    <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
-        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-        <thead>
-            <tr>
-                <th></th>
-                <th>ID</th>
-                <th>Avatar</th>
-                <th>Name</th>
-                <th>Job Title</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Modified</th>
-            </tr>
-        </thead>
+    <div class="card border-radius-coust">
+        <div class="card-body" >
+            @can('write-data')
+                <a href="{{ route('items.create') }}">
+                    <button type="button"
+                        class="btn btn-primary border-radius-coust ml-3 col-1 waves-effect waves-light float-right"><i
+                            class="ti-plus"> </i> Add</button> </a>
+            @endcan
 
+            <table id="datatable-buttons" class="table mt-3 text-center bitable-bordered dt-responsive nowrap"
+                style=" border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="th-table-coust">ID <i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Avatar<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Name<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Description<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust">Modified<i class="fas fa-sort-alpha-down ml-2 mt-1"></i></th>
+                        <th class="th-table-coust"></th>
+                    </tr>
+                </thead>
 
-        <tbody>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                    </div>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+                <tbody>
+                    @php
+                        $i = 0;
+                    @endphp
+                    @foreach ($items as $item)
+                        <tr class="row{{ $item->id }}">
+                            <td>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="" id=""
+                                        value="checkedValue">
+                                </div>
+                            </td>
+                            <td>{{ ++$i }}</td>
+                            <td> <img src="{{ asset('images/avatars/' . $item->avatar) }}" alt="item"
+                                    class="rounded-circle img-fluid avater-table-coust">
+
+                            </td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->description }}</td>
+                            <td>{{ $item->updated_at }}</td>
+                            <td>
+
+                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                                        <a href="{{ route('items.show', $item) }}"> <button type="button"
+                                                class="btn btn-primary"><i class="eva eva-eye-outline"></i></button></a>
+                                        <button type="submit" class="btn btn-danger delete_btn"
+                                            data-id="{{ $item->id }}" data-route="item-delete"><i
+                                                class="eva eva-trash"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+
+            </table>
+        </div>
+    </div>
 @endsection
+
+@section('jquery')
+    <script>
+        $(document).on('click', '.delete_btn', function(e) {
+
+            e.preventDefault();
+            var id = $(this).data("id");
+            var route = $(this).data("route");
+
+            $.ajax({
+                type: "POST",
+                url: route,
+                data: {
+                    id: id,
+                    _token: "{{ csrf_token() }}",
+                    _method: "DELETE",
+                },
+                success: function() {
+                    $('.row' + id).remove();
+                },
+            });
+        });
+    </script>
+@endsection
+
 @section('plugins')
     <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 

@@ -17,9 +17,8 @@ return new class extends Migration
             $table->foreignId('shipment_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('item_id')->constrained()->cascadeOnUpdate();
             $table->integer('quantity');
-            $table->decimal('amount', $precision = 8, $scale = 3);
+            $table->decimal('weight', $precision = 8, $scale = 3);
             $table->primary(['shipment_id', 'item_id']);
-            $table->timestamps();
         });
     }
 

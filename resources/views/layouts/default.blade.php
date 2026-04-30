@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
     @include('includes.head')
+
 </head>
 
 <body>
@@ -15,7 +17,7 @@
             <div class="topbar-left topbar-left-dark">
                 <a href="{{ route('home') }}" class="logo">
                     <span>
-                        <img src="{{ asset('images/cube_logo.svg') }}" alt="" height="77">
+                        <img src="{{ asset('images/cube_logo.svg') }}" class="logo mt-4 mb-5" alt="" height="77">
                     </span>
                     <i>
                         <img src="{{ asset('images/cube_logo.svg') }}" alt="" height="22">
@@ -23,7 +25,7 @@
                 </a>
             </div>
 
-            <nav class="navbar-custom">
+            <nav class="navbar-custom ">
                 @include('includes.header')
             </nav>
 
@@ -32,7 +34,7 @@
 
 
         <!-- ========== Left Sidebar Start ========== -->
-        <div class="left side-menu side-menu-dark">
+        <div class="left side-menu side-menu-dark ">
             <div class="slimscroll-menu" id="remove-scroll">
                 @include('includes.sidebar')
             </div>
@@ -47,46 +49,39 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="page-content-wrapper">
+
                         <div class="row">
                             <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <!-- Demo purpose only -->
-                                        <div style="min-height: 300px;">
-                                            @yield('content')
-                                        </div>
+                                <div>
+                                    <!-- Demo purpose only -->
+                                    <div>
+                                        <p class="page label"></p>
+                                        @yield('content')
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- end page content-->
+                </div>
+                <!-- end page content-->
 
-                </div> <!-- container-fluid -->
+            </div> <!-- container-fluid -->
 
-            </div> <!-- content -->
+        </div> <!-- content -->
 
 
-            <footer class="footer">
-                @include('includes.footer')
-            </footer>
-        </div>
 
-        <!-- jQuery  -->
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ asset('js/metisMenu.min.js') }}"></script>
-        <script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
-        <script src="{{ asset('js/waves.min.js') }}"></script>
+    </div>
 
-        <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 
-        <!-- App js -->
-        <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 
-        <script src="{{ asset('icons/eva-icons/eva.min.js') }}"></script>
-        <script src="{{ asset('icons/eva-icons/eva.js') }}"></script>
-        @yield('plugins')
+    <!-- App js -->
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    <script src="{{ asset('icons/eva-icons/eva.min.js') }}"></script>
+    <script src="{{ asset('icons/eva-icons/eva.js') }}"></script>
+    @yield('plugins')
 </body>
 
 </html>
