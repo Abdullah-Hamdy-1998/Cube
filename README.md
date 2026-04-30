@@ -1,64 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Cube
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Cube is a Laravel 9 warehouse and shipment management application. It tracks items, suppliers, customers, stock movement, user permissions, activity logs, and soft-deleted records from a single authenticated dashboard.
 
-## About Laravel
+## What the project does
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Manage items with stored quantity and weight.
+- Manage suppliers and customers linked to shipments.
+- Create import and export shipments.
+- Update inventory totals automatically when shipments are created.
+- Review recent activity from the home dashboard and full reports page.
+- Control access with module-based permissions.
+- Restore or permanently delete soft-deleted users, items, suppliers, customers, and shipment types.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP 8
+- Laravel 9
+- MySQL
+- Laravel Fortify and Sanctum for authentication support
+- Bootstrap 5, Sass, Laravel Mix, and SweetAlert2 on the frontend
 
-## Learning Laravel
+## Main modules
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Dashboard
+- Users and permissions
+- Items
+- Suppliers
+- Customers
+- Shipment types
+- Shipments
+- Inventory
+- Reports
+- Trash
+- Settings
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Local setup
 
-## Laravel Sponsors
+1. Install PHP and Node.js dependencies.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+	```bash
+	composer install
+	npm install
+	```
 
-### Premium Partners
+2. Create your environment file and update the database credentials.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+	```bash
+	copy .env.example .env
+	```
 
-## Contributing
+	The default environment template expects a MySQL database named `cube`.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. Generate the application key.
 
-## Code of Conduct
+	```bash
+	php artisan key:generate
+	```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. Run the database migrations and seeders.
 
-## Security Vulnerabilities
+	```bash
+	php artisan migrate --seed
+	```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. Build frontend assets.
 
-## License
+	```bash
+	npm run dev
+	```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+6. Start the local server.
+
+	```bash
+	php artisan serve
+	```
+
+## Seeded admin account
+
+After running the seeders, you can sign in with:
+
+- Email: `admin@cube.com`
+- Password: `password`
+
+Change this account immediately outside local development.
+
+## Inventory behavior
+
+- `Import` shipments increase item quantity and weight.
+- `Export` shipments decrease item quantity and weight.
+
+The default shipment types are seeded automatically.
+
+## Useful commands
+
+```bash
+php artisan test
+npm run dev
+npm run watch
+npm run prod
+```
+
+## Notes
+
+- Most web routes are protected by authentication and policy gates.
+- The application uses soft deletes for several core records, with a dedicated trash area for recovery and permanent removal.
